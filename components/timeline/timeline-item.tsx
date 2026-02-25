@@ -19,6 +19,10 @@ export function TimelineItem({ event, index }: TimelineItemProps) {
   useEffect(() => {
     if (!open) return;
 
+    requestAnimationFrame(() => {
+      ref.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
     function handleClick(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
