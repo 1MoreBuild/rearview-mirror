@@ -14,7 +14,7 @@
 }
 
 html[data-theme="dark"] {
-  --bg: #0a0a0b;
+  --bg: #0c0c0c;
   --text: #e8e8e8;
   --muted: #666;
   --accent: #e8372d;
@@ -74,6 +74,7 @@ a {
   border-bottom: 1px solid var(--border);
   background: color-mix(in srgb, var(--bg) 86%, transparent);
   backdrop-filter: blur(12px);
+  padding-top: env(safe-area-inset-top);
 }
 
 .site-header-inner {
@@ -133,7 +134,7 @@ a {
 .site-content {
   width: min(1100px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 3rem 0 6rem;
+  padding: 3rem 0 calc(3rem + env(safe-area-inset-bottom));
 }
 
 .page-shell {
@@ -159,7 +160,7 @@ a {
 
 .timeline-month-header {
   position: sticky;
-  top: 3.5rem;
+  top: calc(3.5rem + env(safe-area-inset-top));
   z-index: 60;
   padding: 0.6rem 0;
   background: color-mix(in srgb, var(--bg) 90%, transparent);

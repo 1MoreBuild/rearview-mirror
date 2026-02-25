@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   },
   description:
     "A curated timeline of AI model milestones since the ChatGPT 3.5 launch.",
+  viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
 };
 
 export default function RootLayout({
