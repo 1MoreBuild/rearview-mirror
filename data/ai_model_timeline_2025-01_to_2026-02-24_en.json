@@ -1,0 +1,1793 @@
+{
+  "as_of": "2026-02-24",
+  "timezone": "America/Los_Angeles",
+  "range_start": "2025-01-01",
+  "range_end_inclusive": "2026-02-24",
+  "scope_note": "Curated timeline of major AI model releases and major version upgrades from Jan 2025 to Feb 24, 2026. Not exhaustive (minor patches, silent rollouts, and region-limited experiments are often omitted). Impact levels are qualitative and reflect a mix of mainstream coverage, developer adoption signals, and downstream effects (product defaults, open-weight forks, policy/legal responses).",
+  "impact_legend": {
+    "watershed": "A clear 'industry moment' that shifted public narrative or competitive dynamics.",
+    "high": "Widely discussed and/or quickly adopted; strong downstream effects.",
+    "medium": "Important to practitioners/ecosystem, but narrower spread.",
+    "low": "Niche or limited rollout; modest downstream impact."
+  },
+  "context_before_2025": [
+    {
+      "date": "2024-12-26",
+      "date_precision": "day",
+      "title": "DeepSeek-V3 introduced (sets the stage for the 2025 'DeepSeek moment')",
+      "organization": "DeepSeek",
+      "model_family": "DeepSeek-V3",
+      "modalities": [
+        "text"
+      ],
+      "release_type": "open-weights",
+      "description": "DeepSeek introduced DeepSeek-V3 near the end of 2024; its performance/cost narrative primed the community for the major 2025 wave of DeepSeek adoption and comparisons.",
+      "why_it_mattered": "Even though the release date is in 2024, the model's visibility and comparisons carried strongly into early 2025 and framed how people interpreted later R1/V3.x drops.",
+      "network_impact": {
+        "level": "high",
+        "markers": [
+          "open-weights",
+          "china-ai-acceleration",
+          "community-comparisons"
+        ]
+      },
+      "sources": [
+        {
+          "label": "DeepSeek — DeepSeek-R1 release page (lists prior DeepSeek-V3 introduction)",
+          "url": "https://api-docs.deepseek.com/news/news250120"
+        },
+        {
+          "label": "Hugging Face — One year since the DeepSeek moment",
+          "url": "https://huggingface.co/blog/huggingface/one-year-since-the-deepseek-moment"
+        }
+      ]
+    }
+  ],
+  "months": [
+    {
+      "month": "2025-01",
+      "events": [
+        {
+          "date": "2025-01-20",
+          "date_precision": "day",
+          "title": "DeepSeek-R1 released (reasoning model, open weights)",
+          "organization": "DeepSeek",
+          "model_family": "DeepSeek-R1",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "DeepSeek released R1 as a reasoning-focused model and also published distilled smaller models, emphasizing permissive use and community re-use.",
+          "why_it_mattered": "This was quickly framed as a 'DeepSeek moment'—a strong open-weights reasoning release that pushed global conversation about cost/performance and open ecosystems.",
+          "network_impact": {
+            "level": "watershed",
+            "markers": [
+              "open-weights",
+              "reasoning",
+              "community-forks",
+              "narrative-shift"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepSeek — DeepSeek-R1 release",
+              "url": "https://api-docs.deepseek.com/news/news250120"
+            },
+            {
+              "label": "Hugging Face — One year since the DeepSeek moment",
+              "url": "https://huggingface.co/blog/huggingface/one-year-since-the-deepseek-moment"
+            }
+          ]
+        },
+        {
+          "date": "2025-01-29",
+          "date_precision": "day",
+          "title": "Qwen2.5-Max announced (large-scale MoE model)",
+          "organization": "Alibaba / Qwen",
+          "model_family": "Qwen2.5-Max",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "api",
+          "description": "Qwen announced Qwen2.5-Max, a large MoE model trained on a very large token corpus and made available via Alibaba Cloud / Qwen Chat.",
+          "why_it_mattered": "Part of the early-2025 China LLM acceleration cycle: rapid releases and marketing pushes following DeepSeek’s visibility.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "china-ai-competition",
+              "moe",
+              "enterprise-api"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Qwen — Qwen2.5-Max announcement",
+              "url": "https://qwenlm.github.io/blog/qwen2.5-max/"
+            },
+            {
+              "label": "Reuters — Qwen 3 coverage referencing earlier Qwen2.5-Max release",
+              "url": "https://www.reuters.com/business/media-telecom/alibaba-unveils-advanced-qwen-3-ai-chinese-tech-rivalry-intensifies-2025-04-29/"
+            }
+          ]
+        },
+        {
+          "date": "2025-01-31",
+          "date_precision": "day",
+          "title": "OpenAI o3-mini released (cost-effective small reasoning model)",
+          "organization": "OpenAI",
+          "model_family": "OpenAI o3-mini",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "api+chatgpt",
+          "description": "OpenAI released o3-mini as the most cost-efficient small model in its reasoning series, with options for different reasoning effort levels.",
+          "why_it_mattered": "A key step in 'reasoning for everyone'—pushing stronger STEM/coding reasoning into lower-cost tiers and widening developer usage.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "reasoning",
+              "cost-down",
+              "developer-adoption"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — o3-mini announcement",
+              "url": "https://openai.com/index/openai-o3-mini/"
+            },
+            {
+              "label": "OpenAI Help Center — Model release notes (o3-mini)",
+              "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-02",
+      "events": [
+        {
+          "date": "2025-02-05",
+          "date_precision": "day",
+          "title": "Gemini 2.0 Flash (Vertex AI model version recorded)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 2.0 Flash",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "api",
+          "description": "Vertex AI model version pages record Gemini 2.0 Flash availability for developers/enterprises (model IDs vary by platform/versioning).",
+          "why_it_mattered": "Less of a viral moment and more of a practical adoption milestone: enterprises could standardize around a new default workhorse model.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "enterprise-rollout",
+              "platform-defaults",
+              "tool-use"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google Cloud — Vertex AI model versions",
+              "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions"
+            },
+            {
+              "label": "Google — Gemini app powered by Gemini 2.0 Flash (January 2025 update post)",
+              "url": "https://blog.google/feed/gemini-app-model-update-january-2025/"
+            }
+          ]
+        },
+        {
+          "date": "2025-02-18",
+          "date_precision": "day",
+          "title": "xAI Grok 3 released (flagship model)",
+          "organization": "xAI",
+          "model_family": "Grok 3",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "closed",
+          "description": "Reuters reported xAI’s launch of Grok 3 as a competitor in the flagship-chatbot race.",
+          "why_it_mattered": "Because X is both the product surface and the distribution channel, Grok releases tend to spread quickly through social discourse and mainstream coverage.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "social-distribution",
+              "flagship-race",
+              "mainstream-coverage"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Reuters — Musk's xAI unveils Grok 3",
+              "url": "https://www.reuters.com/technology/artificial-intelligence/musks-xai-unveils-grok-3-ai-chatbot-rival-chatgpt-chinas-deepseek-2025-02-18/"
+            }
+          ]
+        },
+        {
+          "date": "2025-02-25",
+          "date_precision": "day",
+          "title": "Gemini 2.0 Flash-Lite (Vertex AI model version recorded)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 2.0 Flash-Lite",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "api",
+          "description": "Vertex AI model version pages record Gemini 2.0 Flash-Lite as a lighter, cost-oriented variant for production workloads.",
+          "why_it_mattered": "Cost-optimized variants often matter most at scale: they enable more 'always-on' features, higher query volumes, and broader integration.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "cost-optimization",
+              "enterprise-scale",
+              "platform-variants"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google Cloud — Vertex AI model versions",
+              "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions"
+            }
+          ]
+        },
+        {
+          "date": "2025-02-27",
+          "date_precision": "day",
+          "title": "OpenAI GPT-4.5 released (research preview)",
+          "organization": "OpenAI",
+          "model_family": "GPT-4.5",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "research-preview",
+          "description": "OpenAI released a research preview of GPT-4.5 as a scaled-up general model, emphasizing improved pattern recognition and writing quality.",
+          "why_it_mattered": "A major model-line checkpoint, but the buzz was more 'inside the industry' than the open-weights shockwaves driving broader discourse.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "flagship-upgrade",
+              "research-preview",
+              "developer-migration"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-4.5",
+              "url": "https://openai.com/index/introducing-gpt-4-5/"
+            },
+            {
+              "label": "OpenAI Help Center — Model release notes (GPT-4.5)",
+              "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-03",
+      "events": [
+        {
+          "date": "2025-03-06",
+          "date_precision": "day",
+          "title": "QwQ-32B released (reasoning model from Qwen)",
+          "organization": "Alibaba / Qwen",
+          "model_family": "QwQ-32B",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "Reuters reported Alibaba's release of QwQ-32B, a reasoning-focused model positioned as competitive with other leading reasoning models.",
+          "why_it_mattered": "Highlighted how quickly Chinese labs pivoted into the 'reasoning model' narrative after DeepSeek R1 and others raised the bar.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "china-ai-competition",
+              "reasoning",
+              "benchmark-rivalry"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Reuters — Alibaba shares surge after it unveils reasoning model QwQ-32B",
+              "url": "https://www.reuters.com/technology/alibaba-shares-surge-after-it-unveils-reasoning-model-2025-03-06/"
+            }
+          ]
+        },
+        {
+          "date": "2025-03-25",
+          "date_precision": "day",
+          "title": "OpenAI 4o Image Generation launched (native image generation/editing)",
+          "organization": "OpenAI",
+          "model_family": "GPT-4o Image Generation",
+          "modalities": [
+            "image"
+          ],
+          "release_type": "product",
+          "description": "OpenAI launched a major upgrade to ChatGPT image generation powered by GPT‑4o, emphasizing accurate text rendering, instruction following, and practical editing.",
+          "why_it_mattered": "Image tools spread via outputs: better text rendering + edit consistency tends to trigger rapid UGC waves (memes, posters, diagrams) and copycat features across competitors.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "image-editing",
+              "consumer-creativity"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing 4o Image Generation",
+              "url": "https://openai.com/index/introducing-4o-image-generation/"
+            },
+            {
+              "label": "TechCrunch — ChatGPT image-generation upgrade",
+              "url": "https://techcrunch.com/2025/03/25/chatgpts-image-generation-feature-gets-an-upgrade/"
+            }
+          ]
+        },
+        {
+          "date": "2025-03-25",
+          "date_precision": "day",
+          "title": "DeepSeek-V3-0324 released (open-weights update)",
+          "organization": "DeepSeek",
+          "model_family": "DeepSeek-V3-0324",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "DeepSeek released V3-0324 as a V3-series update (MIT license), continuing rapid iterations after the early-2025 attention spike.",
+          "why_it_mattered": "Sustained the open-weights pressure: frequent updates keep the community benchmarking, fine-tuning, and redeploying—and keep competitors responding.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "rapid-iteration",
+              "community-benchmarks"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepSeek — DeepSeek-V3-0324 release",
+              "url": "https://api-docs.deepseek.com/news/news250325"
+            },
+            {
+              "label": "DeepSeek — Updates / changelog",
+              "url": "https://api-docs.deepseek.com/updates"
+            }
+          ]
+        },
+        {
+          "date": "2025-03-25",
+          "date_precision": "day",
+          "title": "Gemini 2.5 Pro Experimental introduced (thinking model line)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 2.5 Pro",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "research-preview",
+          "description": "DeepMind introduced Gemini 2.5 as a 'thinking model' line; Gemini 2.5 Pro Experimental was positioned as the first 2.5 model with strong reasoning and coding.",
+          "why_it_mattered": "Marked Google's formal push to 'hybrid reasoning' as a product line, influencing how the ecosystem talked about reasoning modes and cost/performance tiers.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "thinking-models",
+              "reasoning",
+              "multimodal"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google — Gemini 2.5 announcement (Mar 25, 2025)",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-04",
+      "events": [
+        {
+          "date": "2025-04-05",
+          "date_precision": "day",
+          "title": "Meta Llama 4 released (Scout & Maverick; open-weight multimodal models)",
+          "organization": "Meta",
+          "model_family": "Llama 4",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "open-weights",
+          "description": "Meta introduced Llama 4 Scout and Llama 4 Maverick as natively multimodal open-weight models, kickstarting a new wave of open deployment and fine-tuning.",
+          "why_it_mattered": "Open-weight releases trigger an immediate 'benchmark → fine-tune → deploy → compare' loop. Llama 4 also sparked debate around benchmark transparency and variants.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "open-weights",
+              "ecosystem-forks",
+              "benchmark-controversy",
+              "multimodal"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Meta — Llama 4 announcement",
+              "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+            },
+            {
+              "label": "Reuters — Meta releases new AI model Llama 4",
+              "url": "https://www.reuters.com/technology/meta-releases-new-ai-model-llama-4-2025-04-05/"
+            },
+            {
+              "label": "The Verge — Meta got caught gaming AI benchmarks (context)",
+              "url": "https://www.theverge.com/meta/645012/meta-llama-4-maverick-benchmarks-gaming"
+            }
+          ]
+        },
+        {
+          "date": "2025-04-14",
+          "date_precision": "day",
+          "title": "OpenAI GPT-4.1 family released in the API (4.1 / 4.1 mini / 4.1 nano)",
+          "organization": "OpenAI",
+          "model_family": "GPT-4.1",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "api",
+          "description": "OpenAI launched GPT‑4.1, 4.1 mini, and 4.1 nano in the API, emphasizing instruction-following, tool use, and long context.",
+          "why_it_mattered": "A big developer-facing reset: new default API options often reshape app baselines, prompting guides, and cost/performance expectations.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "developer-platform",
+              "long-context",
+              "tool-use"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-4.1 in the API",
+              "url": "https://openai.com/index/gpt-4-1/"
+            }
+          ]
+        },
+        {
+          "date": "2025-04-16",
+          "date_precision": "day",
+          "title": "OpenAI o3 and o4-mini released (reasoning + tool-capable models)",
+          "organization": "OpenAI",
+          "model_family": "OpenAI o3 / o4-mini",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "api+chatgpt",
+          "description": "OpenAI released o3 and o4-mini as tool-capable reasoning models, emphasizing multi-step problem solving and visual reasoning ('think with images').",
+          "why_it_mattered": "Helped normalize 'agentic tool use' as a baseline expectation for top-tier reasoning models.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "reasoning",
+              "tool-use",
+              "vision-reasoning"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing o3 and o4-mini",
+              "url": "https://openai.com/index/introducing-o3-and-o4-mini/"
+            }
+          ]
+        },
+        {
+          "date": "2025-04-25",
+          "date_precision": "day",
+          "title": "Baidu ERNIE 4.5 Turbo and ERNIE X1 Turbo launched",
+          "organization": "Baidu",
+          "model_family": "ERNIE 4.5 Turbo / ERNIE X1 Turbo",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video"
+          ],
+          "release_type": "closed",
+          "description": "Reuters reported Baidu’s launch of ERNIE 4.5 Turbo and ERNIE X1 Turbo, positioned as faster/cheaper upgrades amid intensifying domestic competition.",
+          "why_it_mattered": "Part of the 'price/performance war' dynamic in China: frequent upgrades, price cuts, and rapid productization cycles.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "china-ai-competition",
+              "price-war",
+              "multimodal"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Reuters — Baidu launches new AI model amid mounting competition",
+              "url": "https://www.reuters.com/world/china/baidu-launches-new-ai-model-amid-mounting-competition-2025-04-25/"
+            }
+          ]
+        },
+        {
+          "date": "2025-04-29",
+          "date_precision": "day",
+          "title": "Qwen3 unveiled (open-source model family with hybrid reasoning)",
+          "organization": "Alibaba / Qwen",
+          "model_family": "Qwen3",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "Reuters and Qwen’s blog announced the Qwen3 series, highlighting hybrid reasoning capabilities and a range of sizes (dense + MoE).",
+          "why_it_mattered": "A major open-source event: Qwen drops typically ripple through Hugging Face, benchmark leaderboards, and fine-tuning toolchains within days.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "open-weights",
+              "ecosystem-forks",
+              "china-ai-competition"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Qwen — Qwen3 announcement",
+              "url": "https://qwenlm.github.io/blog/qwen3/"
+            },
+            {
+              "label": "Reuters — Alibaba unveils Qwen 3",
+              "url": "https://www.reuters.com/business/media-telecom/alibaba-unveils-advanced-qwen-3-ai-chinese-tech-rivalry-intensifies-2025-04-29/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-05",
+      "events": [
+        {
+          "date": "2025-05-20",
+          "date_precision": "day",
+          "title": "Google announced new generative media models at I/O (Veo 3, Imagen 4, Lyria 2)",
+          "organization": "Google / DeepMind",
+          "model_family": "Veo 3 / Imagen 4 / Lyria 2",
+          "modalities": [
+            "video",
+            "image",
+            "audio"
+          ],
+          "release_type": "product+api",
+          "description": "At I/O 2025, Google highlighted new generative media models: Veo 3 (video), Imagen 4 (image), and expanded access to Lyria 2 (music).",
+          "why_it_mattered": "High-shareability content (video + audio) tends to produce fast viral spread and intensifies concerns about synthetic media misuse and provenance.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "synthetic-media",
+              "io-launch"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google — Generative media models at I/O 2025",
+              "url": "https://blog.google/innovation-and-ai/products/generative-media-models-io-2025/"
+            },
+            {
+              "label": "Google — I/O 2025 announcements list (Veo 3 / Imagen 4)",
+              "url": "https://blog.google/innovation-and-ai/products/google-io-2025-all-our-announcements/"
+            }
+          ]
+        },
+        {
+          "date": "2025-05-22",
+          "date_precision": "day",
+          "title": "Claude 4 released (Opus 4 and Sonnet 4)",
+          "organization": "Anthropic",
+          "model_family": "Claude 4",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "Anthropic launched Claude 4, including Opus 4 and Sonnet 4, as a major generation jump in the Claude family.",
+          "why_it_mattered": "A big step for enterprise/dev adoption, especially where Anthropic is used as a default for coding and knowledge work.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "enterprise-adoption",
+              "coding",
+              "model-refresh"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Anthropic — Claude 4 announcement",
+              "url": "https://www.anthropic.com/news/claude-4"
+            }
+          ]
+        },
+        {
+          "date": "2025-05-28",
+          "date_precision": "day",
+          "title": "DeepSeek-R1-0528 released (reasoning model update)",
+          "organization": "DeepSeek",
+          "model_family": "DeepSeek-R1-0528",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "DeepSeek shipped an updated R1 checkpoint (R1-0528), continuing rapid iteration on open reasoning models.",
+          "why_it_mattered": "Keeps pressure on both open and closed competitors: iterative open checkpoints enable fast community improvements and adaptation.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "rapid-iteration",
+              "reasoning"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepSeek — Release note: DeepSeek-R1-0528",
+              "url": "https://api-docs.deepseek.com/news/news250528"
+            },
+            {
+              "label": "TechCrunch — DeepSeek updates its R1 reasoning model",
+              "url": "https://techcrunch.com/2025/05/28/deepseek-updates-its-r1-reasoning-ai-model-releases-it-on-hugging-face/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-06",
+      "events": [
+        {
+          "date": "2025-06-10",
+          "date_precision": "day",
+          "title": "OpenAI o3-pro launched (higher-compute variant of o3)",
+          "organization": "OpenAI",
+          "model_family": "OpenAI o3-pro",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "api+chatgpt",
+          "description": "OpenAI launched o3-pro as a higher-compute variant of o3 designed to think longer and deliver more reliable results for difficult tasks.",
+          "why_it_mattered": "Strengthened the idea of 'same family, different compute tiers' (Instant/Thinking/Pro patterns) for professional reasoning workloads.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "reasoning",
+              "compute-tiering",
+              "professional-workflows"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI Help Center — Model release notes (o3-pro)",
+              "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+            },
+            {
+              "label": "OpenAI — o3/o4-mini blog (updated with o3-pro)",
+              "url": "https://openai.com/index/introducing-o3-and-o4-mini/"
+            }
+          ]
+        },
+        {
+          "date": "2025-06-17",
+          "date_precision": "day",
+          "title": "Gemini 2.5 Pro and Gemini 2.5 Flash become generally available",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 2.5",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "api",
+          "description": "DeepMind announced Gemini 2.5 Pro and 2.5 Flash as stable/GA models, alongside introducing 2.5 Flash-Lite in preview.",
+          "why_it_mattered": "GA status is when enterprises commit: stability, pricing, and deprecation windows drive real deployment decisions.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "enterprise-rollout",
+              "stable-release",
+              "thinking-models"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepMind — Expanding the Gemini 2.5 family (GA)",
+              "url": "https://deepmind.google/blog/were-expanding-our-gemini-25-family-of-models/"
+            },
+            {
+              "label": "Gemini API changelog (2.5 Pro/Flash released)",
+              "url": "https://ai.google.dev/gemini-api/docs/changelog"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-07",
+      "events": [
+        {
+          "date": "2025-07-03",
+          "date_precision": "day",
+          "title": "Veo 3 rolled out more broadly (video generation model availability expansion)",
+          "organization": "Google / DeepMind",
+          "model_family": "Veo 3",
+          "modalities": [
+            "video",
+            "audio"
+          ],
+          "release_type": "product",
+          "description": "TechCrunch reported broader rollout of Veo 3 beyond the initial announcement window.",
+          "why_it_mattered": "For generative video, the 'broader availability' moment often creates the real viral surge because more creators can publish outputs at once.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "availability-expansion",
+              "synthetic-media"
+            ]
+          },
+          "sources": [
+            {
+              "label": "TechCrunch — Google rolls out Veo 3 globally",
+              "url": "https://techcrunch.com/2025/07/03/google-rolls-out-its-new-veo-3-video-generation-model-globally/"
+            },
+            {
+              "label": "Google — I/O 2025 generative media models",
+              "url": "https://blog.google/innovation-and-ai/products/generative-media-models-io-2025/"
+            }
+          ]
+        },
+        {
+          "date": "2025-07-28",
+          "date_precision": "day",
+          "title": "GLM-4.5 released (open-source model)",
+          "organization": "Zhipu AI",
+          "model_family": "GLM-4.5",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "Reuters reported that Zhipu released GLM-4.5 as an open-source model, adding to the fast-moving Chinese open-model landscape.",
+          "why_it_mattered": "A meaningful node for the Chinese open ecosystem—more choices for local deployment, fine-tuning, and application stacks.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "china-ai-competition",
+              "ecosystem-forks"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Reuters — Zhipu releases open-source model GLM-4.5",
+              "url": "https://www.reuters.com/technology/chinas-ai-startup-zhipu-releases-open-source-model-glm-45-2025-07-28/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-08",
+      "events": [
+        {
+          "date": "2025-08-05",
+          "date_precision": "day",
+          "title": "gpt-oss released (OpenAI open-weight reasoning models: 120B and 20B)",
+          "organization": "OpenAI",
+          "model_family": "gpt-oss",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "OpenAI released open-weight models gpt-oss-120b and gpt-oss-20b, positioned as open-weight reasoning models.",
+          "why_it_mattered": "OpenAI entering open-weight competition amplified benchmarking and prompted ecosystem comparisons vs. Llama/Qwen/DeepSeek.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "open-weights",
+              "ecosystem-comparison",
+              "benchmark-race"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing gpt-oss",
+              "url": "https://openai.com/index/introducing-gpt-oss/"
+            }
+          ]
+        },
+        {
+          "date": "2025-08-07",
+          "date_precision": "day",
+          "title": "GPT-5 released (unified system; new defaults in ChatGPT and API)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "OpenAI launched GPT‑5 as a unified system with built-in thinking and multiple sizes in the API (gpt-5, mini, nano).",
+          "why_it_mattered": "Default-model shifts force ecosystem migration: prompting guides, evaluation baselines, and product experiences realign around the new default.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "default-model-swap",
+              "platform-shift",
+              "reasoning-system"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-5",
+              "url": "https://openai.com/index/introducing-gpt-5/"
+            },
+            {
+              "label": "OpenAI — GPT-5 for developers",
+              "url": "https://openai.com/index/introducing-gpt-5-for-developers/"
+            }
+          ]
+        },
+        {
+          "date": "2025-08-15",
+          "date_precision": "day",
+          "title": "Imagen 4 family generally available in the Gemini API",
+          "organization": "Google / DeepMind",
+          "model_family": "Imagen 4",
+          "modalities": [
+            "image"
+          ],
+          "release_type": "api",
+          "description": "Google Developers Blog announced Imagen 4 (and variants) as generally available in the Gemini API for developers.",
+          "why_it_mattered": "GA image generation with strong text rendering tends to trigger more 'design workflow' adoption (marketing assets, UI mockups) beyond hobby use.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "developer-toolchain",
+              "image-generation",
+              "ga-release"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google Developers Blog — Imagen 4 GA in Gemini API",
+              "url": "https://developers.googleblog.com/announcing-imagen-4-fast-and-imagen-4-family-generally-available-in-the-gemini-api/"
+            }
+          ]
+        },
+        {
+          "date": "2025-08-21",
+          "date_precision": "day",
+          "title": "DeepSeek-V3.1 released (open-weights update)",
+          "organization": "DeepSeek",
+          "model_family": "DeepSeek-V3.1",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "DeepSeek shipped V3.1 as another MIT-licensed update in the V3 line.",
+          "why_it_mattered": "A continuation of the 'high-frequency open releases' strategy—less dramatic than the initial DeepSeek moment, but cumulatively influential.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "rapid-iteration"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepSeek — Updates / changelog",
+              "url": "https://api-docs.deepseek.com/updates"
+            }
+          ]
+        },
+        {
+          "date": "2025-08-26",
+          "date_precision": "day",
+          "title": "Gemini 2.5 Flash Image introduced (codename 'Nano Banana')",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 2.5 Flash Image",
+          "modalities": [
+            "image"
+          ],
+          "release_type": "api+product",
+          "description": "Google introduced Gemini 2.5 Flash Image (a fast image generation/editing model). The 'Nano Banana' codename became associated with viral image-editing trends.",
+          "why_it_mattered": "Shareable edits (especially accurate text in images and strong instruction following) created a social flywheel of prompts and remixes.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "image-editing",
+              "social-trends"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google Developers Blog — Introducing Gemini 2.5 Flash Image (Nano Banana)",
+              "url": "https://developers.googleblog.com/en/introducing-gemini-25-flash-image/"
+            },
+            {
+              "label": "The Verge — Nano Banana 3D figurine trend",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/788126/google-gemini-ai-nano-banana-3d-figurines"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-09",
+      "events": [
+        {
+          "date": "2025-09-29",
+          "date_precision": "day",
+          "title": "Claude Sonnet 4.5 released",
+          "organization": "Anthropic",
+          "model_family": "Claude Sonnet 4.5",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "Anthropic released Claude Sonnet 4.5 as an upgrade in the Sonnet line, focused on broad improvements for coding and knowledge work.",
+          "why_it_mattered": "A steady enterprise/dev upgrade cycle—important for teams standardizing on Sonnet as a default model tier.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "enterprise-adoption",
+              "coding",
+              "model-refresh"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Anthropic — Claude Sonnet 4.5",
+              "url": "https://www.anthropic.com/news/claude-sonnet-4-5"
+            }
+          ]
+        },
+        {
+          "date": "2025-09-30",
+          "date_precision": "day",
+          "title": "Sora 2 launched (video generation model)",
+          "organization": "OpenAI",
+          "model_family": "Sora 2",
+          "modalities": [
+            "video",
+            "audio"
+          ],
+          "release_type": "product",
+          "description": "OpenAI launched Sora 2, emphasizing more realistic and controllable video generation with synchronized dialogue and sound effects.",
+          "why_it_mattered": "Video output is inherently viral: each demo clip acts as marketing, and every jump in realism escalates provenance and misuse debates.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "synthetic-media",
+              "safety-policy"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Sora 2 is here",
+              "url": "https://openai.com/index/sora-2/"
+            },
+            {
+              "label": "OpenAI — Sora 2 System Card",
+              "url": "https://openai.com/index/sora-2-system-card/"
+            }
+          ]
+        },
+        {
+          "date": "2025-09",
+          "date_precision": "month",
+          "title": "DeepSeek-V3.2-Exp released (experimental iteration)",
+          "organization": "DeepSeek",
+          "model_family": "DeepSeek-V3.2-Exp",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "DeepSeek continued iterating the V3 line with an experimental V3.2-Exp release.",
+          "why_it_mattered": "Sustains momentum via continuous checkpoints—useful for the community even when single releases aren't headline moments.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "rapid-iteration"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepSeek — Updates / changelog",
+              "url": "https://api-docs.deepseek.com/updates"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-10",
+      "events": [
+        {
+          "date": "2025-10-02",
+          "date_precision": "day",
+          "title": "Gemini 2.5 Flash Image (Vertex AI model version recorded)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 2.5 Flash Image",
+          "modalities": [
+            "image"
+          ],
+          "release_type": "api",
+          "description": "Vertex AI model versions record stable/packaged Gemini 2.5 Flash Image availability (IDs vary by platform).",
+          "why_it_mattered": "When image models become stable and easy to integrate, they move from 'demo' to 'workflow' (marketing ops, design tooling, content pipelines).",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "developer-toolchain",
+              "workflow-adoption"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google Cloud — Vertex AI model versions",
+              "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions"
+            },
+            {
+              "label": "Gemini API deprecations (mentions flash-image preview → stable)",
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+            }
+          ]
+        },
+        {
+          "date": "2025-10-29",
+          "date_precision": "day",
+          "title": "gpt-oss-safeguard released (safety-focused open models)",
+          "organization": "OpenAI",
+          "model_family": "gpt-oss-safeguard",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "OpenAI introduced gpt-oss-safeguard models and related safety tooling aimed at improved multi-policy accuracy for moderation/safety classification.",
+          "why_it_mattered": "Signaled a trend toward publishing smaller, specialized safety models alongside general open-weight models.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "safety-models",
+              "open-weights",
+              "governance"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing gpt-oss-safeguard",
+              "url": "https://openai.com/index/introducing-gpt-oss-safeguard/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-11",
+      "events": [
+        {
+          "date": "2025-11-12",
+          "date_precision": "day",
+          "title": "GPT-5.1 released (more conversational GPT-5 series upgrade)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5.1",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "OpenAI released GPT‑5.1 as an upgrade to the GPT‑5 series, focusing on a smarter, more conversational ChatGPT and better customization.",
+          "why_it_mattered": "A meaningful 'default quality' upgrade: incremental improvements can matter more than new features when they land for everyone.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "platform-defaults",
+              "quality-upgrade",
+              "product-rollout"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — GPT-5.1 announcement",
+              "url": "https://openai.com/index/gpt-5-1/"
+            },
+            {
+              "label": "OpenAI — GPT-5.1 for developers",
+              "url": "https://openai.com/index/gpt-5-1-for-developers/"
+            }
+          ]
+        },
+        {
+          "date": "2025-11-13",
+          "date_precision": "day",
+          "title": "ERNIE 5.0 unveiled (natively omni-modal foundation model)",
+          "organization": "Baidu",
+          "model_family": "ERNIE 5.0",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video"
+          ],
+          "release_type": "closed",
+          "description": "Baidu unveiled ERNIE 5.0 and a suite of AI applications at Baidu World 2025, emphasizing omni-modal modeling and product integration.",
+          "why_it_mattered": "A major China-market foundation model release; global influence depends on access and developer distribution.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "china-ai-competition",
+              "multimodal",
+              "product-suite"
+            ]
+          },
+          "sources": [
+            {
+              "label": "PR Newswire — Baidu unveils ERNIE 5.0",
+              "url": "https://www.prnewswire.com/news-releases/baidu-unveils-ernie-5-0-and-a-series-of-ai-applications-at-baidu-world-2025--ramps-up-global-push-302614531.html"
+            }
+          ]
+        },
+        {
+          "date": "2025-11-18",
+          "date_precision": "day",
+          "title": "Gemini 3 introduced (new era of Gemini models)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 3",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "closed",
+          "description": "Google introduced Gemini 3 as a major generation update to its core model family.",
+          "why_it_mattered": "A flagship-gen refresh with broad distribution across Google products creates wide indirect impact even if many users don't notice the model name.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "platform-defaults",
+              "ecosystem-upgrade",
+              "multimodal"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google — A new era of intelligence with Gemini 3",
+              "url": "https://blog.google/products-and-platforms/products/gemini/gemini-3/"
+            }
+          ]
+        },
+        {
+          "date": "2025-11-19",
+          "date_precision": "day",
+          "title": "GPT-5.1-Codex-Max released (agentic coding model)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5.1-Codex-Max",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "api+product",
+          "description": "OpenAI introduced GPT‑5.1‑Codex‑Max as a higher-capability agentic coding model designed for long-running tasks and large codebases.",
+          "why_it_mattered": "Reinforced the shift from 'chat coding' to 'agentic coding' with long-horizon execution and tool use.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "agentic-coding",
+              "developer-workflows",
+              "long-horizon"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — GPT-5.1-Codex-Max",
+              "url": "https://openai.com/index/gpt-5-1-codex-max/"
+            }
+          ]
+        },
+        {
+          "date": "2025-11-20",
+          "date_precision": "day",
+          "title": "Nano Banana Pro introduced (Gemini 3 Pro Image Preview-based image generation/editing)",
+          "organization": "Google / DeepMind",
+          "model_family": "Nano Banana Pro",
+          "modalities": [
+            "image"
+          ],
+          "release_type": "product+api",
+          "description": "Google introduced Nano Banana Pro, positioned as a stronger text rendering + image editing model and rolled it into multiple Google products.",
+          "why_it_mattered": "A classic 'viral capability' moment: better in-image text and edit consistency makes outputs more shareable and drives demand spikes (sometimes requiring throttling).",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "image-editing",
+              "demand-spike"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google — Introducing Nano Banana Pro",
+              "url": "https://blog.google/innovation-and-ai/products/nano-banana-pro/"
+            },
+            {
+              "label": "The Verge — Nano Banana Pro coverage",
+              "url": "https://www.theverge.com/news/824785/google-nano-banana-pro-try-free-examples-prices"
+            }
+          ]
+        },
+        {
+          "date": "2025-11-24",
+          "date_precision": "day",
+          "title": "Claude Opus 4.5 released",
+          "organization": "Anthropic",
+          "model_family": "Claude Opus 4.5",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "Anthropic released Claude Opus 4.5 as an upgrade to its top-tier Opus line for coding, agents, and enterprise workflows.",
+          "why_it_mattered": "A steady top-tier upgrade that matters for teams using Opus as their 'best effort' model for difficult tasks.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "enterprise-adoption",
+              "coding",
+              "agents"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Anthropic — Claude Opus 4.5",
+              "url": "https://www.anthropic.com/news/claude-opus-4-5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2025-12",
+      "events": [
+        {
+          "date": "2025-12-01",
+          "date_precision": "day",
+          "title": "DeepSeek-V3.2 released (open-weights update)",
+          "organization": "DeepSeek",
+          "model_family": "DeepSeek-V3.2",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "DeepSeek released V3.2 as another MIT-licensed update to the V3 line.",
+          "why_it_mattered": "Continued the cadence that keeps the open ecosystem benchmarking and building on DeepSeek checkpoints.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "rapid-iteration"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepSeek — Updates / changelog",
+              "url": "https://api-docs.deepseek.com/updates"
+            }
+          ]
+        },
+        {
+          "date": "2025-12-02",
+          "date_precision": "day",
+          "title": "Mistral Large 3 (25.12) released",
+          "organization": "Mistral AI",
+          "model_family": "Mistral Large 3 (25.12)",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "closed+api",
+          "description": "Mistral released Mistral Large 3 (25.12) as an updated large model offering.",
+          "why_it_mattered": "A relevant enterprise/European ecosystem upgrade, especially where Mistral is the preferred vendor for regional deployment needs.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "enterprise-adoption",
+              "regional-ecosystem"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Mistral — Mistral Large 3 (25.12) model page",
+              "url": "https://docs.mistral.ai/models/mistral-large-3-25-12/"
+            },
+            {
+              "label": "Mistral — Mistral 3 blog post",
+              "url": "https://mistral.ai/news/mistral-3/"
+            }
+          ]
+        },
+        {
+          "date": "2025-12-11",
+          "date_precision": "day",
+          "title": "GPT-5.2 released (frontier upgrade for professional work & long-running agents)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5.2",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "OpenAI released GPT‑5.2, emphasizing stronger reasoning, long-context understanding, and more reliable agentic tool use for end-to-end tasks.",
+          "why_it_mattered": "Major platform-level upgrade that often triggers tooling updates (prompting, evals, cost planning) across the ecosystem.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "platform-defaults",
+              "agentic-tool-use",
+              "long-context"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-5.2",
+              "url": "https://openai.com/index/introducing-gpt-5-2/"
+            },
+            {
+              "label": "OpenAI — GPT-5 System Card update for GPT-5.2",
+              "url": "https://openai.com/index/gpt-5-system-card-update-gpt-5-2/"
+            }
+          ]
+        },
+        {
+          "date": "2025-12-16",
+          "date_precision": "day",
+          "title": "New ChatGPT Images launched (new flagship image generation model)",
+          "organization": "OpenAI",
+          "model_family": "ChatGPT Images (new flagship)",
+          "modalities": [
+            "image"
+          ],
+          "release_type": "product",
+          "description": "OpenAI released a new version of ChatGPT Images powered by a new flagship image generation model, focusing on precise edits and faster generation.",
+          "why_it_mattered": "Image creation/editing improvements are highly visible and tend to spread via social media outputs and workflow adoption (design, marketing, docs).",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "image-editing",
+              "workflow-adoption"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — The new ChatGPT Images is here",
+              "url": "https://openai.com/index/new-chatgpt-images-is-here/"
+            }
+          ]
+        },
+        {
+          "date": "2025-12-17",
+          "date_precision": "day",
+          "title": "Gemini 3 Flash launched (default model in the Gemini app and AI Mode in Search)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 3 Flash",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "closed",
+          "description": "Google launched Gemini 3 Flash and made it the default model in the Gemini app and AI Mode in Search.",
+          "why_it_mattered": "Default placement drives massive implicit reach: many users experience the model without opting in, which can shift expectations for speed/cost and capability.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "default-model-swap",
+              "mass-distribution",
+              "fast-workhorse"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Google — Gemini 3 Flash: frontier intelligence built for speed",
+              "url": "https://blog.google/products-and-platforms/products/gemini/gemini-3-flash/"
+            },
+            {
+              "label": "DeepMind — Year-in-review references Gemini 3 Flash",
+              "url": "https://deepmind.google/blog/googles-year-in-review-8-areas-with-research-breakthroughs-in-2025/"
+            }
+          ]
+        },
+        {
+          "date": "2025-12-18",
+          "date_precision": "day",
+          "title": "GPT-5.2-Codex released (agentic coding model)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5.2-Codex",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "api+product",
+          "description": "OpenAI introduced GPT‑5.2‑Codex as an agentic coding model, positioned for long-running coding tasks and strong security-oriented code analysis.",
+          "why_it_mattered": "Accelerated the arms race in coding agents by pushing stronger automated code review, patch generation, and multi-step repo work.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "agentic-coding",
+              "developer-workflows",
+              "security"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-5.2-Codex",
+              "url": "https://openai.com/index/introducing-gpt-5-2-codex/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2026-01",
+      "events": [
+        {
+          "date": "2026-01-27",
+          "date_precision": "day",
+          "title": "Kimi K2.5 released (open-source model + coding agent)",
+          "organization": "Moonshot AI",
+          "model_family": "Kimi K2.5",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "open-weights",
+          "description": "TechCrunch reported that Moonshot released Kimi K2.5 as a new open-source model alongside a coding agent.",
+          "why_it_mattered": "Adds competitive pressure in the Chinese open ecosystem; impact grows if the model becomes a popular fine-tuning base or powers widely-used apps.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "open-weights",
+              "china-ai-competition",
+              "agentic-coding"
+            ]
+          },
+          "sources": [
+            {
+              "label": "TechCrunch — Moonshot releases Kimi K2.5 and a coding agent",
+              "url": "https://techcrunch.com/2026/01/27/chinas-moonshot-releases-a-new-open-source-model-kimi-k2-5-and-a-coding-agent/"
+            }
+          ]
+        },
+        {
+          "date": "2026-01-29",
+          "date_precision": "day",
+          "title": "OpenAI announced retirement of GPT-4o and older models (ChatGPT-side migration)",
+          "organization": "OpenAI",
+          "model_family": "Model lifecycle change",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "lifecycle",
+          "description": "OpenAI announced retiring GPT‑4o and other older models in ChatGPT, forcing a migration to newer defaults.",
+          "why_it_mattered": "Forced migrations matter because they change real workflows overnight: prompt habits, eval baselines, and tool integrations must adapt.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "forced-migration",
+              "platform-defaults",
+              "ecosystem-reset"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Retiring GPT-4o and older models",
+              "url": "https://openai.com/index/retiring-gpt-4o-and-older-models/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "events": [
+        {
+          "date": "2026-02-05",
+          "date_precision": "day",
+          "title": "Claude Opus 4.6 released",
+          "organization": "Anthropic",
+          "model_family": "Claude Opus 4.6",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "Anthropic released Claude Opus 4.6 as an upgrade to its top-tier model, including a 1M token context window (beta) and improved coding/agent reliability.",
+          "why_it_mattered": "Strengthened Anthropic’s position in agentic coding and long-context enterprise work; large-context upgrades often trigger new app architectures.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "long-context",
+              "agentic-coding",
+              "enterprise-workflows"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Anthropic — Introducing Claude Opus 4.6",
+              "url": "https://www.anthropic.com/news/claude-opus-4-6"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-05",
+          "date_precision": "day",
+          "title": "GPT-5.3-Codex released (most capable agentic coding model at launch)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5.3-Codex",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "api+product",
+          "description": "OpenAI introduced GPT‑5.3‑Codex as a faster, more capable agentic coding model combining frontier coding with strong reasoning/pro knowledge.",
+          "why_it_mattered": "Another step-change in coding agents: pushes longer, more autonomous repo work and raises the baseline for competitive coding tooling.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "agentic-coding",
+              "developer-workflows",
+              "long-horizon"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-5.3-Codex",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex/"
+            },
+            {
+              "label": "OpenAI — GPT-5.3-Codex System Card",
+              "url": "https://openai.com/index/gpt-5-3-codex-system-card/"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-12",
+          "date_precision": "day",
+          "title": "Seedance 2.0 launched (multimodal audio+video generation)",
+          "organization": "ByteDance",
+          "model_family": "Seedance 2.0",
+          "modalities": [
+            "video",
+            "audio"
+          ],
+          "release_type": "closed",
+          "description": "ByteDance launched Seedance 2.0, emphasizing a unified multimodal architecture for joint audio-video generation and creative workflows.",
+          "why_it_mattered": "A highly viral capability in practice: realistic video + audio outputs tend to spread fast, and Seedance 2.0 also triggered notable copyright/legal reactions in media coverage.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "viral-ugc",
+              "synthetic-media",
+              "legal-response"
+            ]
+          },
+          "sources": [
+            {
+              "label": "ByteDance — Official launch of Seedance 2.0",
+              "url": "https://seed.bytedance.com/en/blog/official-launch-of-seedance-2-0"
+            },
+            {
+              "label": "The Verge — Seedance 2.0 coverage",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/883615/seedance-bytedance-tom-cruise-brad-pitt-jia-zhangke"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-12",
+          "date_precision": "day",
+          "title": "GPT-5.3-Codex-Spark released (real-time coding model, research preview)",
+          "organization": "OpenAI",
+          "model_family": "GPT-5.3-Codex-Spark",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "research-preview",
+          "description": "OpenAI released a research preview of GPT‑5.3‑Codex‑Spark as a smaller, ultra-low-latency model designed for real-time coding.",
+          "why_it_mattered": "Significant for developer UX: real-time speed changes how coding assistants feel and enables new interactive experiences (pair programming, live refactors).",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "real-time",
+              "developer-experience",
+              "agentic-coding"
+            ]
+          },
+          "sources": [
+            {
+              "label": "OpenAI — Introducing GPT-5.3-Codex-Spark",
+              "url": "https://openai.com/index/introducing-gpt-5-3-codex-spark/"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-12",
+          "date_precision": "day",
+          "title": "Gemini 3 Deep Think announced (science/research/engineering push)",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 3 Deep Think",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "closed",
+          "description": "DeepMind announced Gemini 3 Deep Think as an update aimed at advancing science, research, and engineering use cases.",
+          "why_it_mattered": "Signals intensifying competition on 'deep reasoning modes' and high-end research workflows, not just chat quality.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "deep-reasoning",
+              "science",
+              "research-workflows"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepMind — Gemini 3 Deep Think announcement",
+              "url": "https://deepmind.google/blog/gemini-3-deep-think-advancing-science-research-and-engineering/"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-14",
+          "date_precision": "day",
+          "title": "Doubao 2.0 released (ByteDance chatbot/model refresh)",
+          "organization": "ByteDance",
+          "model_family": "Doubao 2.0",
+          "modalities": [
+            "text"
+          ],
+          "release_type": "closed",
+          "description": "Reuters reported ByteDance’s release of Doubao 2.0 as a significant update in China’s chatbot/model race.",
+          "why_it_mattered": "Impacts domestic distribution: ByteDance’s consumer reach can quickly translate model updates into user acquisition and app ecosystem shifts.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "china-ai-competition",
+              "consumer-distribution",
+              "product-refresh"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Reuters — ByteDance releases Doubao 2.0",
+              "url": "https://www.reuters.com/world/asia-pacific/chinas-bytedance-releases-doubao-20-ai-chatbot-2026-02-14/"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-16",
+          "date_precision": "day",
+          "title": "Qwen 3.5 unveiled (agentic AI focus)",
+          "organization": "Alibaba / Qwen",
+          "model_family": "Qwen 3.5",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed+api",
+          "description": "Reuters reported Alibaba’s launch of Qwen 3.5 positioned for the 'agentic AI era', including visual agentic capabilities across devices/apps.",
+          "why_it_mattered": "Represents the China-market escalation toward agents that act across apps, not just answer questions.",
+          "network_impact": {
+            "level": "medium",
+            "markers": [
+              "agentic-ai",
+              "china-ai-competition",
+              "tool-use"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Reuters — Alibaba unveils Qwen 3.5",
+              "url": "https://www.reuters.com/world/china/alibaba-unveils-new-qwen35-model-agentic-ai-era-2026-02-16/"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-17",
+          "date_precision": "day",
+          "title": "Claude Sonnet 4.6 released",
+          "organization": "Anthropic",
+          "model_family": "Claude Sonnet 4.6",
+          "modalities": [
+            "text",
+            "image"
+          ],
+          "release_type": "closed",
+          "description": "Anthropic released Claude Sonnet 4.6 with broad upgrades across coding, computer use, long-context reasoning, and agent planning (1M context beta).",
+          "why_it_mattered": "A high-impact upgrade because Sonnet tends to be the 'workhorse tier' for many teams; improving it shifts day-to-day productivity for a large user base.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "workhorse-model",
+              "agent-planning",
+              "long-context"
+            ]
+          },
+          "sources": [
+            {
+              "label": "Anthropic — Introducing Claude Sonnet 4.6",
+              "url": "https://www.anthropic.com/news/claude-sonnet-4-6"
+            }
+          ]
+        },
+        {
+          "date": "2026-02-19",
+          "date_precision": "day",
+          "title": "Gemini 3.1 Pro released",
+          "organization": "Google / DeepMind",
+          "model_family": "Gemini 3.1 Pro",
+          "modalities": [
+            "text",
+            "image",
+            "audio",
+            "video",
+            "pdf"
+          ],
+          "release_type": "closed",
+          "description": "DeepMind announced Gemini 3.1 Pro as Google’s most advanced model for complex tasks, rolling out across consumer and developer products.",
+          "why_it_mattered": "A flagship reasoning upgrade with wide distribution across Gemini app, API, Vertex AI, and NotebookLM—likely to reshape benchmark narratives and enterprise deployments.",
+          "network_impact": {
+            "level": "high",
+            "markers": [
+              "flagship-upgrade",
+              "platform-rollout",
+              "agentic-tool-use"
+            ]
+          },
+          "sources": [
+            {
+              "label": "DeepMind — Gemini 3.1 Pro announcement",
+              "url": "https://deepmind.google/blog/gemini-3-1-pro-a-smarter-model-for-your-most-complex-tasks/"
+            },
+            {
+              "label": "DeepMind — Gemini 3.1 Pro model card",
+              "url": "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
