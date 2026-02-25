@@ -2,12 +2,12 @@
   --font-sans: "DM Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --bg: #f0f0ed;
+  --bg: rgb(247, 247, 247);
   --text: #1a1a1b;
   --muted: #666;
   --accent: #e8372d;
   --bar-normal: #1a1a1b;
-  --border: #d0d0cc;
+  --border: #d4d4d4;
   --link: #e8372d;
   --tooltip-bg: #1a1a1b;
   --tooltip-text: #e8e8e8;
