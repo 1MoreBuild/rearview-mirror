@@ -1,22 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ThemeChoice = "system" | "light" | "dark";
 
 const STORAGE_KEY = "rearview-theme";
 const THEME_CHOICES: ThemeChoice[] = ["system", "light", "dark"];
 
-function getStoredChoice(): ThemeChoice {
-  if (typeof window === "undefined") {
-    return "system";
-  }
-
+function readStoredChoice(): ThemeChoice {
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "system" || stored === "light" || stored === "dark") {
     return stored;
   }
-
   return "system";
 }
 
@@ -26,36 +21,39 @@ function resolveTheme(choice: ThemeChoice): "light" | "dark" {
       ? "dark"
       : "light";
   }
-
   return choice;
 }
 
 function applyTheme(choice: ThemeChoice): void {
   const resolved = resolveTheme(choice);
-  const root = document.documentElement;
-
-  root.dataset.theme = resolved;
-  root.style.colorScheme = resolved;
+  document.documentElement.dataset.theme = resolved;
+  document.documentElement.style.colorScheme = resolved;
 }
 
 export function ThemeToggle() {
-  const [choice, setChoice] = useState<ThemeChoice>(getStoredChoice);
+  // Always start with "system" to match SSR output
+  const [choice, setChoice] = useState<ThemeChoice>("system");
+  const mounted = useRef(false);
 
+  // After hydration, read the real stored choice
   useEffect(() => {
+    setChoice(readStoredChoice());
+    mounted.current = true;
+  }, []);
+
+  // Apply theme & persist — but only after mount to avoid overwriting localStorage
+  useEffect(() => {
+    if (!mounted.current) return;
+
     applyTheme(choice);
     localStorage.setItem(STORAGE_KEY, choice);
 
-    if (choice !== "system") {
-      return;
-    }
+    if (choice !== "system") return;
 
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const onMediaChange = () => applyTheme("system");
-
     media.addEventListener("change", onMediaChange);
-    return () => {
-      media.removeEventListener("change", onMediaChange);
-    };
+    return () => media.removeEventListener("change", onMediaChange);
   }, [choice]);
 
   return (
