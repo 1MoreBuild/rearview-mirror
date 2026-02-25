@@ -160,7 +160,7 @@ a {
 .timeline-month-header {
   position: sticky;
   top: 3.5rem;
-  z-index: 8;
+  z-index: 60;
   padding: 0.6rem 0;
   background: color-mix(in srgb, var(--bg) 90%, transparent);
   backdrop-filter: blur(10px);
