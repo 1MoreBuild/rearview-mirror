@@ -87,6 +87,44 @@ export function getAvailableYears<T extends TimelineEvent>(events: T[]): string[
     .sort((left, right) => Number(right) - Number(left));
 }
 
+const MONTH_NAMES = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+export function getEventMonthGroup(date: string, precision: DatePrecision): string {
+  if (precision === "year") {
+    return date.slice(0, 4);
+  }
+
+  const [year, month] = date.split("-").map(Number);
+  return `${MONTH_NAMES[month - 1]} ${year}`;
+}
+
+export function formatEventDateShort(
+  date: string,
+  precision: DatePrecision,
+): string {
+  if (precision === "year") {
+    return date.slice(0, 4);
+  }
+
+  if (precision === "month") {
+    const parsed = new Date(`${date}-01T00:00:00Z`);
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      timeZone: "UTC",
+    }).format(parsed);
+  }
+
+  const parsed = new Date(`${date}T00:00:00Z`);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(parsed);
+}
+
 export function formatEventDate(
   date: string,
   precision: DatePrecision,

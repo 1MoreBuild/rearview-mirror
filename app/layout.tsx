@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Manrope, Source_Serif_4 } from "next/font/google";
+import { DM_Sans, JetBrains_Mono } from "next/font/google";
 
 import { SiteHeader } from "@/components/site/site-header";
 
 import "./globals.css";
 
-const sans = Manrope({
+const sans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const serif = Source_Serif_4({
-  variable: "--font-serif",
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -52,7 +52,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className={`${sans.variable} ${serif.variable}`}>
+      <body className={`${sans.variable} ${mono.variable}`}>
         <SiteHeader />
         <div className="site-content">{children}</div>
       </body>

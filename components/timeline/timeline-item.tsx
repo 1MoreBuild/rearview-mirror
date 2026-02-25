@@ -1,75 +1,70 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { ModelTimelineEvent } from "@/lib/timeline-schema";
-import { formatEventDate } from "@/lib/timeline-utils";
-
-const IMPACT_LABELS = {
-  high: "High impact",
-  medium: "Medium impact",
-  low: "Low impact",
-} as const;
+import { formatEventDateShort } from "@/lib/timeline-utils";
 
 type TimelineItemProps = {
   event: ModelTimelineEvent;
+  index: number;
 };
 
-export function TimelineItem({ event }: TimelineItemProps) {
-  const [expanded, setExpanded] = useState(false);
+export function TimelineItem({ event, index }: TimelineItemProps) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLLIElement>(null);
+
+  const toggle = useCallback(() => setOpen((prev) => !prev), []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [open]);
 
   return (
-    <li className="timeline-item">
-      <span
-        aria-hidden="true"
-        className={`timeline-marker${event.isKeyMoment ? " is-key" : ""}`}
-      />
+    <li
+      id={`event-${event.id}`}
+      ref={ref}
+      className={`timeline-item${event.isKeyMoment ? " is-key" : ""}${open ? " is-open" : ""}`}
+      style={{ "--i": index } as React.CSSProperties}
+      onClick={toggle}
+    >
+      <span className="timeline-bar" aria-hidden="true" />
 
-      <article className="timeline-card">
-        <p className="timeline-date">
-          {formatEventDate(event.date, event.datePrecision)}
-        </p>
-        <h2>{event.title}</h2>
-        <p className="timeline-summary">{event.summary}</p>
+      <div className="timeline-text">
+        <span className="timeline-date">
+          {formatEventDateShort(event.date, event.datePrecision)}
+        </span>
+        <span className="timeline-title">{event.title}</span>
+        <span className="timeline-org">{event.organization}</span>
+      </div>
 
-        <div className="timeline-meta">
-          <span className={`impact-chip impact-${event.impact}`}>
-            {IMPACT_LABELS[event.impact]}
-          </span>
-          <span className="org-chip">{event.organization}</span>
-        </div>
-
-        <ul className="tag-list" aria-label="Tags">
-          {event.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
+      <div className="timeline-tooltip" role="tooltip">
+        <p className="tooltip-summary">{event.summary}</p>
+        <p className="tooltip-details">{event.details}</p>
+        <ul className="tooltip-sources">
+          {event.sources.map((source) => (
+            <li key={source.url}>
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {source.label}
+              </a>
+            </li>
           ))}
         </ul>
-
-        <button
-          type="button"
-          className="read-more-button"
-          onClick={() => setExpanded((current) => !current)}
-          aria-expanded={expanded}
-        >
-          {expanded ? "Collapse" : "Read more"}
-        </button>
-
-        {expanded ? (
-          <div className="timeline-details">
-            <p>{event.details}</p>
-            <h3>Sources</h3>
-            <ul>
-              {event.sources.map((source) => (
-                <li key={source.url}>
-                  <a href={source.url} target="_blank" rel="noopener noreferrer">
-                    {source.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </article>
+      </div>
     </li>
   );
 }

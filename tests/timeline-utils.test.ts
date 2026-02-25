@@ -4,6 +4,7 @@ import { getModelEvents } from "@/lib/timeline";
 import {
   filterEvents,
   formatEventDate,
+  formatEventDateShort,
   getAvailableYears,
   sortEventsNewestFirst,
 } from "@/lib/timeline-utils";
@@ -104,5 +105,17 @@ describe("timeline utils", () => {
 
   it("formats month precision dates", () => {
     expect(formatEventDate("2025-09", "month")).toBe("Sep 2025");
+  });
+
+  it("formats short day precision dates", () => {
+    expect(formatEventDateShort("2025-01-20", "day")).toBe("Jan 20");
+  });
+
+  it("formats short month precision dates", () => {
+    expect(formatEventDateShort("2025-09", "month")).toBe("Sep");
+  });
+
+  it("formats short year precision dates", () => {
+    expect(formatEventDateShort("2025", "year")).toBe("2025");
   });
 });
