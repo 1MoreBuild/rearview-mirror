@@ -9,7 +9,7 @@ For each qualifying event, output a JSON object with these fields:
 - date: ISO date string (YYYY-MM-DD) — use the newsletter date provided
 - date_precision: "day"
 - category: "model" | "product" | "engineering" (see definitions above)
-- significance: "high" (widely discussed, industry-shifting release) or "low" (notable but narrower-impact release)
+- significance: "high" or "low" — see SIGNIFICANCE CRITERIA below
 - title: concise event title (under 80 chars), e.g. "Claude Sonnet 4.6 released"
 - organization: primary org name
 - summary: 1-2 sentence factual summary of what was released
@@ -30,7 +30,10 @@ STRICT EXCLUSION rules — do NOT extract any of the following:
 - Integration/availability announcements that just say an existing model is now available on another platform (only extract if the platform itself shipped a new feature)
 - Weight format re-releases (e.g. "FP8 weights released") — only count the initial model release
 
+SIGNIFICANCE: always set to "low" at extraction time. Significance is evaluated separately in a post-processing step with full timeline context.
+
 Additional rules:
 - Typically 0-5 events per newsletter issue
+- Typically 0-1 "high" significance events per newsletter issue (most issues have zero)
 - If nothing qualifies, return an empty array
 - Return ONLY a JSON array, no markdown fences, no explanation

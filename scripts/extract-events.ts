@@ -173,7 +173,7 @@ function parseEventsFromResponse(response: string): ExtractedEvent[] {
 
     return parsed.map((event: Record<string, unknown>) => ({
       ...event,
-      significance: event.significance === "high" ? "high" : "low",
+      significance: "low" as const,
       detail: event.detail || event.summary || "",
     }));
   } catch {
