@@ -1,9 +1,10 @@
-import { getModelTimelineMeta } from "@/lib/timeline";
+import { getTimelineMeta } from "@/lib/timeline";
 
 export default function AboutPage() {
-  const meta = getModelTimelineMeta();
+  const meta = getTimelineMeta();
 
   return (
+    <div className="site-content">
     <main className="page-shell static-page">
       <h1>About Rearview Mirror</h1>
       <p>
@@ -17,11 +18,10 @@ export default function AboutPage() {
         time window.
       </p>
       <p>
-        v1 intentionally stays narrow: model timeline first, with structure
-        that can expand to product and engineering tracks later. The current
-        dataset focuses on {meta.rangeStart} to {meta.rangeEndInclusive}, plus
-        pre-2025 context where needed.
+        The current dataset covers {meta.rangeStart} to {meta.rangeEnd}, with
+        support for model, product, and engineering event categories.
       </p>
     </main>
+    </div>
   );
 }

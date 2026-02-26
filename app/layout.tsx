@@ -55,7 +55,7 @@ export default function RootLayout({
       </head>
       <body className={`${sans.variable} ${mono.variable}`}>
         <SiteHeader />
-        <div className="site-content">{children}</div>
+        {children}
       </body>
     </html>
   );

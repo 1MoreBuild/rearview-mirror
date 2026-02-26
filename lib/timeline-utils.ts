@@ -1,17 +1,19 @@
 import type {
   DatePrecision,
-  ImpactLevel,
+  TimelineCategory,
   TimelineEvent,
 } from "@/lib/timeline-schema";
 
 const YEAR_EXTRACTOR = /^\d{4}/;
 
-export type ImpactFilter = "all" | ImpactLevel;
+export type Density = "all" | "highlights";
 
 export type TimelineFilters = {
   query: string;
   year: string;
-  impact: ImpactFilter;
+  density: Density;
+  categories: TimelineCategory[];
+  organizations: string[];
 };
 
 export function getEventYear(date: string): string {
@@ -58,7 +60,24 @@ export function filterEvents<T extends TimelineEvent>(
       return false;
     }
 
-    if (filters.impact !== "all" && event.impact !== filters.impact) {
+    if (
+      filters.density === "highlights" &&
+      event.significance !== "high"
+    ) {
+      return false;
+    }
+
+    if (
+      filters.categories.length > 0 &&
+      !filters.categories.includes(event.category)
+    ) {
+      return false;
+    }
+
+    if (
+      filters.organizations.length > 0 &&
+      !filters.organizations.includes(event.organization)
+    ) {
       return false;
     }
 
@@ -85,6 +104,13 @@ export function getAvailableYears<T extends TimelineEvent>(events: T[]): string[
   return [...years]
     .filter((year) => /^\d{4}$/.test(year))
     .sort((left, right) => Number(right) - Number(left));
+}
+
+export function getAvailableOrganizations<T extends TimelineEvent>(
+  events: T[],
+): string[] {
+  const orgs = new Set(events.map((event) => event.organization));
+  return [...orgs].sort();
 }
 
 const MONTH_NAMES = [

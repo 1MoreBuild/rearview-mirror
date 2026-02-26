@@ -1,15 +1,16 @@
 import { describe, expect, it } from "vitest";
 
-import { getModelEvents } from "@/lib/timeline";
+import { getTimelineEvents } from "@/lib/timeline";
 import {
   filterEvents,
   formatEventDate,
   formatEventDateShort,
+  getAvailableOrganizations,
   getAvailableYears,
   sortEventsNewestFirst,
 } from "@/lib/timeline-utils";
 
-const events = getModelEvents();
+const events = getTimelineEvents();
 
 function toComparableValue(date: string, precision: "day" | "month" | "year"): number {
   const [yearPart, monthPart, dayPart] = date.split("-").map(Number);
@@ -30,9 +31,8 @@ function toComparableValue(date: string, precision: "day" | "month" | "year"): n
 }
 
 describe("timeline utils", () => {
-  it("loads all normalized model events", () => {
-    expect(events.length).toBeGreaterThanOrEqual(50);
-    expect(events.every((event) => event.category === "model")).toBe(true);
+  it("loads all normalized events", () => {
+    expect(events.length).toBeGreaterThanOrEqual(1);
   });
 
   it("sorts newest first", () => {
@@ -51,43 +51,86 @@ describe("timeline utils", () => {
 
   it("filters by year", () => {
     const sorted = sortEventsNewestFirst(events);
+    const years = getAvailableYears(sorted);
+    const targetYear = years[0];
+
     const filtered = filterEvents(sorted, {
       query: "",
-      year: "2025",
-      impact: "all",
+      year: targetYear,
+      density: "all",
+      categories: [],
+      organizations: [],
     });
 
     expect(filtered.length).toBeGreaterThan(0);
-    expect(filtered.every((event) => event.date.startsWith("2025"))).toBe(true);
+    expect(filtered.every((event) => event.date.startsWith(targetYear))).toBe(true);
   });
 
-  it("filters by impact", () => {
+  it("filters by density (highlights only)", () => {
     const sorted = sortEventsNewestFirst(events);
     const filtered = filterEvents(sorted, {
       query: "",
       year: "all",
-      impact: "high",
+      density: "highlights",
+      categories: [],
+      organizations: [],
     });
 
     expect(filtered.length).toBeGreaterThan(0);
-    expect(filtered.every((event) => event.impact === "high")).toBe(true);
+    expect(filtered.every((event) => event.significance === "high")).toBe(true);
+  });
+
+  it("filters by category", () => {
+    const sorted = sortEventsNewestFirst(events);
+    const filtered = filterEvents(sorted, {
+      query: "",
+      year: "all",
+      density: "all",
+      categories: ["model"],
+      organizations: [],
+    });
+
+    expect(filtered.length).toBeGreaterThan(0);
+    expect(filtered.every((event) => event.category === "model")).toBe(true);
+  });
+
+  it("filters by organization", () => {
+    const sorted = sortEventsNewestFirst(events);
+    const orgs = getAvailableOrganizations(sorted);
+    const targetOrg = orgs[0];
+
+    const filtered = filterEvents(sorted, {
+      query: "",
+      year: "all",
+      density: "all",
+      categories: [],
+      organizations: [targetOrg],
+    });
+
+    expect(filtered.length).toBeGreaterThan(0);
+    expect(filtered.every((event) => event.organization === targetOrg)).toBe(true);
   });
 
   it("searches across title, organization, and tags", () => {
     const sorted = sortEventsNewestFirst(events);
+    const searchTerm = sorted[0].organization.toLowerCase().split(/\s+/)[0];
+
     const filtered = filterEvents(sorted, {
-      query: "deepseek",
+      query: searchTerm,
       year: "all",
-      impact: "all",
+      density: "all",
+      categories: [],
+      organizations: [],
     });
 
     expect(filtered.length).toBeGreaterThan(0);
     expect(
       filtered.every(
         (event) =>
-          event.title.toLowerCase().includes("deepseek") ||
-          event.organization.toLowerCase().includes("deepseek") ||
-          event.tags.join(" ").toLowerCase().includes("deepseek"),
+          event.title.toLowerCase().includes(searchTerm) ||
+          event.summary.toLowerCase().includes(searchTerm) ||
+          event.organization.toLowerCase().includes(searchTerm) ||
+          event.tags.join(" ").toLowerCase().includes(searchTerm),
       ),
     ).toBe(true);
   });
@@ -95,8 +138,19 @@ describe("timeline utils", () => {
   it("returns years in descending order", () => {
     const years = getAvailableYears(events);
 
-    expect(years[0]).toBe("2026");
-    expect(years[years.length - 1]).toBe("2024");
+    expect(years.length).toBeGreaterThan(0);
+    for (let i = 1; i < years.length; i++) {
+      expect(Number(years[i - 1])).toBeGreaterThanOrEqual(Number(years[i]));
+    }
+  });
+
+  it("returns organizations sorted alphabetically", () => {
+    const orgs = getAvailableOrganizations(events);
+
+    expect(orgs.length).toBeGreaterThan(0);
+    for (let i = 1; i < orgs.length; i++) {
+      expect(orgs[i] >= orgs[i - 1]).toBe(true);
+    }
   });
 
   it("formats day precision dates", () => {

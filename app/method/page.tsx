@@ -1,22 +1,18 @@
-import { getModelTimelineMeta } from "@/lib/timeline";
+import { getTimelineMeta } from "@/lib/timeline";
 
 export default function MethodPage() {
-  const meta = getModelTimelineMeta();
+  const meta = getTimelineMeta();
 
   return (
+    <div className="site-content">
     <main className="page-shell static-page">
       <h1>Method</h1>
-      <p>{meta.scopeNote}</p>
 
       <h2>Dataset coverage</h2>
       <ul>
-        <li>Primary range: {meta.rangeStart} to {meta.rangeEndInclusive}.</li>
+        <li>Primary range: {meta.rangeStart} to {meta.rangeEnd}.</li>
         <li>
-          Includes pre-range context entries when they materially shape the 2025+
-          narrative.
-        </li>
-        <li>
-          Current dataset snapshot: {meta.asOf} ({meta.timezone}), {meta.totalEvents} total events.
+          Current dataset snapshot: {meta.asOf}, {meta.totalEvents} total events.
         </li>
       </ul>
 
@@ -25,18 +21,19 @@ export default function MethodPage() {
         <li>Major model launch or major version transition.</li>
         <li>Release that changed adoption patterns, workflows, or defaults.</li>
         <li>Open-weights drops with clear ecosystem impact.</li>
+        <li>Significant product launches or engineering milestones.</li>
       </ul>
 
-      <h2>Impact handling</h2>
+      <h2>Significance levels</h2>
       <ul>
         <li>
-          Source levels include <code>watershed/high/medium/low</code>.
+          <code>high</code> — widely discussed and/or quickly adopted; strong
+          downstream effects. Highlighted as key moments in the timeline.
         </li>
         <li>
-          UI keeps <code>high/medium/low</code> filters; <code>watershed</code> is
-          mapped to <code>high</code> and highlighted as a red key moment.
+          <code>low</code> — important but narrower spread or limited rollout.
         </li>
-        <li>Current red key moments: {meta.keyMomentCount} events.</li>
+        <li>Current highlighted events: {meta.highSignificanceCount}.</li>
       </ul>
 
       <h2>Known limitations</h2>
@@ -46,5 +43,6 @@ export default function MethodPage() {
         <li>English-first content baseline.</li>
       </ul>
     </main>
+    </div>
   );
 }

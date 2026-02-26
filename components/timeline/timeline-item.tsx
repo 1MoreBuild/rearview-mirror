@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import type { ModelTimelineEvent } from "@/lib/timeline-schema";
+import type { TimelineEvent } from "@/lib/timeline-schema";
 import { formatEventDateShort } from "@/lib/timeline-utils";
 
 type TimelineItemProps = {
-  event: ModelTimelineEvent;
+  event: TimelineEvent;
   index: number;
 };
 
@@ -37,7 +37,7 @@ export function TimelineItem({ event, index }: TimelineItemProps) {
     <li
       id={`event-${event.id}`}
       ref={ref}
-      className={`timeline-item${event.isKeyMoment ? " is-key" : ""}${open ? " is-open" : ""}`}
+      className={`timeline-item${event.significance === "high" ? " is-key" : ""}${open ? " is-open" : ""}`}
       style={{ "--i": index } as React.CSSProperties}
       onClick={toggle}
     >
@@ -53,7 +53,7 @@ export function TimelineItem({ event, index }: TimelineItemProps) {
 
       <div className="timeline-tooltip" role="tooltip">
         <p className="tooltip-summary">{event.summary}</p>
-        <p className="tooltip-details">{event.details}</p>
+        <p className="tooltip-details">{event.detail}</p>
         <ul className="tooltip-sources">
           {event.sources.map((source) => (
             <li key={source.url}>

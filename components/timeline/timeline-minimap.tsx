@@ -22,7 +22,7 @@ function scrollToEvent(id: string) {
   const el = document.getElementById(`event-${id}`);
   if (!el) return;
 
-  const headerOffset = 56 + 40; // sticky site header + sticky month header
+  const headerOffset = 56 + 80 + 40; // sticky site header + filter bar + sticky month header
   const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
 
   window.scrollTo({ top, behavior: "smooth" });
@@ -77,7 +77,7 @@ export function TimelineMinimap({ groups }: TimelineMinimapProps) {
                 {group.events.map((event) => (
                   <button
                     key={event.id}
-                    className={`minimap-dot${event.isKeyMoment ? " is-key" : ""}`}
+                    className={`minimap-dot${event.significance === "high" ? " is-key" : ""}`}
                     onClick={() => scrollToEvent(event.id)}
                     aria-label={event.title}
                     type="button"

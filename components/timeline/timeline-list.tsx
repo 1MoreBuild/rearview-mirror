@@ -1,14 +1,14 @@
-import type { ModelTimelineEvent } from "@/lib/timeline-schema";
+import type { TimelineEvent } from "@/lib/timeline-schema";
 import { getEventMonthGroup } from "@/lib/timeline-utils";
 
 import { TimelineItem } from "@/components/timeline/timeline-item";
 
 export type MonthGroup = {
   label: string;
-  events: ModelTimelineEvent[];
+  events: TimelineEvent[];
 };
 
-export function groupByMonth(events: ModelTimelineEvent[]): MonthGroup[] {
+export function groupByMonth(events: TimelineEvent[]): MonthGroup[] {
   const groups: MonthGroup[] = [];
   let current: MonthGroup | null = null;
 

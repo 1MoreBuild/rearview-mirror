@@ -1,12 +1,8 @@
 import { TimelineExperience } from "@/components/timeline/timeline-experience";
-import { getModelEvents } from "@/lib/timeline";
+import { getTimelineEvents } from "@/lib/timeline";
 
 export default function HomePage() {
-  const events = getModelEvents();
+  const events = getTimelineEvents();
 
-  return (
-    <main className="page-shell">
-      <TimelineExperience events={events} />
-    </main>
-  );
+  return <TimelineExperience events={events} />;
 }
