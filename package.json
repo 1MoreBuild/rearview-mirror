@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "ingest": "tsx scripts/fetch-rss.ts",
+    "ingest:process": "tsx scripts/process-approved-issue.ts"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -22,6 +24,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "fast-xml-parser": "^5.4.1",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "vitest": "^4.0.18"
   }
