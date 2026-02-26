@@ -20,7 +20,7 @@ function requireEnv(name: string): string {
 async function main(): Promise<void> {
   const feedUrl = requireEnv("RSS_FEED_URL");
   const apiKey = requireEnv("OPENROUTER_API_KEY");
-  const model = process.env.OPENROUTER_MODEL ?? "anthropic/claude-sonnet-4";
+  const model = process.env.OPENROUTER_MODEL ?? "minimax/minimax-m2.5";
 
   // 1. Load current timeline data
   const dataFile = findCurrentDataFile("data/");
