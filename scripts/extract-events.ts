@@ -5,6 +5,8 @@
  * only processes RSS items published after that date. Use --full to
  * reprocess everything.
  *
+ * Every run produces an audit log in data/logs/ with full extraction details.
+ *
  * Usage:
  *   OPENROUTER_API_KEY=sk-or-xxx npx tsx scripts/extract-events.ts
  *
@@ -22,6 +24,7 @@ import { chatCompletion, getModelName } from "./shared/openrouter-client";
 
 const RSS_URL = process.env.RSS_FEED_URL ?? "https://news.smol.ai/rss.xml";
 const OUTPUT_PATH = path.resolve(__dirname, "../data/ai_timeline.json");
+const LOGS_DIR = path.resolve(__dirname, "../data/logs");
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -51,6 +54,63 @@ type TimelineFile = {
   range_start: string;
   range_end: string;
   events: ExtractedEvent[];
+};
+
+// ─── Audit log types ────────────────────────────────────────────────────────
+
+type AuditRssItem = {
+  rssTitle: string;
+  pubDate: string;
+  link: string;
+  contentLength: number;
+  contentType: "full" | "description";
+  processingMode: "individual" | "batch";
+  batchIndex?: number;
+  eventsExtracted: {
+    date: string;
+    title: string;
+    organization: string;
+    category: string;
+  }[];
+};
+
+type AuditDedup = {
+  kept: { date: string; title: string; organization: string };
+  dropped: { date: string; title: string; organization: string };
+  reason: string;
+};
+
+type AuditExtractionLog = {
+  timestamp: string;
+  model: string;
+  config: {
+    mode: "full" | "incremental";
+    dryRun: boolean;
+    limit: number | null;
+    rssSource: string;
+    batchSize: number;
+    shortContentThreshold: number;
+  };
+  input: {
+    totalRssItems: number;
+    filteredRssItems: number;
+    longItems: number;
+    shortItems: number;
+    batches: number;
+  };
+  items: AuditRssItem[];
+  dedup: {
+    beforeCount: number;
+    afterCount: number;
+    removedCount: number;
+    details: AuditDedup[];
+  };
+  result: {
+    newEvents: number;
+    existingEvents: number;
+    totalAfterMerge: number;
+    dateRange: string;
+  };
 };
 
 // ─── RSS fetching & parsing ─────────────────────────────────────────────────
@@ -85,8 +145,10 @@ function stripHtml(html: string): string {
     .trim();
 }
 
-function parseRssItems(xml: string): RssItem[] {
-  const items: RssItem[] = [];
+type ParsedRssItem = RssItem & { contentType: "full" | "description" };
+
+function parseRssItems(xml: string): ParsedRssItem[] {
+  const items: ParsedRssItem[] = [];
   const itemRegex = /<item>([\s\S]*?)<\/item>/g;
 
   let match: RegExpExecArray | null;
@@ -116,7 +178,7 @@ function parseRssItems(xml: string): RssItem[] {
 
       const twitterRecap = stripHtml(recapHtml);
       if (twitterRecap.length >= 100) {
-        items.push({ title, pubDate, link, twitterRecap });
+        items.push({ title, pubDate, link, twitterRecap, contentType: "full" });
         continue;
       }
     }
@@ -127,7 +189,7 @@ function parseRssItems(xml: string): RssItem[] {
     if (description) {
       const descText = stripHtml(description);
       if (descText.length >= 80) {
-        items.push({ title, pubDate, link, twitterRecap: descText });
+        items.push({ title, pubDate, link, twitterRecap: descText, contentType: "description" });
       }
     }
   }
@@ -288,8 +350,11 @@ function eventsOverlap(a: ExtractedEvent, b: ExtractedEvent): boolean {
   return sameOrg && overlap >= 0.5;
 }
 
-function deduplicateEvents(events: ExtractedEvent[]): ExtractedEvent[] {
+function deduplicateEvents(
+  events: ExtractedEvent[],
+): { result: ExtractedEvent[]; details: AuditDedup[] } {
   const result: ExtractedEvent[] = [];
+  const details: AuditDedup[] = [];
 
   for (const event of events) {
     const dupIndex = result.findIndex((existing) =>
@@ -302,19 +367,45 @@ function deduplicateEvents(events: ExtractedEvent[]): ExtractedEvent[] {
       if (
         event.significance === "high" && existing.significance !== "high"
       ) {
+        details.push({
+          kept: { date: event.date, title: event.title, organization: event.organization },
+          dropped: { date: existing.date, title: existing.title, organization: existing.organization },
+          reason: `new has higher significance; title overlap with "${existing.title}"`,
+        });
         result[dupIndex] = event;
       } else if (
         event.significance === existing.significance &&
         event.date < existing.date
       ) {
+        details.push({
+          kept: { date: event.date, title: event.title, organization: event.organization },
+          dropped: { date: existing.date, title: existing.title, organization: existing.organization },
+          reason: `same significance, new has earlier date; title overlap with "${existing.title}"`,
+        });
         result[dupIndex] = event;
+      } else {
+        details.push({
+          kept: { date: existing.date, title: existing.title, organization: existing.organization },
+          dropped: { date: event.date, title: event.title, organization: event.organization },
+          reason: `duplicate of "${existing.title}"`,
+        });
       }
       continue;
     }
     result.push(event);
   }
 
-  return result;
+  return { result, details };
+}
+
+// ─── Audit log helpers ──────────────────────────────────────────────────────
+
+function writeAuditLog(log: AuditExtractionLog): string {
+  fs.mkdirSync(LOGS_DIR, { recursive: true });
+  const filename = `extract-${log.timestamp.replace(/[:.]/g, "-")}.json`;
+  const filepath = path.join(LOGS_DIR, filename);
+  fs.writeFileSync(filepath, JSON.stringify(log, null, 2) + "\n", "utf-8");
+  return filepath;
 }
 
 // ─── Main ───────────────────────────────────────────────────────────────────
@@ -327,6 +418,8 @@ async function main() {
   const localFile = fileIdx !== -1 ? args[fileIdx + 1] : undefined;
   const dryRun = args.includes("--dry-run");
   const fullMode = args.includes("--full");
+
+  const runTimestamp = new Date().toISOString();
 
   console.log(`Model: ${getModelName()}`);
 
@@ -343,6 +436,7 @@ async function main() {
   // Fetch and parse RSS
   const xml = await fetchRss(localFile);
   let items = parseRssItems(xml);
+  const totalRssItems = items.length;
   console.log(`Found ${items.length} usable RSS items`);
 
   // Filter to only new items (pubDate > as_of)
@@ -360,16 +454,42 @@ async function main() {
     return;
   }
 
-  if (limit < items.length) {
-    items = items.slice(0, limit);
-    console.log(`Limited to first ${limit} items`);
+  const effectiveLimit = limit < items.length ? limit : null;
+  if (effectiveLimit) {
+    items = items.slice(0, effectiveLimit);
+    console.log(`Limited to first ${effectiveLimit} items`);
   }
 
   // Split items into long (full-content) and short (description-only) groups
   const longItems = items.filter((i) => i.twitterRecap.length >= SHORT_CONTENT_THRESHOLD);
   const shortItems = items.filter((i) => i.twitterRecap.length < SHORT_CONTENT_THRESHOLD);
+  const totalBatches = Math.ceil(shortItems.length / BATCH_SIZE);
 
   console.log(`Processing ${longItems.length} full-content items individually, ${shortItems.length} short items in batches of ${BATCH_SIZE}`);
+
+  // Initialize audit log
+  const audit: AuditExtractionLog = {
+    timestamp: runTimestamp,
+    model: getModelName(),
+    config: {
+      mode: fullMode ? "full" : "incremental",
+      dryRun,
+      limit: effectiveLimit,
+      rssSource: localFile ?? RSS_URL,
+      batchSize: BATCH_SIZE,
+      shortContentThreshold: SHORT_CONTENT_THRESHOLD,
+    },
+    input: {
+      totalRssItems,
+      filteredRssItems: items.length,
+      longItems: longItems.length,
+      shortItems: shortItems.length,
+      batches: totalBatches,
+    },
+    items: [],
+    dedup: { beforeCount: 0, afterCount: 0, removedCount: 0, details: [] },
+    result: { newEvents: 0, existingEvents: 0, totalAfterMerge: 0, dateRange: "" },
+  };
 
   const newEvents: ExtractedEvent[] = [];
 
@@ -384,13 +504,27 @@ async function main() {
     const events = await extractEventsFromItem(item);
     console.log(`  → ${events.length} events extracted`);
     newEvents.push(...events);
+
+    audit.items.push({
+      rssTitle: item.title,
+      pubDate: date,
+      link: item.link,
+      contentLength: item.twitterRecap.length,
+      contentType: item.contentType,
+      processingMode: "individual",
+      eventsExtracted: events.map((e) => ({
+        date: e.date,
+        title: e.title,
+        organization: e.organization,
+        category: e.category,
+      })),
+    });
   }
 
   // Process short items in batches
   for (let i = 0; i < shortItems.length; i += BATCH_SIZE) {
     const batch = shortItems.slice(i, i + BATCH_SIZE);
     const batchNum = Math.floor(i / BATCH_SIZE) + 1;
-    const totalBatches = Math.ceil(shortItems.length / BATCH_SIZE);
     const dateRange = `${parsePubDate(batch[batch.length - 1].pubDate)} to ${parsePubDate(batch[0].pubDate)}`;
     console.log(
       `[batch ${batchNum}/${totalBatches}] ${batch.length} items (${dateRange})`,
@@ -399,13 +533,41 @@ async function main() {
     const events = await extractEventsFromBatch(batch);
     console.log(`  → ${events.length} events extracted`);
     newEvents.push(...events);
+
+    // Log each item in the batch
+    for (const item of batch) {
+      const date = parsePubDate(item.pubDate);
+      // Find events that came from this newsletter date
+      const itemEvents = events.filter((e) => e.date === date);
+      audit.items.push({
+        rssTitle: item.title,
+        pubDate: date,
+        link: item.link,
+        contentLength: item.twitterRecap.length,
+        contentType: item.contentType,
+        processingMode: "batch",
+        batchIndex: batchNum,
+        eventsExtracted: itemEvents.map((e) => ({
+          date: e.date,
+          title: e.title,
+          organization: e.organization,
+          category: e.category,
+        })),
+      });
+    }
   }
 
   // Merge with existing events and deduplicate
-  const mergedEvents = deduplicateEvents([
-    ...(existing?.events ?? []),
-    ...newEvents,
-  ]);
+  const allEvents = [...(existing?.events ?? []), ...newEvents];
+  const { result: mergedEvents, details: dedupDetails } =
+    deduplicateEvents(allEvents);
+
+  audit.dedup = {
+    beforeCount: allEvents.length,
+    afterCount: mergedEvents.length,
+    removedCount: allEvents.length - mergedEvents.length,
+    details: dedupDetails,
+  };
 
   // Sort by date ascending
   mergedEvents.sort((a, b) => a.date.localeCompare(b.date));
@@ -419,6 +581,15 @@ async function main() {
     range_start: existing?.range_start ?? dates[0] ?? today,
     range_end: dates[dates.length - 1] ?? today,
     events: mergedEvents,
+  };
+
+  const dateRange = `${output.range_start} to ${output.range_end}`;
+
+  audit.result = {
+    newEvents: newEvents.length,
+    existingEvents: existing?.events.length ?? 0,
+    totalAfterMerge: mergedEvents.length,
+    dateRange,
   };
 
   console.log(
@@ -436,6 +607,10 @@ async function main() {
     );
     console.log(`Wrote ${mergedEvents.length} events to ${OUTPUT_PATH}`);
   }
+
+  // Always write audit log (even on dry-run)
+  const logPath = writeAuditLog(audit);
+  console.log(`Audit log: ${logPath}`);
 }
 
 main().catch((err) => {
