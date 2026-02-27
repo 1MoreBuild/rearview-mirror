@@ -5,8 +5,7 @@ if (!apiKey) {
   throw new Error("OPENROUTER_API_KEY environment variable is required");
 }
 
-const model =
-  process.env.OPENROUTER_MODEL ?? "minimax/minimax-m2.5";
+const model = "minimax/minimax-m2.5";
 
 type Message = {
   role: "system" | "user" | "assistant";
