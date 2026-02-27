@@ -6,8 +6,7 @@
  *   2. Hacker News + Wikipedia validate each candidate —
  *      only events with real community buzz survive as "high"
  *
- * This ensures significance is grounded in real-world community reaction,
- * not just LLM judgment.
+ * Every run produces an audit log in data/logs/ with full decision details.
  *
  * Usage:
  *   OPENROUTER_API_KEY=sk-or-xxx npx tsx scripts/evaluate-significance.ts
@@ -23,6 +22,7 @@ import path from "node:path";
 import { chatCompletion, getModelName } from "./shared/openrouter-client";
 
 const DATA_PATH = path.resolve(__dirname, "../data/ai_timeline.json");
+const LOGS_DIR = path.resolve(__dirname, "../data/logs");
 const LLM_BATCH_SIZE = 40;
 
 // ─── Validation thresholds ──────────────────────────────────────────────────
@@ -50,6 +50,64 @@ type TimelineFile = {
   events: TimelineEvent[];
 };
 
+// ─── Audit log types ────────────────────────────────────────────────────────
+
+type AuditLLMBatch = {
+  batch: number;
+  dateRange: string;
+  eventCount: number;
+  nominated: string[]; // titles of nominated events
+  retries: number;
+};
+
+type AuditValidation = {
+  date: string;
+  title: string;
+  organization: string;
+  keyword: string;
+  hn: {
+    topPoints: number;
+    topComments: number;
+    totalStories: number;
+    pass: boolean;
+  };
+  wiki: {
+    article: string | null;
+    peakViews: number;
+    avgViews: number;
+    pass: boolean;
+  };
+  result: "high" | "low";
+  reason: string;
+};
+
+type AuditLog = {
+  timestamp: string;
+  model: string;
+  config: {
+    llmBatchSize: number;
+    hnThreshold: number;
+    wikiThreshold: number;
+    skipValidation: boolean;
+    dryRun: boolean;
+  };
+  input: {
+    totalEvents: number;
+    dateRange: string;
+  };
+  pass1_llm: {
+    batches: AuditLLMBatch[];
+    totalNominated: number;
+  };
+  pass2_validation: AuditValidation[];
+  result: {
+    highCount: number;
+    totalCount: number;
+    highRatio: string;
+    highEvents: { date: string; title: string; organization: string }[];
+  };
+};
+
 const SYSTEM_PROMPT = fs.readFileSync(
   path.resolve(__dirname, "shared/significance-prompt.txt"),
   "utf-8",
@@ -61,7 +119,7 @@ const LLM_MAX_RETRIES = 3;
 
 async function llmNominateBatch(
   events: TimelineEvent[],
-): Promise<("high" | "low")[]> {
+): Promise<{ results: ("high" | "low")[]; retries: number }> {
   const listing = events
     .map(
       (e, i) =>
@@ -71,6 +129,7 @@ async function llmNominateBatch(
 
   const userPrompt = `Evaluate these ${events.length} events:\n\n${listing}`;
 
+  let retries = 0;
   for (let attempt = 0; attempt < LLM_MAX_RETRIES; attempt++) {
     const response = await chatCompletion(
       [
@@ -97,8 +156,9 @@ async function llmNominateBatch(
           result[item.index] = item.significance === "high" ? "high" : "low";
         }
       }
-      return result;
+      return { results: result, retries };
     } catch {
+      retries++;
       if (attempt < LLM_MAX_RETRIES - 1) {
         console.error(
           `  ⟳ LLM parse failed, retry ${attempt + 1}/${LLM_MAX_RETRIES}...`,
@@ -110,7 +170,7 @@ async function llmNominateBatch(
       }
     }
   }
-  return events.map(() => "low");
+  return { results: events.map(() => "low"), retries };
 }
 
 // ─── Pass 2: Community signal validation ─────────────────────────────────────
@@ -280,12 +340,24 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// ─── Audit log helpers ──────────────────────────────────────────────────────
+
+function writeAuditLog(log: AuditLog): string {
+  fs.mkdirSync(LOGS_DIR, { recursive: true });
+  const filename = `eval-${log.timestamp.replace(/[:.]/g, "-")}.json`;
+  const filepath = path.join(LOGS_DIR, filename);
+  fs.writeFileSync(filepath, JSON.stringify(log, null, 2) + "\n", "utf-8");
+  return filepath;
+}
+
 // ─── Main ───────────────────────────────────────────────────────────────────
 
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
   const skipValidation = args.includes("--skip-validation");
+
+  const runTimestamp = new Date().toISOString();
 
   console.log(`Model: ${getModelName()}`);
   if (!skipValidation) {
@@ -303,6 +375,34 @@ async function main() {
     a.date.localeCompare(b.date),
   );
 
+  // Initialize audit log
+  const audit: AuditLog = {
+    timestamp: runTimestamp,
+    model: getModelName(),
+    config: {
+      llmBatchSize: LLM_BATCH_SIZE,
+      hnThreshold: HN_POINTS_THRESHOLD,
+      wikiThreshold: WIKI_VIEWS_THRESHOLD,
+      skipValidation,
+      dryRun,
+    },
+    input: {
+      totalEvents: events.length,
+      dateRange: `${data.range_start} to ${data.range_end}`,
+    },
+    pass1_llm: {
+      batches: [],
+      totalNominated: 0,
+    },
+    pass2_validation: [],
+    result: {
+      highCount: 0,
+      totalCount: events.length,
+      highRatio: "0.0%",
+      highEvents: [],
+    },
+  };
+
   // ── Pass 1: LLM nomination ──
   console.log("\n═══ Pass 1: LLM nomination ═══");
   const totalBatches = Math.ceil(events.length / LLM_BATCH_SIZE);
@@ -316,13 +416,15 @@ async function main() {
       `[batch ${batchNum}/${totalBatches}] ${batch.length} events (${dateRange})`,
     );
 
-    const significances = await llmNominateBatch(batch);
+    const { results: significances, retries } = await llmNominateBatch(batch);
     let batchHigh = 0;
+    const nominated: string[] = [];
 
     for (let j = 0; j < batch.length; j++) {
       if (significances[j] === "high") {
         candidates.push(batch[j]);
         batchHigh++;
+        nominated.push(batch[j].title);
         console.log(`  ☆ ${batch[j].date} ${batch[j].title}`);
       }
       batch[j].significance = "low"; // Reset all to low; pass 2 promotes
@@ -330,8 +432,17 @@ async function main() {
     console.log(
       `  → ${batchHigh} candidates, ${batch.length - batchHigh} low`,
     );
+
+    audit.pass1_llm.batches.push({
+      batch: batchNum,
+      dateRange,
+      eventCount: batch.length,
+      nominated,
+      retries,
+    });
   }
 
+  audit.pass1_llm.totalNominated = candidates.length;
   console.log(`\nLLM nominated ${candidates.length} candidates`);
 
   // ── Pass 2: Community signal validation ──
@@ -340,6 +451,19 @@ async function main() {
   if (skipValidation) {
     console.log("\n═══ Pass 2: SKIPPED (--skip-validation) ═══");
     finalHigh = candidates;
+    // Log all candidates as auto-passed
+    for (const event of candidates) {
+      audit.pass2_validation.push({
+        date: event.date,
+        title: event.title,
+        organization: event.organization,
+        keyword: extractSearchKeyword(event),
+        hn: { topPoints: 0, topComments: 0, totalStories: 0, pass: false },
+        wiki: { article: null, peakViews: 0, avgViews: 0, pass: false },
+        result: "high",
+        reason: "skip-validation: LLM nomination accepted without external check",
+      });
+    }
   } else {
     console.log("\n═══ Pass 2: HN + Wikipedia validation ═══");
     finalHigh = [];
@@ -367,6 +491,46 @@ async function main() {
         ? `Wiki:${wiki.peakViews}views`
         : "Wiki:N/A";
 
+      // Build reason string
+      let reason: string;
+      if (hnPass && wikiPass) {
+        reason = `PASS both: HN ${hn.topPoints}>=${HN_POINTS_THRESHOLD}pts AND Wiki ${wiki.peakViews}>=${WIKI_VIEWS_THRESHOLD}views`;
+      } else if (hnPass) {
+        reason = `PASS HN: ${hn.topPoints}>=${HN_POINTS_THRESHOLD}pts`;
+      } else if (wikiPass) {
+        reason = `PASS Wiki: ${wiki.peakViews}>=${WIKI_VIEWS_THRESHOLD}views`;
+      } else {
+        const parts: string[] = [];
+        parts.push(`HN ${hn.topPoints}<${HN_POINTS_THRESHOLD}pts`);
+        if (wikiArticle) {
+          parts.push(`Wiki ${wiki.peakViews}<${WIKI_VIEWS_THRESHOLD}views`);
+        } else {
+          parts.push("Wiki: no article found");
+        }
+        reason = `FAIL: ${parts.join(", ")}`;
+      }
+
+      audit.pass2_validation.push({
+        date: event.date,
+        title: event.title,
+        organization: event.organization,
+        keyword,
+        hn: {
+          topPoints: hn.topPoints,
+          topComments: hn.topComments,
+          totalStories: hn.totalStories,
+          pass: hnPass,
+        },
+        wiki: {
+          article: wikiArticle,
+          peakViews: wiki.peakViews,
+          avgViews: wiki.avgViews,
+          pass: wikiPass,
+        },
+        result: pass ? "high" : "low",
+        reason,
+      });
+
       if (pass) {
         console.log(
           `  ★ PASS  ${event.date} "${keyword}" ${hnStr} ${wikiStr}`,
@@ -393,10 +557,22 @@ async function main() {
 
   data.events = events;
 
-  const ratio = ((finalHigh.length / events.length) * 100).toFixed(1);
+  const highRatio = ((finalHigh.length / events.length) * 100).toFixed(1);
   console.log(
-    `\nFinal: ${finalHigh.length}/${events.length} high (${ratio}%)`,
+    `\nFinal: ${finalHigh.length}/${events.length} high (${highRatio}%)`,
   );
+
+  // Finalize audit log
+  audit.result = {
+    highCount: finalHigh.length,
+    totalCount: events.length,
+    highRatio: `${highRatio}%`,
+    highEvents: finalHigh.map((e) => ({
+      date: e.date,
+      title: e.title,
+      organization: e.organization,
+    })),
+  };
 
   if (dryRun) {
     console.log("\n--- DRY RUN — not writing ---");
@@ -407,6 +583,10 @@ async function main() {
     fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2) + "\n", "utf-8");
     console.log(`Wrote to ${DATA_PATH}`);
   }
+
+  // Always write audit log (even on dry-run)
+  const logPath = writeAuditLog(audit);
+  console.log(`Audit log: ${logPath}`);
 }
 
 main().catch((err) => {

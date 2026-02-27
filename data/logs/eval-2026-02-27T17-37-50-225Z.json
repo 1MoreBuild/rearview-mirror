@@ -1,0 +1,1695 @@
+{
+  "timestamp": "2026-02-27T17:37:50.225Z",
+  "model": "minimax/minimax-m2.5",
+  "config": {
+    "llmBatchSize": 40,
+    "hnThreshold": 200,
+    "wikiThreshold": 5000,
+    "skipValidation": false,
+    "dryRun": false
+  },
+  "input": {
+    "totalEvents": 653,
+    "dateRange": "2023-12-06 to 2026-02-24"
+  },
+  "pass1_llm": {
+    "batches": [
+      {
+        "batch": 1,
+        "dateRange": "2023-12-06 to 2024-02-13",
+        "eventCount": 40,
+        "nominated": [
+          "OpenAI launches GPT Store with 3 million custom ChatGPT versions",
+          "Google releases Gemini Ultra as paid tier"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 2,
+        "dateRange": "2024-02-15 to 2024-04-01",
+        "eventCount": 40,
+        "nominated": [
+          "Gemini Pro 1.5 announced with 1M token context",
+          "Claude 3 family launched with three model sizes",
+          "Claude 3 models released by Anthropic",
+          "Cognition Labs releases Devin AI software engineer agent"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 3,
+        "dateRange": "2024-04-01 to 2024-05-06",
+        "eventCount": 40,
+        "nominated": [
+          "Gemini 1.5 Pro released with million-token context",
+          "Llama 3 released by Meta",
+          "DeepSeek V2 MoE model with 236B parameters released"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 4,
+        "dateRange": "2024-05-08 to 2024-06-27",
+        "eventCount": 40,
+        "nominated": [
+          "OpenAI launches GPT-4o multimodal model",
+          "Claude 3.5 Sonnet released"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 5,
+        "dateRange": "2024-06-28 to 2024-08-09",
+        "eventCount": 40,
+        "nominated": [
+          "Meta AI releases Llama 3.1 including 405B parameter model",
+          "Meta releases Llama 3.1 with 405B parameter model"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 6,
+        "dateRange": "2024-08-09 to 2024-09-04",
+        "eventCount": 40,
+        "nominated": [
+          "Anthropic prompt caching API feature launched"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 7,
+        "dateRange": "2024-09-04 to 2024-10-16",
+        "eventCount": 40,
+        "nominated": [
+          "Alibaba released Qwen 2.5 suite surpassing Llama 3.1",
+          "Meta releases Llama 3.2 with multimodal and on-device variants"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 8,
+        "dateRange": "2024-10-17 to 2024-11-27",
+        "eventCount": 40,
+        "nominated": [
+          "GitHub Multi-model Copilot launched",
+          "ChatGPT Search launched",
+          "DeepSeek releases R1-Lite-Preview reasoning model",
+          "Anthropic launches Model Context Protocol (MCP)"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 9,
+        "dateRange": "2024-11-28 to 2025-01-17",
+        "eventCount": 40,
+        "nominated": [
+          "QwQ 32B open weight reasoning model released",
+          "Amazon announces Nova family of multimodal foundation models",
+          "OpenAI o1 model with multimodal capabilities launched",
+          "Meta Llama 3.3 70B released",
+          "Cognition Labs Devin AI developer released",
+          "Microsoft Phi-4 14B parameter model announced",
+          "Genesis physics engine for robotics released",
+          "DeepSeek-V3 671B MoE model launched",
+          "Olmo 2 released with full training details",
+          "NVIDIA Cosmos open-source video world model released",
+          "Sky-T1-32B-Preview reasoning model released",
+          "MiniMax-01 with 4M token context and 456B parameters released"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 10,
+        "dateRange": "2025-01-17 to 2025-03-05",
+        "eventCount": 40,
+        "nominated": [
+          "DeepSeek releases DeepSeek R1 with 8 model variants",
+          "DeepSeek AI unveils DeepSeek R1 reasoning model",
+          "OpenAI launches Operator computer-using agent",
+          "xAI launches Grok 3 with strong benchmark performance",
+          "LLaDA 8B diffusion-based language model released",
+          "xAI releases Grok-3 family of LLMs",
+          "Anthropic launches Claude 3.7 Sonnet with hybrid reasoning"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 11,
+        "dateRange": "2025-03-05 to 2025-04-22",
+        "eventCount": 40,
+        "nominated": [
+          "OpenAI adopts MCP protocol support",
+          "Google DeepMind Gemini 2.5 Pro launched",
+          "Google Agent to Agent protocol launched",
+          "Gemini 2.5 Flash hybrid reasoning model launched"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 12,
+        "dateRange": "2025-04-23 to 2025-06-06",
+        "eventCount": 40,
+        "nominated": [
+          "Qwen 3 model family released with 0.6B to 235B MoE variants",
+          "Google launches AI Mode in Google Search"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 13,
+        "dateRange": "2025-06-09 to 2025-08-06",
+        "eventCount": 40,
+        "nominated": [
+          "Google Gemma 3n multimodal edge model released",
+          "DeepMind AlphaGenome model unveiled",
+          "Grok 4 and Grok 4 Heavy launched",
+          "OpenAI releases gpt-oss-120b and gpt-oss-20b open models"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 14,
+        "dateRange": "2025-08-07 to 2025-09-18",
+        "eventCount": 40,
+        "nominated": [
+          "Agent/Client Protocol (ACP) introduced by Zed team",
+          "MiniCPM-V 4.5 8B released with video token compression",
+          "Qwen3-Next released with extreme sparsity and hybrid architecture",
+          "Meta MobileLLM-R1 released as sub-1B reasoning model family",
+          "GitHub launches MCP server registry with VS Code Insiders integration"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 15,
+        "dateRange": "2025-09-18 to 2025-11-10",
+        "eventCount": 40,
+        "nominated": [
+          "Sora 2 released with video+audio capabilities",
+          "Claude 4.5 Sonnet released with enhanced intelligence",
+          "GPT-5 Pro and multiple new models released",
+          "MiniMax M2 open-weight sparse MoE model released",
+          "Cursor 2.0 launches with Composer-1 agentic coding model",
+          "Kimi K2 Thinking released with 1T parameters and INT4 quantization"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 16,
+        "dateRange": "2025-11-11 to 2026-01-26",
+        "eventCount": 40,
+        "nominated": [
+          "xAI launches Grok 4.1 achieving #1 Text Arena rank",
+          "Google introduces Antigravity agentic IDE",
+          "OpenAI releases GPT-5.1-Codex-Max with autonomous operation",
+          "Claude Opus 4.5 released with 3x price cut and SOTA coding",
+          "Mistral launches Mistral 3 family with Large 3 (675B) model",
+          "MCP Apps spec released with Claude.ai support"
+        ],
+        "retries": 0
+      },
+      {
+        "batch": 17,
+        "dateRange": "2026-01-27 to 2026-02-24",
+        "eventCount": 13,
+        "nominated": [],
+        "retries": 0
+      }
+    ],
+    "totalNominated": 66
+  },
+  "pass2_validation": [
+    {
+      "date": "2024-01-11",
+      "title": "OpenAI launches GPT Store with 3 million custom ChatGPT versions",
+      "organization": "OpenAI",
+      "keyword": "GPT Store",
+      "hn": {
+        "topPoints": 160,
+        "topComments": 125,
+        "totalStories": 53,
+        "pass": false
+      },
+      "wiki": {
+        "article": "GPT Store",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 160<200pts, Wiki 0<5000views"
+    },
+    {
+      "date": "2024-02-09",
+      "title": "Google releases Gemini Ultra as paid tier",
+      "organization": "Google",
+      "keyword": "Gemini Ultra",
+      "hn": {
+        "topPoints": 427,
+        "topComments": 6,
+        "totalStories": 7,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Gemini Ultra",
+        "peakViews": 2,
+        "avgViews": 1,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 427>=200pts"
+    },
+    {
+      "date": "2024-02-22",
+      "title": "Gemini Pro 1.5 announced with 1M token context",
+      "organization": "Google",
+      "keyword": "Gemini Pro 1.5",
+      "hn": {
+        "topPoints": 1136,
+        "topComments": 482,
+        "totalStories": 17,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 1136>=200pts"
+    },
+    {
+      "date": "2024-03-04",
+      "title": "Claude 3 family launched with three model sizes",
+      "organization": "Anthropic",
+      "keyword": "Claude 3",
+      "hn": {
+        "topPoints": 1016,
+        "topComments": 683,
+        "totalStories": 65,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Claude 3",
+        "peakViews": 33,
+        "avgViews": 25,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 1016>=200pts"
+    },
+    {
+      "date": "2024-03-07",
+      "title": "Claude 3 models released by Anthropic",
+      "organization": "Anthropic",
+      "keyword": "Claude 3 models",
+      "hn": {
+        "topPoints": 1016,
+        "topComments": 683,
+        "totalStories": 13,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 1016>=200pts"
+    },
+    {
+      "date": "2024-03-12",
+      "title": "Cognition Labs releases Devin AI software engineer agent",
+      "organization": "Cognition Labs",
+      "keyword": "Devin AI software engineer age",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-04-10",
+      "title": "Gemini 1.5 Pro released with million-token context",
+      "organization": "Google",
+      "keyword": "Gemini 1.5 Pro",
+      "hn": {
+        "topPoints": 22,
+        "topComments": 4,
+        "totalStories": 7,
+        "pass": false
+      },
+      "wiki": {
+        "article": "Gemini 2.5 Pro",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 22<200pts, Wiki 0<5000views"
+    },
+    {
+      "date": "2024-04-20",
+      "title": "Llama 3 released by Meta",
+      "organization": "Meta",
+      "keyword": "Llama 3",
+      "hn": {
+        "topPoints": 2199,
+        "topComments": 923,
+        "totalStories": 131,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Llama 3",
+        "peakViews": 21,
+        "avgViews": 10,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 2199>=200pts"
+    },
+    {
+      "date": "2024-05-06",
+      "title": "DeepSeek V2 MoE model with 236B parameters released",
+      "organization": "DeepSeek",
+      "keyword": "DeepSeek V2 MoE",
+      "hn": {
+        "topPoints": 14,
+        "topComments": 3,
+        "totalStories": 1,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 14<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-05-17",
+      "title": "OpenAI launches GPT-4o multimodal model",
+      "organization": "OpenAI",
+      "keyword": "GPT-4o",
+      "hn": {
+        "topPoints": 3138,
+        "topComments": 2366,
+        "totalStories": 117,
+        "pass": true
+      },
+      "wiki": {
+        "article": "GPT-4o",
+        "peakViews": 8511,
+        "avgViews": 2770,
+        "pass": true
+      },
+      "result": "high",
+      "reason": "PASS both: HN 3138>=200pts AND Wiki 8511>=5000views"
+    },
+    {
+      "date": "2024-06-21",
+      "title": "Claude 3.5 Sonnet released",
+      "organization": "Anthropic",
+      "keyword": "Claude 3.5 Sonnet",
+      "hn": {
+        "topPoints": 665,
+        "topComments": 278,
+        "totalStories": 23,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Claude 3.5 Sonnet",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 665>=200pts"
+    },
+    {
+      "date": "2024-07-23",
+      "title": "Meta AI releases Llama 3.1 including 405B parameter model",
+      "organization": "Meta AI",
+      "keyword": "Llama 3.1",
+      "hn": {
+        "topPoints": 437,
+        "topComments": 269,
+        "totalStories": 71,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Llama 3.1",
+        "peakViews": 5,
+        "avgViews": 3,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 437>=200pts"
+    },
+    {
+      "date": "2024-07-30",
+      "title": "Meta releases Llama 3.1 with 405B parameter model",
+      "organization": "Meta",
+      "keyword": "Llama 3.1",
+      "hn": {
+        "topPoints": 437,
+        "topComments": 269,
+        "totalStories": 72,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Llama 3.1",
+        "peakViews": 5,
+        "avgViews": 3,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 437>=200pts"
+    },
+    {
+      "date": "2024-08-17",
+      "title": "Anthropic prompt caching API feature launched",
+      "organization": "Anthropic",
+      "keyword": "Anthropic prompt caching API f",
+      "hn": {
+        "topPoints": 21,
+        "topComments": 5,
+        "totalStories": 1,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 21<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-09-18",
+      "title": "Alibaba released Qwen 2.5 suite surpassing Llama 3.1",
+      "organization": "Alibaba",
+      "keyword": "Alibaba",
+      "hn": {
+        "topPoints": 10,
+        "topComments": 0,
+        "totalStories": 8,
+        "pass": false
+      },
+      "wiki": {
+        "article": "Alibaba",
+        "peakViews": 20,
+        "avgViews": 14,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 10<200pts, Wiki 20<5000views"
+    },
+    {
+      "date": "2024-09-25",
+      "title": "Meta releases Llama 3.2 with multimodal and on-device variants",
+      "organization": "Meta",
+      "keyword": "Llama 3.2",
+      "hn": {
+        "topPoints": 924,
+        "topComments": 328,
+        "totalStories": 17,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Llama 3.2",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 924>=200pts"
+    },
+    {
+      "date": "2024-10-29",
+      "title": "GitHub Multi-model Copilot launched",
+      "organization": "GitHub",
+      "keyword": "GitHub Multi-model Copilot",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-11-01",
+      "title": "ChatGPT Search launched",
+      "organization": "OpenAI",
+      "keyword": "ChatGPT Search",
+      "hn": {
+        "topPoints": 1485,
+        "topComments": 1251,
+        "totalStories": 37,
+        "pass": true
+      },
+      "wiki": {
+        "article": "ChatGPT Search",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 1485>=200pts"
+    },
+    {
+      "date": "2024-11-21",
+      "title": "DeepSeek releases R1-Lite-Preview reasoning model",
+      "organization": "DeepSeek",
+      "keyword": "R1-Lite-Preview",
+      "hn": {
+        "topPoints": 13,
+        "topComments": 2,
+        "totalStories": 3,
+        "pass": false
+      },
+      "wiki": {
+        "article": "R1-Lite-Preview",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 13<200pts, Wiki 0<5000views"
+    },
+    {
+      "date": "2024-11-26",
+      "title": "Anthropic launches Model Context Protocol (MCP)",
+      "organization": "Anthropic",
+      "keyword": "Model Context Protocol (MCP)",
+      "hn": {
+        "topPoints": 13,
+        "topComments": 2,
+        "totalStories": 11,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 13<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-11-28",
+      "title": "QwQ 32B open weight reasoning model released",
+      "organization": "Justin Lin",
+      "keyword": "QwQ 32B open weight",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-12-04",
+      "title": "Amazon announces Nova family of multimodal foundation models",
+      "organization": "Amazon",
+      "keyword": "Nova",
+      "hn": {
+        "topPoints": 365,
+        "topComments": 152,
+        "totalStories": 193,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Nova",
+        "peakViews": 985,
+        "avgViews": 452,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 365>=200pts"
+    },
+    {
+      "date": "2024-12-05",
+      "title": "OpenAI o1 model with multimodal capabilities launched",
+      "organization": "OpenAI",
+      "keyword": "OpenAI o1",
+      "hn": {
+        "topPoints": 417,
+        "topComments": 302,
+        "totalStories": 32,
+        "pass": true
+      },
+      "wiki": {
+        "article": "OpenAI o1",
+        "peakViews": 3258,
+        "avgViews": 1448,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 417>=200pts"
+    },
+    {
+      "date": "2024-12-06",
+      "title": "Meta Llama 3.3 70B released",
+      "organization": "Meta AI",
+      "keyword": "Meta Llama 3.3 70B",
+      "hn": {
+        "topPoints": 425,
+        "topComments": 219,
+        "totalStories": 1,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 425>=200pts"
+    },
+    {
+      "date": "2024-12-10",
+      "title": "Cognition Labs Devin AI developer released",
+      "organization": "Cognition Labs",
+      "keyword": "Cognition Labs Devin AI develo",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-12-13",
+      "title": "Microsoft Phi-4 14B parameter model announced",
+      "organization": "Microsoft",
+      "keyword": "Microsoft Phi-4 14B",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2024-12-19",
+      "title": "Genesis physics engine for robotics released",
+      "organization": "Unknown",
+      "keyword": "Genesis physics engine for rob",
+      "hn": {
+        "topPoints": 233,
+        "topComments": 52,
+        "totalStories": 2,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 233>=200pts"
+    },
+    {
+      "date": "2024-12-27",
+      "title": "DeepSeek-V3 671B MoE model launched",
+      "organization": "DeepSeek",
+      "keyword": "DeepSeek-V3 671B MoE",
+      "hn": {
+        "topPoints": 2,
+        "topComments": 1,
+        "totalStories": 1,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 2<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-01-04",
+      "title": "Olmo 2 released with full training details",
+      "organization": "Allen Institute for AI",
+      "keyword": "Olmo 2",
+      "hn": {
+        "topPoints": 4,
+        "topComments": 1,
+        "totalStories": 2,
+        "pass": false
+      },
+      "wiki": {
+        "article": "Edward James Olmos",
+        "peakViews": 2657,
+        "avgViews": 2253,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 4<200pts, Wiki 2657<5000views"
+    },
+    {
+      "date": "2025-01-08",
+      "title": "NVIDIA Cosmos open-source video world model released",
+      "organization": "NVIDIA",
+      "keyword": "NVIDIA Cosmos",
+      "hn": {
+        "topPoints": 6,
+        "topComments": 1,
+        "totalStories": 10,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 6<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-01-14",
+      "title": "Sky-T1-32B-Preview reasoning model released",
+      "organization": "Sky-T1",
+      "keyword": "Sky-T1-32B-Preview",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-01-16",
+      "title": "MiniMax-01 with 4M token context and 456B parameters released",
+      "organization": "MiniMax",
+      "keyword": "MiniMax-01",
+      "hn": {
+        "topPoints": 19,
+        "topComments": 1,
+        "totalStories": 4,
+        "pass": false
+      },
+      "wiki": {
+        "article": "MiniMax (company)",
+        "peakViews": 463,
+        "avgViews": 297,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 19<200pts, Wiki 463<5000views"
+    },
+    {
+      "date": "2025-01-21",
+      "title": "DeepSeek releases DeepSeek R1 with 8 model variants",
+      "organization": "DeepSeek",
+      "keyword": "DeepSeek R1",
+      "hn": {
+        "topPoints": 1843,
+        "topComments": 663,
+        "totalStories": 185,
+        "pass": true
+      },
+      "wiki": {
+        "article": "DeepSeek",
+        "peakViews": 860907,
+        "avgViews": 134279,
+        "pass": true
+      },
+      "result": "high",
+      "reason": "PASS both: HN 1843>=200pts AND Wiki 860907>=5000views"
+    },
+    {
+      "date": "2025-01-24",
+      "title": "DeepSeek AI unveils DeepSeek R1 reasoning model",
+      "organization": "DeepSeek AI",
+      "keyword": "DeepSeek R1",
+      "hn": {
+        "topPoints": 1843,
+        "topComments": 663,
+        "totalStories": 208,
+        "pass": true
+      },
+      "wiki": {
+        "article": "DeepSeek",
+        "peakViews": 860907,
+        "avgViews": 141352,
+        "pass": true
+      },
+      "result": "high",
+      "reason": "PASS both: HN 1843>=200pts AND Wiki 860907>=5000views"
+    },
+    {
+      "date": "2025-01-24",
+      "title": "OpenAI launches Operator computer-using agent",
+      "organization": "OpenAI",
+      "keyword": "Operator computer-using agent",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-02-18",
+      "title": "xAI launches Grok 3 with strong benchmark performance",
+      "organization": "xAI",
+      "keyword": "Grok 3",
+      "hn": {
+        "topPoints": 632,
+        "topComments": 1354,
+        "totalStories": 39,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Grok 3",
+        "peakViews": 84,
+        "avgViews": 34,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 632>=200pts"
+    },
+    {
+      "date": "2025-02-18",
+      "title": "LLaDA 8B diffusion-based language model released",
+      "organization": "Unknown",
+      "keyword": "LLaDA 8B diffusion-based langu",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-02-21",
+      "title": "xAI releases Grok-3 family of LLMs",
+      "organization": "xAI",
+      "keyword": "Grok-3",
+      "hn": {
+        "topPoints": 632,
+        "topComments": 1354,
+        "totalStories": 37,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Grok-3",
+        "peakViews": 14,
+        "avgViews": 3,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 632>=200pts"
+    },
+    {
+      "date": "2025-02-25",
+      "title": "Anthropic launches Claude 3.7 Sonnet with hybrid reasoning",
+      "organization": "Anthropic",
+      "keyword": "Claude 3.7 Sonnet",
+      "hn": {
+        "topPoints": 2127,
+        "topComments": 963,
+        "totalStories": 21,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Claude 3.7 Sonnet",
+        "peakViews": 2,
+        "avgViews": 1,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 2127>=200pts"
+    },
+    {
+      "date": "2025-03-27",
+      "title": "OpenAI adopts MCP protocol support",
+      "organization": "OpenAI",
+      "keyword": "OpenAI adopts MCP protocol sup",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-04-09",
+      "title": "Google DeepMind Gemini 2.5 Pro launched",
+      "organization": "Google DeepMind",
+      "keyword": "Google DeepMind Gemini 2.5 Pro",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-04-10",
+      "title": "Google Agent to Agent protocol launched",
+      "organization": "Google",
+      "keyword": "Google Agent to Agent protocol",
+      "hn": {
+        "topPoints": 1,
+        "topComments": 0,
+        "totalStories": 3,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 1<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-04-19",
+      "title": "Gemini 2.5 Flash hybrid reasoning model launched",
+      "organization": "Google DeepMind",
+      "keyword": "Gemini 2.5 Flash",
+      "hn": {
+        "topPoints": 1076,
+        "topComments": 560,
+        "totalStories": 5,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Gemini 2.5 Flash Image",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 1076>=200pts"
+    },
+    {
+      "date": "2025-04-28",
+      "title": "Qwen 3 model family released with 0.6B to 235B MoE variants",
+      "organization": "Alibaba",
+      "keyword": "Qwen 3",
+      "hn": {
+        "topPoints": 869,
+        "topComments": 388,
+        "totalStories": 24,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Qwen",
+        "peakViews": 1845,
+        "avgViews": 582,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 869>=200pts"
+    },
+    {
+      "date": "2025-05-20",
+      "title": "Google launches AI Mode in Google Search",
+      "organization": "Google",
+      "keyword": "AI Mode in Google Search",
+      "hn": {
+        "topPoints": 12,
+        "topComments": 0,
+        "totalStories": 4,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 12<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-06-26",
+      "title": "Google Gemma 3n multimodal edge model released",
+      "organization": "Google",
+      "keyword": "Google Gemma 3n edge",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-06-26",
+      "title": "DeepMind AlphaGenome model unveiled",
+      "organization": "DeepMind",
+      "keyword": "DeepMind AlphaGenome",
+      "hn": {
+        "topPoints": 4,
+        "topComments": 0,
+        "totalStories": 7,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 4<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-07-10",
+      "title": "Grok 4 and Grok 4 Heavy launched",
+      "organization": "xAI",
+      "keyword": "Grok 4 and Grok 4 Heavy",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-08-06",
+      "title": "OpenAI releases gpt-oss-120b and gpt-oss-20b open models",
+      "organization": "OpenAI",
+      "keyword": "gpt-oss-120b and gpt-oss-20b o",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-09-03",
+      "title": "Agent/Client Protocol (ACP) introduced by Zed team",
+      "organization": "Zed",
+      "keyword": "Agent/Client Protocol (ACP)",
+      "hn": {
+        "topPoints": 281,
+        "topComments": 98,
+        "totalStories": 4,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 281>=200pts"
+    },
+    {
+      "date": "2025-09-04",
+      "title": "MiniCPM-V 4.5 8B released with video token compression",
+      "organization": "MiniCPM",
+      "keyword": "MiniCPM-V 4.5 8B",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-09-11",
+      "title": "Qwen3-Next released with extreme sparsity and hybrid architecture",
+      "organization": "Alibaba",
+      "keyword": "Qwen3-Next",
+      "hn": {
+        "topPoints": 569,
+        "topComments": 230,
+        "totalStories": 5,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 569>=200pts"
+    },
+    {
+      "date": "2025-09-13",
+      "title": "Meta MobileLLM-R1 released as sub-1B reasoning model family",
+      "organization": "Meta",
+      "keyword": "Meta MobileLLM-R1",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-09-17",
+      "title": "GitHub launches MCP server registry with VS Code Insiders integration",
+      "organization": "GitHub",
+      "keyword": "MCP server registry",
+      "hn": {
+        "topPoints": 3,
+        "topComments": 1,
+        "totalStories": 2,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 3<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "Sora 2 released with video+audio capabilities",
+      "organization": "OpenAI",
+      "keyword": "Sora 2",
+      "hn": {
+        "topPoints": 905,
+        "topComments": 878,
+        "totalStories": 106,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Sora 2",
+        "peakViews": 207,
+        "avgViews": 81,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 905>=200pts"
+    },
+    {
+      "date": "2025-09-30",
+      "title": "Claude 4.5 Sonnet released with enhanced intelligence",
+      "organization": "Anthropic",
+      "keyword": "Claude 4.5 Sonnet",
+      "hn": {
+        "topPoints": 3,
+        "topComments": 0,
+        "totalStories": 35,
+        "pass": false
+      },
+      "wiki": {
+        "article": "Claude 3.5 Sonnet",
+        "peakViews": 3,
+        "avgViews": 1,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 3<200pts, Wiki 3<5000views"
+    },
+    {
+      "date": "2025-10-06",
+      "title": "GPT-5 Pro and multiple new models released",
+      "organization": "OpenAI",
+      "keyword": "GPT-5 Pro and multiple new mod",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-10-27",
+      "title": "MiniMax M2 open-weight sparse MoE model released",
+      "organization": "Hailuo AI",
+      "keyword": "MiniMax M2 sparse MoE",
+      "hn": {
+        "topPoints": 0,
+        "topComments": 0,
+        "totalStories": 0,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 0<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Cursor 2.0 launches with Composer-1 agentic coding model",
+      "organization": "Cursor",
+      "keyword": "Cursor 2.0 launches",
+      "hn": {
+        "topPoints": 1,
+        "topComments": 0,
+        "totalStories": 1,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 1<200pts, Wiki: no article found"
+    },
+    {
+      "date": "2025-11-06",
+      "title": "Kimi K2 Thinking released with 1T parameters and INT4 quantization",
+      "organization": "Moonshot AI",
+      "keyword": "Kimi K2 Thinking",
+      "hn": {
+        "topPoints": 936,
+        "topComments": 427,
+        "totalStories": 7,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 936>=200pts"
+    },
+    {
+      "date": "2025-11-17",
+      "title": "xAI launches Grok 4.1 achieving #1 Text Arena rank",
+      "organization": "xAI",
+      "keyword": "Grok 4.1",
+      "hn": {
+        "topPoints": 140,
+        "topComments": 128,
+        "totalStories": 7,
+        "pass": false
+      },
+      "wiki": {
+        "article": "Grok 4",
+        "peakViews": 12,
+        "avgViews": 6,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 140<200pts, Wiki 12<5000views"
+    },
+    {
+      "date": "2025-11-18",
+      "title": "Google introduces Antigravity agentic IDE",
+      "organization": "Google",
+      "keyword": "Antigravity IDE",
+      "hn": {
+        "topPoints": 4,
+        "topComments": 3,
+        "totalStories": 11,
+        "pass": false
+      },
+      "wiki": {
+        "article": "AntiGravity, Inc",
+        "peakViews": 13,
+        "avgViews": 5,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 4<200pts, Wiki 13<5000views"
+    },
+    {
+      "date": "2025-11-19",
+      "title": "OpenAI releases GPT-5.1-Codex-Max with autonomous operation",
+      "organization": "OpenAI",
+      "keyword": "GPT-5.1-Codex-Max",
+      "hn": {
+        "topPoints": 483,
+        "topComments": 319,
+        "totalStories": 4,
+        "pass": true
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 483>=200pts"
+    },
+    {
+      "date": "2025-11-24",
+      "title": "Claude Opus 4.5 released with 3x price cut and SOTA coding",
+      "organization": "Anthropic",
+      "keyword": "Claude Opus 4.5",
+      "hn": {
+        "topPoints": 1113,
+        "topComments": 506,
+        "totalStories": 42,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Claude Opus 4.5",
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 1113>=200pts"
+    },
+    {
+      "date": "2025-12-02",
+      "title": "Mistral launches Mistral 3 family with Large 3 (675B) model",
+      "organization": "Mistral",
+      "keyword": "Mistral 3",
+      "hn": {
+        "topPoints": 826,
+        "topComments": 236,
+        "totalStories": 8,
+        "pass": true
+      },
+      "wiki": {
+        "article": "Mistral-class landing helicopter dock",
+        "peakViews": 242,
+        "avgViews": 127,
+        "pass": false
+      },
+      "result": "high",
+      "reason": "PASS HN: 826>=200pts"
+    },
+    {
+      "date": "2026-01-26",
+      "title": "MCP Apps spec released with Claude.ai support",
+      "organization": "Anthropic",
+      "keyword": "MCP Apps spec",
+      "hn": {
+        "topPoints": 2,
+        "topComments": 0,
+        "totalStories": 15,
+        "pass": false
+      },
+      "wiki": {
+        "article": null,
+        "peakViews": 0,
+        "avgViews": 0,
+        "pass": false
+      },
+      "result": "low",
+      "reason": "FAIL: HN 2<200pts, Wiki: no article found"
+    }
+  ],
+  "result": {
+    "highCount": 29,
+    "totalCount": 653,
+    "highRatio": "4.4%",
+    "highEvents": [
+      {
+        "date": "2024-02-09",
+        "title": "Google releases Gemini Ultra as paid tier",
+        "organization": "Google"
+      },
+      {
+        "date": "2024-02-22",
+        "title": "Gemini Pro 1.5 announced with 1M token context",
+        "organization": "Google"
+      },
+      {
+        "date": "2024-03-04",
+        "title": "Claude 3 family launched with three model sizes",
+        "organization": "Anthropic"
+      },
+      {
+        "date": "2024-03-07",
+        "title": "Claude 3 models released by Anthropic",
+        "organization": "Anthropic"
+      },
+      {
+        "date": "2024-04-20",
+        "title": "Llama 3 released by Meta",
+        "organization": "Meta"
+      },
+      {
+        "date": "2024-05-17",
+        "title": "OpenAI launches GPT-4o multimodal model",
+        "organization": "OpenAI"
+      },
+      {
+        "date": "2024-06-21",
+        "title": "Claude 3.5 Sonnet released",
+        "organization": "Anthropic"
+      },
+      {
+        "date": "2024-07-23",
+        "title": "Meta AI releases Llama 3.1 including 405B parameter model",
+        "organization": "Meta AI"
+      },
+      {
+        "date": "2024-07-30",
+        "title": "Meta releases Llama 3.1 with 405B parameter model",
+        "organization": "Meta"
+      },
+      {
+        "date": "2024-09-25",
+        "title": "Meta releases Llama 3.2 with multimodal and on-device variants",
+        "organization": "Meta"
+      },
+      {
+        "date": "2024-11-01",
+        "title": "ChatGPT Search launched",
+        "organization": "OpenAI"
+      },
+      {
+        "date": "2024-12-04",
+        "title": "Amazon announces Nova family of multimodal foundation models",
+        "organization": "Amazon"
+      },
+      {
+        "date": "2024-12-05",
+        "title": "OpenAI o1 model with multimodal capabilities launched",
+        "organization": "OpenAI"
+      },
+      {
+        "date": "2024-12-06",
+        "title": "Meta Llama 3.3 70B released",
+        "organization": "Meta AI"
+      },
+      {
+        "date": "2024-12-19",
+        "title": "Genesis physics engine for robotics released",
+        "organization": "Unknown"
+      },
+      {
+        "date": "2025-01-21",
+        "title": "DeepSeek releases DeepSeek R1 with 8 model variants",
+        "organization": "DeepSeek"
+      },
+      {
+        "date": "2025-01-24",
+        "title": "DeepSeek AI unveils DeepSeek R1 reasoning model",
+        "organization": "DeepSeek AI"
+      },
+      {
+        "date": "2025-02-18",
+        "title": "xAI launches Grok 3 with strong benchmark performance",
+        "organization": "xAI"
+      },
+      {
+        "date": "2025-02-21",
+        "title": "xAI releases Grok-3 family of LLMs",
+        "organization": "xAI"
+      },
+      {
+        "date": "2025-02-25",
+        "title": "Anthropic launches Claude 3.7 Sonnet with hybrid reasoning",
+        "organization": "Anthropic"
+      },
+      {
+        "date": "2025-04-19",
+        "title": "Gemini 2.5 Flash hybrid reasoning model launched",
+        "organization": "Google DeepMind"
+      },
+      {
+        "date": "2025-04-28",
+        "title": "Qwen 3 model family released with 0.6B to 235B MoE variants",
+        "organization": "Alibaba"
+      },
+      {
+        "date": "2025-09-03",
+        "title": "Agent/Client Protocol (ACP) introduced by Zed team",
+        "organization": "Zed"
+      },
+      {
+        "date": "2025-09-11",
+        "title": "Qwen3-Next released with extreme sparsity and hybrid architecture",
+        "organization": "Alibaba"
+      },
+      {
+        "date": "2025-09-30",
+        "title": "Sora 2 released with video+audio capabilities",
+        "organization": "OpenAI"
+      },
+      {
+        "date": "2025-11-06",
+        "title": "Kimi K2 Thinking released with 1T parameters and INT4 quantization",
+        "organization": "Moonshot AI"
+      },
+      {
+        "date": "2025-11-19",
+        "title": "OpenAI releases GPT-5.1-Codex-Max with autonomous operation",
+        "organization": "OpenAI"
+      },
+      {
+        "date": "2025-11-24",
+        "title": "Claude Opus 4.5 released with 3x price cut and SOTA coding",
+        "organization": "Anthropic"
+      },
+      {
+        "date": "2025-12-02",
+        "title": "Mistral launches Mistral 3 family with Large 3 (675B) model",
+        "organization": "Mistral"
+      }
+    ]
+  }
+}
