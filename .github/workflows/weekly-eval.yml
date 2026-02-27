@@ -1,0 +1,44 @@
+name: Weekly Significance Evaluation
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # UTC 8:00 every Monday
+  workflow_dispatch:
+
+concurrency:
+  group: eval-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install
+
+      - name: Evaluate significance of all events
+        run: npx tsx scripts/evaluate-significance.ts
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet data/ && echo "No changes" && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ai_timeline.json data/logs/eval-*.json
+          git commit -m "chore(data): weekly significance evaluation $(date -u +%Y-%m-%d)"
+          git push
