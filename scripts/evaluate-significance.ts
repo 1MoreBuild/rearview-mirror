@@ -1,10 +1,10 @@
 /**
- * Re-evaluates event significance using LLM + Google Trends validation.
+ * Re-evaluates event significance using LLM + community signal validation.
  *
  * Two-pass approach:
  *   1. LLM nominates candidate "high" events based on context
- *   2. Google Trends validates each candidate against a reference keyword —
- *      only events with real search interest spikes survive as "high"
+ *   2. Hacker News + Wikipedia validate each candidate —
+ *      only events with real community buzz survive as "high"
  *
  * This ensures significance is grounded in real-world community reaction,
  * not just LLM judgment.
@@ -13,22 +13,21 @@
  *   OPENROUTER_API_KEY=sk-or-xxx npx tsx scripts/evaluate-significance.ts
  *
  * Options:
- *   --dry-run         Print result without writing file
- *   --skip-trends     Skip Google Trends validation (LLM only)
+ *   --dry-run           Print result without writing file
+ *   --skip-validation   Skip HN/Wikipedia validation (LLM only)
  */
 
 import fs from "node:fs";
 import path from "node:path";
 
-// @ts-expect-error — no types for google-trends-api
-import googleTrends from "google-trends-api";
-
 import { chatCompletion, getModelName } from "./shared/openrouter-client";
 
 const DATA_PATH = path.resolve(__dirname, "../data/ai_timeline.json");
 const LLM_BATCH_SIZE = 40;
-const TRENDS_REFERENCE = "Hugging Face"; // Stable AI-community reference
-const TRENDS_THRESHOLD = 20; // ratio% vs reference — must exceed to be "high"
+
+// ─── Validation thresholds ──────────────────────────────────────────────────
+const HN_POINTS_THRESHOLD = 200; // top story must have >= this many points
+const WIKI_VIEWS_THRESHOLD = 5000; // peak daily pageviews must exceed this
 
 type TimelineEvent = {
   date: string;
@@ -114,7 +113,7 @@ async function llmNominateBatch(
   return events.map(() => "low");
 }
 
-// ─── Pass 2: Google Trends validation ───────────────────────────────────────
+// ─── Pass 2: Community signal validation ─────────────────────────────────────
 
 function extractSearchKeyword(event: TimelineEvent): string {
   const title = event.title;
@@ -122,27 +121,31 @@ function extractSearchKeyword(event: TimelineEvent): string {
   // Strip leading org/company + verb phrases:
   // "OpenAI launches GPT-4o ..." → "GPT-4o"
   // "Meta releases Llama 3.1 ..." → "Llama 3.1"
-  // "Google's Gemini AI model announced" → "Gemini AI model"
+  // "Cognition Labs releases Devin AI ..." → "Devin AI"
   const afterOrgVerb = title.match(
-    /^(?:\w+(?:\s+\w+)?\s+)?(?:launches?|releases?|unveils?|introduces?|announces?|ships?)\s+(.+)/i,
+    /^(?:[\w-]+(?:\s+[\w-]+){0,2}?\s+)?(?:launches?|releases?|unveils?|introduces?|announces?|ships?|showcases?|previews?)\s+(.+)/i,
   );
 
   let subject = afterOrgVerb ? afterOrgVerb[1] : title;
 
-  // Strip trailing verb phrases:
-  // "GPT-4o multimodal model" → "GPT-4o"
-  // "Llama 3.1 including 405B parameter model" → "Llama 3.1"
+  // Strip trailing verb phrases
   subject = subject
     .replace(
-      /\s+(?:released|launched|announced|unveiled|introduced|with|featuring|including|achieving|reaches|open-source|open source).*$/i,
+      /\s+(?:released|launched|announced|unveiled|introduced|with|featuring|including|achieving|reaches|open-source|open source|as\s).*$/i,
       "",
     )
     .trim();
 
-  // Strip generic nouns: "model", "family", "system", "parameters"
+  // Strip descriptive adjectives and generic nouns
   subject = subject
     .replace(
-      /\s+(?:model|family|system|variant|variants|parameters?|preview)\b.*$/i,
+      /\s+(?:multimodal|hybrid|reasoning|open-weight|agentic|autonomous|non-generative|vision-language)\b/gi,
+      "",
+    )
+    .trim();
+  subject = subject
+    .replace(
+      /\s+(?:model|family|system|variant|variants|parameters?|preview|capabilities|details)\b.*$/i,
       "",
     )
     .trim();
@@ -150,64 +153,127 @@ function extractSearchKeyword(event: TimelineEvent): string {
   // Possessives: "Google's" → ""
   subject = subject.replace(/^\w+'s\s+/i, "").trim();
 
-  // Keep it short for Google Trends (long phrases return 0)
+  // Strip "full version of" prefix
+  subject = subject.replace(/^full\s+version\s+of\s+/i, "").trim();
+
   if (subject.length > 30) subject = subject.slice(0, 30).trim();
 
   return subject || title.slice(0, 25).trim();
 }
 
-const TRENDS_MAX_RETRIES = 3;
-const TRENDS_BASE_DELAY = 2000; // ms between requests
+// ─── Hacker News Algolia API ─────────────────────────────────────────────────
 
-async function checkGoogleTrends(
+interface HNSearchResult {
+  nbHits: number;
+  hits: {
+    title: string;
+    points: number | null;
+    num_comments: number | null;
+    created_at: string;
+    objectID: string;
+  }[];
+}
+
+async function checkHackerNews(
   keyword: string,
   date: string,
-): Promise<{ peak: number; refPeak: number; ratio: number }> {
+): Promise<{ topPoints: number; topComments: number; totalStories: number }> {
   const eventDate = new Date(date);
   const start = new Date(eventDate);
-  start.setDate(start.getDate() - 14);
+  start.setDate(start.getDate() - 7);
   const end = new Date(eventDate);
   end.setDate(end.getDate() + 14);
 
-  for (let attempt = 0; attempt < TRENDS_MAX_RETRIES; attempt++) {
-    try {
-      const res = await googleTrends.interestOverTime({
-        keyword: [keyword, TRENDS_REFERENCE],
-        startTime: start,
-        endTime: end,
-        geo: "",
-      });
+  const startUnix = Math.floor(start.getTime() / 1000);
+  const endUnix = Math.floor(end.getTime() / 1000);
 
-      // Detect HTML response (rate limit / CAPTCHA)
-      if (typeof res === "string" && res.trimStart().startsWith("<")) {
-        throw new Error("Google Trends returned HTML (rate limited)");
-      }
+  const params = new URLSearchParams({
+    query: keyword,
+    tags: "story",
+    numericFilters: `created_at_i>${startUnix},created_at_i<${endUnix}`,
+    hitsPerPage: "5",
+  });
 
-      const data = JSON.parse(res);
-      const points = data.default.timelineData;
+  try {
+    const res = await fetch(
+      `https://hn.algolia.com/api/v1/search?${params}`,
+    );
+    if (!res.ok) return { topPoints: 0, topComments: 0, totalStories: 0 };
 
-      let peak = 0;
-      let refPeak = 0;
-      for (const p of points) {
-        peak = Math.max(peak, p.value[0]);
-        refPeak = Math.max(refPeak, p.value[1]);
-      }
-      const ratio = refPeak > 0 ? (peak / refPeak) * 100 : 0;
-      return { peak, refPeak, ratio };
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      if (attempt < TRENDS_MAX_RETRIES - 1) {
-        const backoff = TRENDS_BASE_DELAY * 2 ** attempt;
-        console.error(
-          `    ⟳ retry ${attempt + 1}/${TRENDS_MAX_RETRIES} in ${backoff}ms: ${msg}`,
-        );
-        await sleep(backoff);
-      } else {
-        console.error(`    ✗ failed after ${TRENDS_MAX_RETRIES} attempts: ${msg}`);
-      }
-    }
+    const data: HNSearchResult = await res.json();
+    const topHit = data.hits[0];
+
+    return {
+      topPoints: topHit?.points ?? 0,
+      topComments: topHit?.num_comments ?? 0,
+      totalStories: data.nbHits,
+    };
+  } catch {
+    return { topPoints: 0, topComments: 0, totalStories: 0 };
   }
-  return { peak: 0, refPeak: 0, ratio: 0 };
+}
+
+// ─── Wikipedia Pageviews API ─────────────────────────────────────────────────
+
+async function findWikipediaArticle(
+  keyword: string,
+): Promise<string | null> {
+  try {
+    const params = new URLSearchParams({
+      action: "opensearch",
+      search: keyword,
+      limit: "1",
+      format: "json",
+    });
+    const res = await fetch(
+      `https://en.wikipedia.org/w/api.php?${params}`,
+    );
+    if (!res.ok) return null;
+
+    const data = (await res.json()) as [string, string[]];
+    return data[1]?.[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function checkWikipediaPageviews(
+  articleTitle: string,
+  date: string,
+): Promise<{ peakViews: number; avgViews: number }> {
+  const eventDate = new Date(date);
+  const start = new Date(eventDate);
+  start.setDate(start.getDate() - 7);
+  const end = new Date(eventDate);
+  end.setDate(end.getDate() + 14);
+
+  const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, "");
+  const encoded = encodeURIComponent(articleTitle.replace(/ /g, "_"));
+  const url =
+    `https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article` +
+    `/en.wikipedia/all-access/user/${encoded}/daily/${fmt(start)}/${fmt(end)}`;
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "rearview-mirror/1.0 (AI timeline project)",
+      },
+    });
+    if (!res.ok) return { peakViews: 0, avgViews: 0 };
+
+    const data = (await res.json()) as {
+      items?: { views: number }[];
+    };
+    const views = (data.items ?? []).map((i) => i.views);
+    const peak = Math.max(...views, 0);
+    const avg =
+      views.length > 0
+        ? Math.round(views.reduce((a, b) => a + b, 0) / views.length)
+        : 0;
+    return { peakViews: peak, avgViews: avg };
+  } catch {
+    return { peakViews: 0, avgViews: 0 };
+  }
 }
 
 function sleep(ms: number): Promise<void> {
@@ -219,12 +285,12 @@ function sleep(ms: number): Promise<void> {
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
-  const skipTrends = args.includes("--skip-trends");
+  const skipValidation = args.includes("--skip-validation");
 
   console.log(`Model: ${getModelName()}`);
-  if (!skipTrends) {
+  if (!skipValidation) {
     console.log(
-      `Trends validation: ON (ref="${TRENDS_REFERENCE}", threshold=${TRENDS_THRESHOLD}%)`,
+      `Validation: HN (>=${HN_POINTS_THRESHOLD} pts) + Wikipedia (>=${WIKI_VIEWS_THRESHOLD} views/day)`,
     );
   }
 
@@ -268,38 +334,52 @@ async function main() {
 
   console.log(`\nLLM nominated ${candidates.length} candidates`);
 
-  // ── Pass 2: Google Trends validation ──
+  // ── Pass 2: Community signal validation ──
   let finalHigh: TimelineEvent[];
 
-  if (skipTrends) {
-    console.log("\n═══ Pass 2: SKIPPED (--skip-trends) ═══");
+  if (skipValidation) {
+    console.log("\n═══ Pass 2: SKIPPED (--skip-validation) ═══");
     finalHigh = candidates;
   } else {
-    console.log("\n═══ Pass 2: Google Trends validation ═══");
+    console.log("\n═══ Pass 2: HN + Wikipedia validation ═══");
     finalHigh = [];
 
     for (const event of candidates) {
       const keyword = extractSearchKeyword(event);
-      const { peak, refPeak, ratio } = await checkGoogleTrends(
-        keyword,
-        event.date,
-      );
-      const ratioStr = ratio.toFixed(1);
-      const pass = ratio >= TRENDS_THRESHOLD;
+
+      // Query HN and Wikipedia in parallel
+      const [hn, wikiArticle] = await Promise.all([
+        checkHackerNews(keyword, event.date),
+        findWikipediaArticle(keyword),
+      ]);
+
+      let wiki = { peakViews: 0, avgViews: 0 };
+      if (wikiArticle) {
+        wiki = await checkWikipediaPageviews(wikiArticle, event.date);
+      }
+
+      const hnPass = hn.topPoints >= HN_POINTS_THRESHOLD;
+      const wikiPass = wiki.peakViews >= WIKI_VIEWS_THRESHOLD;
+      const pass = hnPass || wikiPass;
+
+      const hnStr = `HN:${hn.topPoints}pts`;
+      const wikiStr = wikiArticle
+        ? `Wiki:${wiki.peakViews}views`
+        : "Wiki:N/A";
 
       if (pass) {
         console.log(
-          `  ★ PASS  ${event.date} "${keyword}" peak:${peak} ref:${refPeak} ratio:${ratioStr}%`,
+          `  ★ PASS  ${event.date} "${keyword}" ${hnStr} ${wikiStr}`,
         );
         finalHigh.push(event);
       } else {
         console.log(
-          `  ✗ FAIL  ${event.date} "${keyword}" peak:${peak} ref:${refPeak} ratio:${ratioStr}%`,
+          `  ✗ FAIL  ${event.date} "${keyword}" ${hnStr} ${wikiStr}`,
         );
       }
 
-      // Rate limit: Google Trends can throttle
-      await sleep(TRENDS_BASE_DELAY);
+      // Small delay to be polite to Wikipedia API
+      await sleep(200);
     }
   }
 
