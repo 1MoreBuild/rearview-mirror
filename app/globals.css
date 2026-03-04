@@ -405,11 +405,18 @@ body:has(.sticky-backdrop) .timeline-month-header {
   color: var(--muted);
 }
 
+.timeline-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
 /* ---- Tooltip ---- */
 
 .timeline-tooltip {
   position: absolute;
-  left: 3.5rem;
+  left: 0;
   top: 100%;
   z-index: 100;
   width: min(420px, calc(100vw - 4rem));
@@ -569,6 +576,34 @@ body:has(.sticky-backdrop) .timeline-month-header {
   opacity: 1;
 }
 
+/* ---- Pelican inline SVG (main timeline) ---- */
+
+.pelican-svg-frame {
+  height: 240px;
+  width: fit-content;
+  margin-top: 0.5rem;
+  background: #f0f0f0;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+html[data-theme="dark"] .pelican-svg-frame {
+  background: #1c1c1e;
+}
+
+.pelican-svg-frame svg {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.pelican-svg-frame img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 /* ---- Responsive ---- */
 
 @media (max-width: 1200px) {
@@ -625,7 +660,6 @@ body:has(.sticky-backdrop) .timeline-month-header {
     top: auto;
     width: 100%;
     margin-top: 0.6rem;
-    grid-column: 2;
     transform: translateY(0);
     max-height: 0;
     overflow: hidden;

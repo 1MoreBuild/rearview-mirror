@@ -28,9 +28,11 @@ export function groupByMonth(events: TimelineEvent[]): MonthGroup[] {
 
 type TimelineListProps = {
   groups: MonthGroup[];
+  svgContents: Record<string, string>;
+  rasterFallbacks: Record<string, string>;
 };
 
-export function TimelineList({ groups }: TimelineListProps) {
+export function TimelineList({ groups, svgContents, rasterFallbacks }: TimelineListProps) {
   if (!groups.length) {
     return (
       <section className="timeline-empty" aria-live="polite">
@@ -58,6 +60,8 @@ export function TimelineList({ groups }: TimelineListProps) {
                   key={event.id}
                   event={event}
                   index={startIndex + i}
+                  svgContents={svgContents}
+                  rasterFallbacks={rasterFallbacks}
                 />
               ))}
             </ol>

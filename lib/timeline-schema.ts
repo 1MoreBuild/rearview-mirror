@@ -4,6 +4,7 @@ export const timelineCategorySchema = z.enum([
   "model",
   "product",
   "engineering",
+  "pelican",
 ]);
 export type TimelineCategory = z.infer<typeof timelineCategorySchema>;
 
@@ -31,5 +32,6 @@ export const timelineEventSchema = z.object({
   detail: z.string().min(1),
   tags: z.array(z.string().min(1)).min(1),
   sources: z.array(sourceLinkSchema),
+  svgFiles: z.array(z.string()).optional(),
 });
 export type TimelineEvent = z.infer<typeof timelineEventSchema>;

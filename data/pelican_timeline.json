@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "date": "2024-10-25",
+      "model": "Claude 3.5 Sonnet (Jun)",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "notes": "From the original \"Pelicans on a bicycle\" post that started the benchmark.",
+      "svg_files": [
+        "claude-3-5-sonnet-jun-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "Claude 3.5 Sonnet (Oct)",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "notes": "Updated October version — notable improvement over June.",
+      "svg_files": [
+        "claude-3-5-sonnet-oct-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "GPT-4o",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "svg_files": [
+        "gpt-4o-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "GPT-4o Mini",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "svg_files": [
+        "gpt-4o-mini-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "o1-mini",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "svg_files": [
+        "o1-mini-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "o1-preview",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "svg_files": [
+        "o1-preview-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "Gemini 1.5 Flash 002",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "svg_files": [
+        "gemini-1-5-flash-002-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "Gemini 1.5 Pro 002",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "svg_files": [
+        "gemini-1-5-pro-002-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "model": "Llama 3.1 70B",
+      "provider": "Meta",
+      "blog_url": "https://simonwillison.net/2024/Oct/25/pelicans-on-a-bicycle/",
+      "notes": "Run via Cerebras inference.",
+      "svg_files": [
+        "llama-3-1-70b-2024-10-25.svg"
+      ]
+    },
+    {
+      "date": "2024-11-12",
+      "model": "Qwen2.5-Coder-32B-Instruct",
+      "provider": "Alibaba",
+      "blog_url": "https://simonwillison.net/2024/Nov/12/qwen25-coder/",
+      "svg_files": [
+        "qwen2-5-coder-32b-instruct-2024-11-12.svg"
+      ]
+    },
+    {
+      "date": "2024-11-22",
+      "model": "Gemini Exp 1121",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2024/Nov/22/gemini-exp-1121/",
+      "svg_files": [
+        "gemini-exp-1121-2024-11-22.svg"
+      ]
+    },
+    {
+      "date": "2024-11-27",
+      "model": "QwQ-32B Preview",
+      "provider": "Alibaba",
+      "blog_url": "https://simonwillison.net/2024/Nov/27/qwq/",
+      "svg_files": [
+        "qwq-32b-preview-2024-11-27.svg"
+      ]
+    },
+    {
+      "date": "2024-12-06",
+      "model": "Gemini Exp 1206",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2024/Dec/6/gemini-exp-1206/",
+      "svg_files": [
+        "gemini-exp-1206-2024-12-06.svg",
+        "gemini-exp-1206-2024-12-06-2.svg"
+      ]
+    },
+    {
+      "date": "2024-12-09",
+      "model": "Llama 3.3 70B",
+      "provider": "Meta",
+      "blog_url": "https://simonwillison.net/2024/Dec/9/llama-33-70b/",
+      "svg_files": [
+        "llama-3-3-70b-2024-12-09.svg",
+        "llama-3-3-70b-2024-12-09-2.svg"
+      ]
+    },
+    {
+      "date": "2024-12-19",
+      "model": "Gemini 2.0 Flash Thinking",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2024/Dec/19/gemini-thinking-mode/",
+      "svg_files": [
+        "gemini-2-0-flash-thinking-2024-12-19.svg"
+      ]
+    },
+    {
+      "date": "2025-01-20",
+      "model": "DeepSeek-R1-Distill-Llama-8B",
+      "provider": "DeepSeek",
+      "blog_url": "https://simonwillison.net/2025/Jan/20/deepseek-r1/",
+      "svg_files": [
+        "deepseek-r1-distill-llama-8b-2025-01-20.svg",
+        "deepseek-r1-distill-llama-8b-2025-01-20-2.svg"
+      ]
+    },
+    {
+      "date": "2025-02-24",
+      "model": "Claude 3.7 Sonnet",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2025/Feb/24/claude-37-sonnet-and-claude-code/",
+      "svg_files": [
+        "claude-3-7-sonnet-2025-02-24.svg",
+        "claude-3-7-sonnet-2025-02-24-2.svg"
+      ]
+    },
+    {
+      "date": "2025-02-27",
+      "model": "GPT-4.5",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Feb/27/introducing-gpt-45/",
+      "svg_files": [
+        "gpt-4-5-2025-02-27.svg"
+      ]
+    },
+    {
+      "date": "2025-03-25",
+      "model": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2025/Mar/25/gemini/",
+      "svg_files": [
+        "gemini-2-5-pro-2025-03-25.svg"
+      ]
+    },
+    {
+      "date": "2025-04-14",
+      "model": "GPT-4.1",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Apr/14/gpt-4-1/",
+      "svg_files": [
+        "gpt-4-1-2025-04-14.svg"
+      ]
+    },
+    {
+      "date": "2025-04-29",
+      "model": "Qwen3 32B",
+      "provider": "Alibaba",
+      "blog_url": "https://simonwillison.net/2025/Apr/29/qwen-3/",
+      "svg_files": [
+        "qwen3-32b-2025-04-29.svg",
+        "qwen3-32b-2025-04-29-2.svg"
+      ]
+    },
+    {
+      "date": "2025-05-22",
+      "model": "Claude Sonnet 4",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2025/May/22/code-with-claude-live-blog/",
+      "svg_files": [
+        "claude-sonnet-4-2025-05-22.svg"
+      ]
+    },
+    {
+      "date": "2025-05-22",
+      "model": "Claude Opus 4",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2025/May/22/code-with-claude-live-blog/",
+      "svg_files": [
+        "claude-opus-4-2025-05-22.svg"
+      ]
+    },
+    {
+      "date": "2025-06-10",
+      "model": "o3-pro",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Jun/10/o3-pro/",
+      "svg_files": [
+        "o3-pro-2025-06-10.svg"
+      ]
+    },
+    {
+      "date": "2025-07-10",
+      "model": "Grok 4",
+      "provider": "xAI",
+      "blog_url": "https://simonwillison.net/2025/Jul/10/grok-4/",
+      "svg_files": [
+        "grok-4-2025-07-10.svg"
+      ]
+    },
+    {
+      "date": "2025-07-11",
+      "model": "Kimi-K2",
+      "provider": "Moonshot AI",
+      "blog_url": "https://simonwillison.net/2025/Jul/11/kimi-k2/",
+      "svg_files": [
+        "kimi-k2-2025-07-11.svg"
+      ]
+    },
+    {
+      "date": "2025-08-07",
+      "model": "GPT-5",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Aug/7/gpt-5/",
+      "svg_files": [
+        "gpt-5-2025-08-07.svg"
+      ]
+    },
+    {
+      "date": "2025-08-07",
+      "model": "GPT-5 Mini",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Aug/7/gpt-5/",
+      "svg_files": [
+        "gpt-5-mini-2025-08-07.svg"
+      ]
+    },
+    {
+      "date": "2025-08-07",
+      "model": "GPT-5 Nano",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Aug/7/gpt-5/",
+      "svg_files": [
+        "gpt-5-nano-2025-08-07.svg"
+      ]
+    },
+    {
+      "date": "2025-09-29",
+      "model": "Claude Sonnet 4.5",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2025/Sep/29/claude-sonnet-4-5/",
+      "svg_files": [
+        "claude-sonnet-4-5-2025-09-29.svg"
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "model": "DeepSeek-V3.2-Exp",
+      "provider": "DeepSeek",
+      "blog_url": "https://simonwillison.net/2025/Oct/1/two-pelicans/",
+      "svg_files": [
+        "deepseek-v3-2-exp-2025-10-01.svg"
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "model": "GLM-4.6",
+      "provider": "Zhipu AI",
+      "blog_url": "https://simonwillison.net/2025/Oct/1/two-pelicans/",
+      "svg_files": [
+        "glm-4-6-2025-10-01.svg"
+      ]
+    },
+    {
+      "date": "2025-10-15",
+      "model": "Claude Haiku 4.5",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2025/Oct/15/claude-haiku-45/",
+      "svg_files": [
+        "claude-haiku-4-5-2025-10-15.svg"
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "model": "SWE-1.5",
+      "provider": "Cognition",
+      "blog_url": "https://simonwillison.net/2025/Oct/29/swe-15/",
+      "svg_files": [
+        "swe-1-5-2025-10-29.svg"
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "model": "MiniMax M2",
+      "provider": "MiniMax",
+      "blog_url": "https://simonwillison.net/2025/Oct/29/minimax-m2/",
+      "svg_files": [
+        "minimax-m2-2025-10-29.svg"
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "model": "Composer 1",
+      "provider": "Cursor",
+      "blog_url": "https://simonwillison.net/2025/Oct/29/cursor-composer/",
+      "svg_files": [
+        "composer-1-2025-10-29.svg"
+      ]
+    },
+    {
+      "date": "2025-11-06",
+      "model": "Kimi K2 Thinking",
+      "provider": "Moonshot AI",
+      "blog_url": "https://simonwillison.net/2025/Nov/6/kimi-k2-thinking/",
+      "svg_files": [
+        "kimi-k2-thinking-2025-11-06.svg",
+        "kimi-k2-thinking-2025-11-06-2.svg"
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "model": "GPT-5-Codex-Mini",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Nov/9/gpt-5-codex-mini/",
+      "svg_files": [
+        "gpt-5-codex-mini-2025-11-09.svg",
+        "gpt-5-codex-mini-2025-11-09-2.svg"
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "model": "GPT-5-Codex",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Nov/9/gpt-5-codex-mini/",
+      "svg_files": [
+        "gpt-5-codex-2025-11-09.svg"
+      ]
+    },
+    {
+      "date": "2025-11-13",
+      "model": "GPT-5.1",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Nov/13/gpt-51/",
+      "svg_files": [
+        "gpt-5-1-2025-11-13.svg",
+        "gpt-5-1-2025-11-13-2.svg"
+      ]
+    },
+    {
+      "date": "2025-11-18",
+      "model": "Gemini 3 Pro",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2025/Nov/18/gemini-3/",
+      "notes": "Tested with the upgraded v2 prompt requiring a California brown pelican.",
+      "svg_files": [
+        "gemini-3-pro-2025-11-18.svg",
+        "gemini-3-pro-2025-11-18-2.svg",
+        "gemini-3-pro-2025-11-18-3.svg"
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "model": "GPT-5.1-Codex-Max",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Nov/19/gpt-51-codex-max/",
+      "svg_files": [
+        "gpt-5-1-codex-max-2025-11-19.svg",
+        "gpt-5-1-codex-max-2025-11-19-2.svg",
+        "gpt-5-1-codex-max-2025-11-19-3.svg"
+      ]
+    },
+    {
+      "date": "2025-11-22",
+      "model": "OLMo 3-Think 32B",
+      "provider": "Ai2",
+      "blog_url": "https://simonwillison.net/2025/Nov/22/olmo-3/",
+      "svg_files": [
+        "olmo-3-think-32b-2025-11-22.svg",
+        "olmo-3-think-32b-2025-11-22-2.svg"
+      ]
+    },
+    {
+      "date": "2025-11-24",
+      "model": "Claude Opus 4.5",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2025/Nov/24/claude-opus/",
+      "svg_files": [
+        "claude-opus-4-5-2025-11-24.svg",
+        "claude-opus-4-5-2025-11-24-2.svg"
+      ]
+    },
+    {
+      "date": "2025-12-01",
+      "model": "DeepSeek-V3.2",
+      "provider": "DeepSeek",
+      "blog_url": "https://simonwillison.net/2025/Dec/1/deepseek-v32/",
+      "notes": "The Speciale variant spent over 10 minutes thinking about pelican geometry.",
+      "svg_files": [
+        "deepseek-v3-2-2025-12-01.svg",
+        "deepseek-v3-2-2025-12-01-2.svg"
+      ]
+    },
+    {
+      "date": "2025-12-09",
+      "model": "Devstral 2",
+      "provider": "Mistral",
+      "blog_url": "https://simonwillison.net/2025/Dec/9/devstral-2/",
+      "notes": "For a ~120B model, pretty good.",
+      "svg_files": [
+        "devstral-2-2025-12-09.svg"
+      ]
+    },
+    {
+      "date": "2025-12-11",
+      "model": "GPT-5.2",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Dec/11/gpt-52/",
+      "svg_files": [
+        "gpt-5-2-2025-12-11.svg",
+        "gpt-5-2-2025-12-11-2.svg"
+      ]
+    },
+    {
+      "date": "2025-12-17",
+      "model": "Gemini 3 Flash",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2025/Dec/17/gemini-3-flash/",
+      "notes": "Tested at different thinking levels via llm-gemini.",
+      "svg_files": [
+        "gemini-3-flash-2025-12-17.svg",
+        "gemini-3-flash-2025-12-17-2.svg",
+        "gemini-3-flash-2025-12-17-3.svg",
+        "gemini-3-flash-2025-12-17-4.svg"
+      ]
+    },
+    {
+      "date": "2025-12-19",
+      "model": "GPT-5.2-Codex",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2025/Dec/19/introducing-gpt-52-codex/",
+      "svg_files": [
+        "gpt-5-2-codex-2025-12-19.svg"
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "model": "Kimi K2.5",
+      "provider": "Moonshot AI",
+      "blog_url": "https://simonwillison.net/2026/Jan/27/kimi-k25/",
+      "svg_files": [
+        "kimi-k2-5-2026-01-27.svg"
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2026/Feb/5/two-new-models/",
+      "notes": "Excellent pelican with clear beak and pouch — slightly wonky bicycle frame.",
+      "svg_files": [
+        "claude-opus-4-6-2026-02-05.svg"
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "model": "GPT-5.3-Codex",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2026/Feb/5/two-new-models/",
+      "notes": "More of a line drawing — mangled bicycle.",
+      "svg_files": [
+        "gpt-5-3-codex-2026-02-05.svg"
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "model": "GLM-5",
+      "provider": "Zhipu AI",
+      "blog_url": "https://simonwillison.net/2026/Feb/11/glm-5/",
+      "notes": "Very good pelican on a disappointing bicycle frame.",
+      "svg_files": [
+        "glm-5-2026-02-11.svg"
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "model": "GPT-5.3-Codex-Spark",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2026/Feb/12/codex-spark/",
+      "notes": "Produced an orange duck merged with a bicycle — fast but inaccurate.",
+      "svg_files": [
+        "gpt-5-3-codex-spark-2026-02-12.svg"
+      ]
+    },
+    {
+      "date": "2026-02-12",
+      "model": "Gemini 3 Deep Think",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2026/Feb/12/gemini-3-deep-think/",
+      "notes": "Drew a really good SVG — considered the best one Simon has seen.",
+      "svg_files": [
+        "gemini-3-deep-think-2026-02-12.svg",
+        "gemini-3-deep-think-2026-02-12-2.svg"
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "model": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2026/Feb/17/claude-sonnet-46/",
+      "notes": "Apparently loves top hats.",
+      "svg_files": [
+        "claude-sonnet-4-6-2026-02-17.svg"
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "model": "Qwen3.5-397B-A17B",
+      "provider": "Alibaba",
+      "blog_url": "https://simonwillison.net/2026/Feb/17/qwen35/",
+      "svg_files": [
+        "qwen3-5-397b-a17b-2026-02-17.svg"
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "model": "Gemini 3.1 Pro",
+      "provider": "Google",
+      "blog_url": "https://simonwillison.net/2026/Feb/19/gemini-31-pro/",
+      "notes": "Took 323.9 seconds to produce the illustration in Google AI Studio.",
+      "svg_files": [
+        "gemini-3-1-pro-2026-02-19.svg",
+        "gemini-3-1-pro-2026-02-19-2.svg"
+      ]
+    }
+  ]
+}

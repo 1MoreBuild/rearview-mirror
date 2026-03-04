@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Bicycle Frame -->
+
+<line x1="40" y1="100" x2="120" y2="100" stroke="black" stroke-width="4"/>
+
+<line x1="120" y1="100" x2="140" y2="80" stroke="black" stroke-width="4"/>
+
+[...]
+
+<!-- Bicycle Handlebars -->
+
+<rect x="30" y="80" width="20" height="5" fill="#8B4513"/>
+</svg>

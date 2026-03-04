@@ -1,0 +1,53 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Bike -->
+
+  <!-- Wheels -->
+
+  <circle cx="150" cy="200" r="50" stroke="black" fill="none"/>
+
+  <circle cx="250" cy="200" r="50" stroke="black" fill="none"/>
+
+  <!-- Frame -->
+
+  <path d="M150 150 L250 150 Q200 50 150 150 Z" fill="none" stroke="black"/>
+
+  <!-- Seat Post and Saddle -->
+
+  <line x1="250" y1="150" x2="250" y2="100" stroke="black"/>
+
+  <rect x="240" y="90" width="20" height="10" fill="red"/>
+
+  <!-- Handlebars -->
+
+  <path d="M150 150 L100 150 Q75 125 75 100" fill="none" stroke="black"/>
+
+  <!-- Pelican -->
+
+  <!-- Body -->
+
+  <ellipse cx="250" cy="100" rx="50" ry="30" fill="lightblue"/>
+
+  <!-- Wings -->
+
+  <path d="M250 100 L200 50 C180 30 160 50 140 60" fill="lightblue" stroke="black"/>
+
+  <path d="M250 100 L300 50 C320 30 340 50 360 60" fill="lightblue" stroke="black"/>
+
+  <!-- Neck and Head -->
+
+  <path d="M250 100 L250 50 Q300 50 300 0" fill="none" stroke="black"/>
+
+  <polygon points="300,0 320,-20 320,20" fill="lightblue" stroke="black"/>
+
+  <!-- Eye -->
+
+  <circle cx="310" cy="-10" r="5" fill="black"/>
+
+  <!-- Feet -->
+
+  <circle cx="240" cy="100" r="5" fill="lightblue"/>
+
+  <circle cx="260" cy="100" r="5" fill="lightblue"/>
+
+</svg>

@@ -1,8 +1,16 @@
+import { config } from "dotenv";
+import path from "node:path";
+
+// Load .env.local so scripts pick up Vercel-pulled env vars automatically
+config({ path: path.resolve(__dirname, "../../.env.local") });
+
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 const apiKey = process.env.OPENROUTER_API_KEY;
 if (!apiKey) {
-  throw new Error("OPENROUTER_API_KEY environment variable is required");
+  throw new Error(
+    "OPENROUTER_API_KEY not found. Run `vercel env pull` to create .env.local",
+  );
 }
 
 const model = "minimax/minimax-m2.5";

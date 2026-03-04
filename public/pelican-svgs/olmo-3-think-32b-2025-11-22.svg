@@ -1,0 +1,36 @@
+<svg width="200" height="200" viewBox="0 0 100 100">
+
+<!-- Bicycle -->
+
+<circle cx="30" cy="60" r="15" stroke="black" fill="none"/>
+
+<circle cx="70" cy="60" r="15" stroke="black" fill="none"/>
+
+<!-- Bike frame -->
+
+<rect x="35" y="25" width="30" height="10" fill="saddlebrown"/>
+
+<line x1="35" y1="40" x2="30" y2="60" stroke="black" stroke-width="3"/>
+
+<line x1="65" y1="40" x2="70" y2="60" stroke="black" stroke-width="3"/>
+
+<!-- Pelican -->
+
+<ellipse cx="55" cy="65" rx="20" ry="15" fill="white"/>
+
+<polygon points="52 50,57 35,62 50" fill="black"/> <!-- Head/beak -->
+
+<circle cx="55" cy="45" r="2" fill="white"/>
+
+<circle cx="60" cy="45" r="2" fill="white"/>
+
+<polygon points="45 60,50 70,55 60" fill="lightgrey"/> <!-- Left wing -->
+
+<polygon points="65 60,70 70,55 60" fill="lightgrey"/> <!-- Right wing -->
+
+<!-- Feet on pedals -->
+
+<polygon points="25 75,30 85,35 75" fill="black"/>
+
+<polygon points="75 75,70 85,65 75" fill="black"/>
+</svg>

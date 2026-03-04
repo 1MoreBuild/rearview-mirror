@@ -27,6 +27,7 @@ const CATEGORY_OPTIONS: { value: CategoryOption; label: string }[] = [
   { value: "model", label: "model" },
   { value: "product", label: "product" },
   { value: "engineering", label: "eng" },
+  { value: "pelican", label: "pelican" },
 ];
 
 export function TimelineFilterBar({

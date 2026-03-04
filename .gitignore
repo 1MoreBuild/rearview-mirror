@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# pipeline caches & logs
+data/pelican-cache/
+data/logs/
