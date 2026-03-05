@@ -25,6 +25,9 @@ Open [http://localhost:3000](http://localhost:3000).
 pnpm dev
 pnpm lint
 pnpm test
+pnpm check:data
+pnpm check:loc
+pnpm check
 pnpm build
 ```
 
@@ -32,7 +35,7 @@ pnpm build
 
 Model timeline source data is stored in:
 
-- `data/ai_model_timeline_2025-01_to_2026-02-24_en.json`
+- `data/ai_timeline.json`
 
 The app normalizes this source into internal timeline events at runtime.
 

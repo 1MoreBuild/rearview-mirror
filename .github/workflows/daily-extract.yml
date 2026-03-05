@@ -41,12 +41,15 @@ jobs:
           echo "Saved RSS snapshot from $RSS_URL"
 
       - name: Extract new events from RSS snapshot
-        run: npx tsx scripts/extract-events.ts --file data/raw_rss.xml
+        run: pnpm exec tsx scripts/extract-events.ts --file data/raw_rss.xml
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
       - name: Sync pelican entries from Simon tag page
-        run: npx tsx scripts/sync-pelican-from-tag.ts
+        run: pnpm exec tsx scripts/sync-pelican-from-tag.ts
+
+      - name: Validate generated data integrity
+        run: pnpm check:data
 
       - name: Commit and push synced content
         id: commit
