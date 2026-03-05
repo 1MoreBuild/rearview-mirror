@@ -206,6 +206,18 @@ function parsePubDate(pubDate: string): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
+function maxDate(values: string[]): string {
+  return values
+    .filter((value) => /^\d{4}-\d{2}-\d{2}$/.test(value))
+    .sort()
+    .at(-1) ?? "";
+}
+
+function clampDateToMax(date: string, maxDateInclusive: string): string {
+  if (!date) return "";
+  return date > maxDateInclusive ? maxDateInclusive : date;
+}
+
 // ─── Existing data ──────────────────────────────────────────────────────────
 
 function loadExistingTimeline(): TimelineFile | null {
@@ -428,7 +440,7 @@ async function main() {
   const cursor = existing?.as_of ?? "";
 
   if (cursor) {
-    console.log(`Incremental mode: processing items after ${cursor}`);
+    console.log(`Incremental mode: reprocessing items on/after ${cursor}`);
   } else {
     console.log(`Full mode: processing all items`);
   }
@@ -439,14 +451,16 @@ async function main() {
   const totalRssItems = items.length;
   console.log(`Found ${items.length} usable RSS items`);
 
-  // Filter to only new items (pubDate > as_of)
+  // Inclusive replay (`>=`) avoids missing items added later on the same day.
   if (cursor) {
     const before = items.length;
     items = items.filter((item) => {
       const date = parsePubDate(item.pubDate);
-      return date > cursor;
+      return date >= cursor;
     });
-    console.log(`Filtered to ${items.length} new items (skipped ${before - items.length} already processed)`);
+    console.log(
+      `Filtered to ${items.length} candidate items (skipped ${before - items.length} older items)`,
+    );
   }
 
   if (items.length === 0) {
@@ -459,6 +473,7 @@ async function main() {
     items = items.slice(0, effectiveLimit);
     console.log(`Limited to first ${effectiveLimit} items`);
   }
+  const processedCursorDate = maxDate(items.map((item) => parsePubDate(item.pubDate)));
 
   // Split items into long (full-content) and short (description-only) groups
   const longItems = items.filter((i) => i.twitterRecap.length >= SHORT_CONTENT_THRESHOLD);
@@ -574,10 +589,12 @@ async function main() {
 
   const dates = mergedEvents.map((e) => e.date).sort();
   const today = new Date().toISOString().slice(0, 10);
+  const rawNextCursor = maxDate([cursor, processedCursorDate]);
+  const nextCursor = clampDateToMax(rawNextCursor, today) || today;
 
   const output: TimelineFile = {
     version: 2,
-    as_of: today,
+    as_of: nextCursor,
     range_start: existing?.range_start ?? dates[0] ?? today,
     range_end: dates[dates.length - 1] ?? today,
     events: mergedEvents,
