@@ -26,6 +26,16 @@ const themeInitScript = `
       : choice;
     document.documentElement.dataset.theme = resolved;
     document.documentElement.style.colorScheme = resolved;
+
+    var cachedHeaderH = Number(localStorage.getItem("rearview-header-h"));
+    if (Number.isFinite(cachedHeaderH) && cachedHeaderH >= 32 && cachedHeaderH <= 240) {
+      document.documentElement.style.setProperty("--header-h", cachedHeaderH + "px");
+    }
+
+    var cachedFilterH = Number(localStorage.getItem("rearview-filter-h"));
+    if (Number.isFinite(cachedFilterH) && cachedFilterH >= 40 && cachedFilterH <= 320) {
+      document.documentElement.style.setProperty("--filter-bar-h", cachedFilterH + "px");
+    }
   } catch (error) {
     document.documentElement.dataset.theme = "light";
     document.documentElement.style.colorScheme = "light";
