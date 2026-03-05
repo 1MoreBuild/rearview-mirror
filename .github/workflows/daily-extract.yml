@@ -45,10 +45,8 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
-      - name: Refresh pelican benchmark images
-        run: npx tsx scripts/fetch-pelican-svgs.ts all
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      - name: Sync pelican entries from Simon tag page
+        run: npx tsx scripts/sync-pelican-from-tag.ts
 
       - name: Commit and push synced content
         id: commit
