@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import {
   discoverPosts,
+  extractImageUrls,
   looksLikeModelName,
+  normalizeModel,
 } from "../scripts/sync-pelican-from-tag";
 
 describe("sync-pelican-from-tag", () => {
@@ -29,6 +31,25 @@ describe("sync-pelican-from-tag", () => {
     expect(posts[0].model).toBe("GPT-5.3-Codex-Spark");
     expect(posts[0].imageUrls).toEqual([
       "https://static.simonwillison.net/static/2026/gpt-5.3-codex-spark-pelican.png",
+    ]);
+  });
+
+  it('trims "Introducing the" prefix fully', () => {
+    expect(normalizeModel("Introducing the Gemini 3.1 Flash-Lite")).toBe(
+      "Gemini 3.1 Flash-Lite",
+    );
+  });
+
+  it("keeps o1/o3/o4 model-family tokens intact for image filtering", () => {
+    const segment = `
+<div class="blogmark segment">
+  <p><img src="https://static.simonwillison.net/static/2026/o3-pro-pelican.png" alt="o3-pro pelican" /></p>
+  <p><img src="https://static.simonwillison.net/static/2026/o4-mini-pelican.png" alt="o4-mini pelican" /></p>
+</div>
+`;
+
+    expect(extractImageUrls(segment, "o3-pro")).toEqual([
+      "https://static.simonwillison.net/static/2026/o3-pro-pelican.png",
     ]);
   });
 });

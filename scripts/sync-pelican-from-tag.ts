@@ -85,9 +85,9 @@ export function normalizeModel(raw: string): string {
     .trim();
 
   model = model
+    .replace(/^Introducing the\s+/i, "")
     .replace(/^Introducing\s+/i, "")
-    .replace(/^Announcing\s+/i, "")
-    .replace(/^Introducing the\s+/i, "");
+    .replace(/^Announcing\s+/i, "");
 
   if (model.includes(":")) {
     model = model.split(":")[0].trim();
@@ -177,7 +177,18 @@ function normalizeForMatching(input: string): string {
   return decodeHtml(input)
     .toLowerCase()
     .replace(/[‐‑‒–—]/g, "-")
-    .replace(/([a-z])(\d)/gi, "$1 $2")
+    .replace(/([a-z])(\d)/gi, (match, letter: string, digit: string, offset: number, full: string) => {
+      const prev = offset > 0 ? full[offset - 1] : "";
+      const next = offset + 2 < full.length ? full[offset + 2] : "";
+      const boundaryBefore = prev === "" || /[^a-z0-9]/i.test(prev);
+      const boundaryAfter = next === "" || /[^a-z0-9]/i.test(next);
+      const keepOpenAIReasoningFamily =
+        letter.toLowerCase() === "o" &&
+        ["1", "3", "4"].includes(digit) &&
+        boundaryBefore &&
+        boundaryAfter;
+      return keepOpenAIReasoningFamily ? match : `${letter} ${digit}`;
+    })
     .replace(/(\d)([a-z])/gi, "$1 $2")
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\s+/g, " ")
