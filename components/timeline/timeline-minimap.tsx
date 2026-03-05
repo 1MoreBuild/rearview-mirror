@@ -18,12 +18,26 @@ function shortMonth(label: string): string {
   return match ? match[0] : label;
 }
 
+function parseCssSize(value: string): number {
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function getStickyOffset(): number {
+  const rootStyles = getComputedStyle(document.documentElement);
+  const cssHeaderHeight = parseCssSize(rootStyles.getPropertyValue("--header-h"));
+  const cssFilterHeight = parseCssSize(rootStyles.getPropertyValue("--filter-bar-h"));
+  const monthHeaderHeight =
+    document.querySelector<HTMLElement>(".timeline-month-header")?.getBoundingClientRect().height ?? 0;
+
+  return cssHeaderHeight + cssFilterHeight + monthHeaderHeight + 12;
+}
+
 function scrollToEvent(id: string) {
   const el = document.getElementById(`event-${id}`);
   if (!el) return;
 
-  const headerOffset = 56 + 80 + 40; // sticky site header + filter bar + sticky month header
-  const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+  const top = el.getBoundingClientRect().top + window.scrollY - getStickyOffset();
 
   window.scrollTo({ top, behavior: "smooth" });
 }
