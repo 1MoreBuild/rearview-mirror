@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 
 import { SiteHeader } from "@/components/site/site-header";
@@ -40,7 +40,12 @@ export const metadata: Metadata = {
   },
   description:
     "A curated timeline of AI model milestones since the ChatGPT 3.5 launch.",
-  viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

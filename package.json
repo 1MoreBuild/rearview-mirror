@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:loc": "node --import tsx scripts/check-ts-max-loc.ts --max 500",
+    "check:data": "node --import tsx scripts/check-data-integrity.ts",
+    "check": "pnpm lint && pnpm test && pnpm check:loc && pnpm check:data"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -23,6 +26,7 @@
     "dotenv": "^17.3.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "tsx": "4.21.0",
     "typescript": "^5",
     "vitest": "^4.0.18"
   }
