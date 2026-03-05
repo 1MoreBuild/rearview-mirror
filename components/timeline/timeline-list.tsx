@@ -41,14 +41,22 @@ export function TimelineList({ groups, svgContents, rasterFallbacks }: TimelineL
     );
   }
 
-  let runningIndex = 0;
+  const groupsWithStartIndex = groups.reduce<
+    Array<{
+      group: MonthGroup;
+      startIndex: number;
+    }>
+  >((acc, group) => {
+    const previous = acc[acc.length - 1];
+    const startIndex = previous
+      ? previous.startIndex + previous.group.events.length
+      : 0;
+    return [...acc, { group, startIndex }];
+  }, []);
 
   return (
     <div className="timeline-list">
-      {groups.map((group) => {
-        const startIndex = runningIndex;
-        runningIndex += group.events.length;
-
+      {groupsWithStartIndex.map(({ group, startIndex }) => {
         return (
           <section key={group.label} className="timeline-group" data-month={group.label}>
             <div className="timeline-month-header">

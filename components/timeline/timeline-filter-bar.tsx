@@ -38,8 +38,9 @@ export function TimelineFilterBar({
   totalCount,
   filteredCount,
 }: TimelineFilterBarProps) {
-  const [localQuery, setLocalQuery] = useState(filters.query);
+  const queryInputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latestFiltersRef = useRef(filters);
 
   const activeCategory: CategoryOption =
     filters.categories.length === 1 ? filters.categories[0] : "all";
@@ -62,18 +63,23 @@ export function TimelineFilterBar({
   }, [activeCategory]);
 
   useEffect(() => {
-    setLocalQuery(filters.query);
+    latestFiltersRef.current = filters;
+  }, [filters]);
+
+  useEffect(() => {
+    if (!queryInputRef.current) return;
+    if (queryInputRef.current.value === filters.query) return;
+    queryInputRef.current.value = filters.query;
   }, [filters.query]);
 
   const handleQueryChange = useCallback(
     (value: string) => {
-      setLocalQuery(value);
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(() => {
-        onChange({ ...filters, query: value });
+        onChange({ ...latestFiltersRef.current, query: value });
       }, 200);
     },
-    [filters, onChange],
+    [onChange],
   );
 
   useEffect(() => {
@@ -167,10 +173,11 @@ export function TimelineFilterBar({
 
         <div className="filter-row">
           <input
+            ref={queryInputRef}
             type="search"
             className="filter-input"
             placeholder="search..."
-            value={localQuery}
+            defaultValue={filters.query}
             onChange={(e) => handleQueryChange(e.target.value)}
             aria-label="Search events"
           />
