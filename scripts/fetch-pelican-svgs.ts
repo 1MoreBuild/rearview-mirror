@@ -424,7 +424,7 @@ async function fetchExternalImage(url: string): Promise<FetchedImage> {
     }
 
     return { type: "svg", content: text };
-  } catch (err) {
+  } catch {
     console.log(`    ✗ External fetch error: ${resolvedUrl}`);
     return null;
   }

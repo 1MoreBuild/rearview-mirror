@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type ResolvedTheme = "light" | "dark";
 
@@ -20,16 +20,12 @@ function applyTheme(theme: ResolvedTheme): void {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<ResolvedTheme>("light");
-  const mounted = useRef(false);
+  const [theme, setTheme] = useState<ResolvedTheme>(() => {
+    if (typeof window === "undefined") return "light";
+    return getInitialTheme();
+  });
 
   useEffect(() => {
-    setTheme(getInitialTheme());
-    mounted.current = true;
-  }, []);
-
-  useEffect(() => {
-    if (!mounted.current) return;
     applyTheme(theme);
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);

@@ -51,15 +51,13 @@ export function TimelineMinimap({ groups }: TimelineMinimapProps) {
     return () => observer.disconnect();
   }, [groups]);
 
-  // Group months by year for year-label separators
-  let lastYear = "";
-
   return (
     <nav className="minimap" aria-label="Timeline minimap">
-      {groups.map((group) => {
+      {groups.map((group, index) => {
         const year = extractYear(group.label);
-        const showYear = year !== lastYear;
-        lastYear = year;
+        const previousYear =
+          index === 0 ? "" : extractYear(groups[index - 1].label);
+        const showYear = year !== previousYear;
 
         // If label is just a year (year-precision), use it as month label
         const monthLabel = /^\d{4}$/.test(group.label)
