@@ -276,7 +276,8 @@
       "provider": "Anthropic",
       "blog_url": "https://simonwillison.net/2025/Sep/29/claude-sonnet-4-5/",
       "svg_files": [
-        "claude-sonnet-4-5-2025-09-29.svg"
+        "claude-sonnet-4-5-2025-09-29.svg",
+        "claude-sonnet-4-5-2025-09-29-2.svg"
       ]
     },
     {
@@ -422,8 +423,7 @@
       "blog_url": "https://simonwillison.net/2025/Dec/1/deepseek-v32/",
       "notes": "The Speciale variant spent over 10 minutes thinking about pelican geometry.",
       "svg_files": [
-        "deepseek-v3-2-2025-12-01.svg",
-        "deepseek-v3-2-2025-12-01-2.svg"
+        "deepseek-v3-2-2025-12-01.svg"
       ]
     },
     {
@@ -514,7 +514,8 @@
       "blog_url": "https://simonwillison.net/2026/Feb/12/codex-spark/",
       "notes": "Produced an orange duck merged with a bicycle — fast but inaccurate.",
       "svg_files": [
-        "gpt-5-3-codex-spark-2026-02-12.svg"
+        "gpt-5-3-codex-spark-2026-02-12.svg",
+        "gpt-5-3-codex-spark-2026-02-12-2.svg"
       ]
     },
     {

@@ -1,28 +1,9 @@
 {
   "version": 2,
-  "as_of": "2026-02-26",
+  "as_of": "2026-03-03",
   "range_start": "2023-12-06",
-  "range_end": "2026-02-24",
+  "range_end": "2026-02-26",
   "events": [
-    {
-      "date": "2023-12-06",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Google's Gemini AI model announced",
-      "organization": "Google",
-      "summary": "Google announced the Gemini AI model with claims of 32-shot chain of thought MMLU performance and 32k context window. The announcement included upcoming Gemini Pro and Gemini Ultra models for the Bard platform.",
-      "detail": "Gemini represents Google's major attempt to compete directly with GPT-4, with multimodal capabilities and potentially superior performance in certain benchmarks, though the community expressed skepticism about some claims.",
-      "tags": [
-        "gemini",
-        "google",
-        "multimodal",
-        "32k-context",
-        "bard",
-        "mmlu"
-      ],
-      "sources": []
-    },
     {
       "date": "2023-12-08",
       "date_precision": "day",
@@ -526,24 +507,6 @@
         "openai",
         "language-model",
         "api"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-01-30",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Meta releases CodeLlama 70B",
-      "organization": "Meta",
-      "summary": "Meta AI released CodeLlama, an open-source coding model now available on platforms like Ollama and MLX for local use, reportedly beating GPT-4 on HumanEval.",
-      "detail": "This represents a significant achievement in open-source code generation, potentially challenging OpenAI's dominance in coding assistance.",
-      "tags": [
-        "codellama",
-        "meta",
-        "coding",
-        "humaneval",
-        "open-source"
       ],
       "sources": []
     },
@@ -1515,24 +1478,6 @@
       "date_precision": "day",
       "category": "product",
       "significance": "low",
-      "title": "Claude tool use beta launched by Anthropic",
-      "organization": "Anthropic",
-      "summary": "Anthropic introduced tool use in beta for Claude, supporting over 250 tools with new cookbooks for practical applications.",
-      "detail": "This significantly expands Claude's capabilities beyond text generation to interact with external systems and APIs.",
-      "tags": [
-        "claude",
-        "anthropic",
-        "tool-use",
-        "beta",
-        "cookbooks"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-04-04",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
       "title": "Opera browser adds local LLM inference support",
       "organization": "Opera",
       "summary": "The Opera browser added local inference support for large language models like Meta's Llama, Google's Gemma, and Vicuna.",
@@ -1603,24 +1548,6 @@
       "date_precision": "day",
       "category": "model",
       "significance": "low",
-      "title": "CodeGemma models open-sourced by Google",
-      "organization": "Google",
-      "summary": "Google open-sourced CodeGemma models with pre-quantized 4-bit versions for faster downloads and code generation capabilities.",
-      "detail": "This release provides developers with open-source alternatives for code generation, potentially accelerating development of coding assistants and tools.",
-      "tags": [
-        "codegemma",
-        "google",
-        "open-source",
-        "code-generation",
-        "quantized"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-04-10",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
       "title": "Gecko-1b-256/768 embedding model released",
       "organization": "Google",
       "summary": "Google released the Gecko-1b-256/768 embedding model alongside Gemini 1.5 Pro.",
@@ -1668,42 +1595,6 @@
       "sources": []
     },
     {
-      "date": "2024-04-11",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Cohere Rerank 3 launched",
-      "organization": "Cohere",
-      "summary": "Cohere launched Rerank 3, a foundation model enhancing enterprise search and retrieval-augmented generation (RAG) systems supporting 100+ languages.",
-      "detail": "This specialized reranking model addresses critical needs in enterprise search and RAG applications, potentially improving information retrieval accuracy across diverse languages.",
-      "tags": [
-        "cohere",
-        "rerank-3",
-        "rag",
-        "enterprise",
-        "multilingual"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-04-11",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Mixtral 8x22B released by Mistral",
-      "organization": "Mistral",
-      "summary": "Mistral released the 8x22B Mixtral model, which was later merged back into a dense model to effectively create a 22B Mistral model.",
-      "detail": "This release demonstrates innovative approaches to model architecture, showing how mixture-of-experts models can be converted to dense formats for different deployment scenarios.",
-      "tags": [
-        "mixtral",
-        "8x22b",
-        "mistral",
-        "moe",
-        "dense-model"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-04-12",
       "date_precision": "day",
       "category": "engineering",
@@ -1744,24 +1635,6 @@
       "date_precision": "day",
       "category": "model",
       "significance": "low",
-      "title": "Cohere Compass embedding model released",
-      "organization": "Cohere",
-      "summary": "Cohere Compass introduced a foundation embedding model for indexing and searching multi-aspect enterprise data like emails and invoices.",
-      "detail": "This specialized embedding model addresses enterprise search needs, potentially improving information retrieval across diverse document types and formats.",
-      "tags": [
-        "cohere",
-        "compass",
-        "embedding",
-        "enterprise",
-        "search"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-04-15",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
       "title": "IDEFICS 2-8B model released",
       "organization": "Hugging Face",
       "summary": "The open-source IDEFICS 2-8B model was released, continuing Google's Flamingo multimodal model reproduction efforts.",
@@ -1772,24 +1645,6 @@
         "open-source",
         "flamingo",
         "8b"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-04-16",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "OpenAI Batch API introduced",
-      "organization": "OpenAI",
-      "summary": "OpenAI introduced a Batch API for processing large volumes of requests efficiently.",
-      "detail": "This API addresses enterprise needs for bulk processing, potentially reducing costs and improving efficiency for large-scale AI applications.",
-      "tags": [
-        "openai",
-        "batch-api",
-        "api",
-        "enterprise",
-        "bulk-processing"
       ],
       "sources": []
     },
@@ -2024,24 +1879,6 @@
         "image-generation",
         "stable-diffusion",
         "local"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-04-30",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "OpenAI memory feature rolled out to all ChatGPT Plus users",
-      "organization": "OpenAI",
-      "summary": "OpenAI has rolled out the memory feature to all ChatGPT Plus users, allowing the AI to remember information across conversations.",
-      "detail": "This feature enhancement improves user experience by enabling more personalized and contextual interactions, though some users report data cleansing issues after the update.",
-      "tags": [
-        "openai",
-        "chatgpt",
-        "memory",
-        "plus",
-        "personalization"
       ],
       "sources": []
     },
@@ -2759,24 +2596,6 @@
       "sources": []
     },
     {
-      "date": "2024-06-20",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "DeepSeek-Coder-V2 released",
-      "organization": "DeepSeek",
-      "summary": "DeepSeek-Coder-V2 shows code capabilities comparable to GPT-4 Turbo, supporting 338 programming languages and 128K context length.",
-      "detail": "This model represents a significant advancement in coding AI, matching commercial model performance while supporting an unprecedented number of programming languages.",
-      "tags": [
-        "deepseek-coder-v2",
-        "338-languages",
-        "128k-context",
-        "gpt-4-turbo",
-        "coding"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-06-21",
       "date_precision": "day",
       "category": "product",
@@ -3161,24 +2980,6 @@
       "sources": []
     },
     {
-      "date": "2024-07-16",
-      "date_precision": "day",
-      "category": "engineering",
-      "significance": "low",
-      "title": "Microsoft Research releases AgentInstruct synthetic data pipeline",
-      "organization": "Microsoft Research",
-      "summary": "Microsoft Research released AgentInstruct, a generative teaching pipeline that produces 25.8 million synthetic instructions to fine-tune models like mistral-7b.",
-      "detail": "The approach achieved significant performance gains across multiple benchmarks including +40% AGIEval and +19% MMLU, representing the third paper in Microsoft's Orca series.",
-      "tags": [
-        "microsoft",
-        "agentinstruct",
-        "orca",
-        "synthetic-data",
-        "fine-tuning"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-07-19",
       "date_precision": "day",
       "category": "model",
@@ -3301,24 +3102,6 @@
         "macos",
         "on-device",
         "developer-preview"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-07-30",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "high",
-      "title": "Meta releases Llama 3.1 with 405B parameter model",
-      "organization": "Meta",
-      "summary": "Meta released Llama 3.1 with a 405B parameter model, marking a significant open-source frontier model release.",
-      "detail": "This represents the largest open-source language model to date, potentially democratizing access to frontier-level AI capabilities.",
-      "tags": [
-        "llama3.1",
-        "405b",
-        "open-source",
-        "frontier-model",
-        "meta"
       ],
       "sources": []
     },
@@ -3466,42 +3249,6 @@
       "sources": []
     },
     {
-      "date": "2024-08-05",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "Stability AI launches Stable Fast 3D",
-      "organization": "Stability AI",
-      "summary": "Stability AI launched Stable Fast 3D for rapid 3D asset generation.",
-      "detail": "This tool addresses the growing demand for 3D content creation in gaming, VR, and digital media applications.",
-      "tags": [
-        "stable-fast-3d",
-        "3d-generation",
-        "asset-creation",
-        "stability-ai",
-        "content-creation"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-08-05",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "Runway unveils Gen-3 Alpha",
-      "organization": "Runway",
-      "summary": "Runway unveiled Gen-3 Alpha for AI text-to-video generation.",
-      "detail": "This represents continued advancement in AI video generation capabilities, enabling more sophisticated text-to-video creation.",
-      "tags": [
-        "gen-3-alpha",
-        "text-to-video",
-        "video-generation",
-        "runway",
-        "ai-video"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-08-07",
       "date_precision": "day",
       "category": "model",
@@ -3642,24 +3389,6 @@
         "retrieval",
         "open-source",
         "ai-applications"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-08-12",
-      "date_precision": "day",
-      "category": "engineering",
-      "significance": "low",
-      "title": "LlamaParse CLI released",
-      "organization": "LlamaIndex",
-      "summary": "LlamaParse CLI was released to enhance PDF parsing capabilities for AI applications.",
-      "detail": "This tool addresses a common need in AI workflows by improving document processing and data extraction from PDFs.",
-      "tags": [
-        "llamaparse",
-        "pdf-parsing",
-        "cli",
-        "document-processing",
-        "tools"
       ],
       "sources": []
     },
@@ -3898,24 +3627,6 @@
       "sources": []
     },
     {
-      "date": "2024-08-21",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "GPT-4o finetuning launched by OpenAI",
-      "organization": "OpenAI",
-      "summary": "OpenAI launched GPT-4o finetuning with a case study on Cosine.",
-      "detail": "This enables developers to customize GPT-4o for specific use cases, potentially improving performance on domain-specific tasks.",
-      "tags": [
-        "gpt-4o",
-        "finetuning",
-        "openai",
-        "customization",
-        "cosine"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-08-22",
       "date_precision": "day",
       "category": "model",
@@ -3930,24 +3641,6 @@
         "color-control",
         "api",
         "ios"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-08-22",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Phi-3.5 models launched by Microsoft",
-      "organization": "Microsoft",
-      "summary": "Microsoft launched three Phi-3.5 models with impressive reasoning and context window capabilities.",
-      "detail": "These models continue Microsoft's focus on efficient, high-performing smaller models that can run on edge devices.",
-      "tags": [
-        "phi-3.5",
-        "microsoft",
-        "reasoning",
-        "context-window",
-        "efficiency"
       ],
       "sources": []
     },
@@ -4221,25 +3914,6 @@
         "llama3.1",
         "speed",
         "1800-tokens-sec"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-08-29",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "Anthropic's Claude adds prompt caching support",
-      "organization": "Anthropic",
-      "summary": "Anthropic's Claude now supports prompt caching, improving speed and cost efficiency.",
-      "detail": "This feature reduces computational costs and improves response times for repeated or similar queries, making Claude more efficient for production use cases.",
-      "tags": [
-        "anthropic",
-        "claude",
-        "prompt-caching",
-        "efficiency",
-        "cost-reduction",
-        "speed"
       ],
       "sources": []
     },
@@ -4779,24 +4453,6 @@
       "sources": []
     },
     {
-      "date": "2024-09-27",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Molmo multimodal model introduced",
-      "organization": "Allen AI",
-      "summary": "Molmo, a new multimodal model, was introduced with a large dense captioning dataset.",
-      "detail": "Molmo represents another advancement in open-source multimodal AI, providing researchers and developers with new capabilities for vision-language tasks.",
-      "tags": [
-        "molmo",
-        "multimodal",
-        "allen-ai",
-        "vision-language",
-        "captioning"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-09-30",
       "date_precision": "day",
       "category": "model",
@@ -5216,24 +4872,6 @@
       "sources": []
     },
     {
-      "date": "2024-10-25",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Cohere multilingual models supporting 23 languages released",
-      "organization": "Cohere",
-      "summary": "Cohere launched new multilingual models supporting 23 languages with state-of-the-art performance.",
-      "detail": "This expands global AI accessibility by providing high-quality language models across diverse languages, addressing the need for non-English AI capabilities.",
-      "tags": [
-        "cohere",
-        "multilingual",
-        "23-languages",
-        "sota",
-        "global-ai"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-10-28",
       "date_precision": "day",
       "category": "engineering",
@@ -5440,23 +5078,6 @@
     {
       "date": "2024-11-01",
       "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Universal-2 speech-to-text model released",
-      "organization": "Unknown",
-      "summary": "Universal-2, a speech-to-text model with 660M parameters, was released.",
-      "detail": "This model advances speech recognition capabilities with a substantial parameter count, potentially offering improved accuracy and language support.",
-      "tags": [
-        "universal-2",
-        "speech-to-text",
-        "660m-parameters",
-        "asr"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-11-01",
-      "date_precision": "day",
       "category": "engineering",
       "significance": "low",
       "title": "HOVER neural humanoid robot controller released",
@@ -5565,24 +5186,6 @@
       "sources": []
     },
     {
-      "date": "2024-11-13",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Alibaba announces Qwen 2.5-Coder-32B-Instruct",
-      "organization": "Alibaba",
-      "summary": "Alibaba announced Qwen 2.5-Coder-32B-Instruct, which matches or surpasses GPT-4o on coding benchmarks.",
-      "detail": "This model's competitive performance against GPT-4o on coding tasks signals strong progress in open-source coding models, potentially challenging proprietary offerings.",
-      "tags": [
-        "alibaba",
-        "qwen2.5-coder",
-        "32b",
-        "coding",
-        "gpt-4o"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-11-14",
       "date_precision": "day",
       "category": "product",
@@ -5667,24 +5270,6 @@
         "ai-shopping",
         "payments",
         "e-commerce"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-11-21",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "DeepSeek releases R1-Lite-Preview reasoning model",
-      "organization": "DeepSeek",
-      "summary": "DeepSeek released DeepSeek-R1-Lite-Preview, an open-source reasoning model achieving o1-preview-level performance on math benchmarks with transparent thought processes.",
-      "detail": "This represents a significant milestone in open-source reasoning models, potentially democratizing access to advanced reasoning capabilities previously limited to proprietary systems.",
-      "tags": [
-        "deepseek",
-        "r1-lite",
-        "reasoning",
-        "open-source",
-        "o1-level"
       ],
       "sources": []
     },
@@ -5901,24 +5486,6 @@
       "sources": []
     },
     {
-      "date": "2024-12-05",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "high",
-      "title": "OpenAI o1 model with multimodal capabilities launched",
-      "organization": "OpenAI",
-      "summary": "OpenAI launched the o1 model with multimodal capabilities, faster reasoning, and image input support, marking it as a state-of-the-art model despite some bugs and mixed reviews.",
-      "detail": "This represents a significant advancement in reasoning-focused AI with multimodal capabilities, though early reception suggests there are still refinements needed for optimal performance.",
-      "tags": [
-        "o1",
-        "multimodal",
-        "reasoning",
-        "image-input",
-        "sota"
-      ],
-      "sources": []
-    },
-    {
       "date": "2024-12-06",
       "date_precision": "day",
       "category": "model",
@@ -5969,24 +5536,6 @@
         "inference",
         "optimization",
         "long-context"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2024-12-10",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "Cognition Labs Devin AI developer released",
-      "organization": "Cognition Labs",
-      "summary": "Cognition Labs released Devin, an AI developer capable of building Kubernetes operators and other software development tasks.",
-      "detail": "This represents advancement in AI-powered software development tools, potentially automating complex infrastructure and application development tasks.",
-      "tags": [
-        "devin",
-        "ai-developer",
-        "kubernetes",
-        "automation",
-        "coding"
       ],
       "sources": []
     },
@@ -6918,24 +6467,6 @@
       "date_precision": "day",
       "category": "model",
       "significance": "low",
-      "title": "Google DeepMind unveils PaliGemma 2 Mix",
-      "organization": "Google DeepMind",
-      "summary": "Google DeepMind unveiled PaliGemma 2 Mix, a multi-task vision-language model available in 3B, 10B, and 28B sizes for various multimodal applications.",
-      "detail": "This expands Google's vision-language capabilities with multiple model sizes to suit different computational requirements and use cases.",
-      "tags": [
-        "paligemma-2",
-        "google-deepmind",
-        "vision-language",
-        "multi-task",
-        "multiple-sizes"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-02-20",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
       "title": "Microsoft introduces Muse gaming AI model",
       "organization": "Microsoft",
       "summary": "Microsoft introduced Muse, a generative AI model trained on the game Bleeding Edge for creating gaming experiences and content.",
@@ -7000,24 +6531,6 @@
         "vision-language",
         "ocr",
         "multilingual"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-02-25",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "high",
-      "title": "Anthropic launches Claude 3.7 Sonnet with hybrid reasoning",
-      "organization": "Anthropic",
-      "summary": "Anthropic launched Claude 3.7 Sonnet, their most intelligent model featuring hybrid reasoning with two thinking modes: near-instant and extended step-by-step thinking. The model includes 128k output token capability in beta and performs well on coding benchmarks.",
-      "detail": "This represents the first generally available hybrid reasoning model, combining fast responses with deep thinking capabilities and marking Anthropic's entry into reasoning-focused AI.",
-      "tags": [
-        "claude-3.7",
-        "anthropic",
-        "hybrid-reasoning",
-        "thinking-modes",
-        "coding"
       ],
       "sources": []
     },
@@ -7090,24 +6603,6 @@
         "multimodal",
         "open-source",
         "math-coding"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-02-28",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "OpenAI releases GPT-4.5 research preview",
-      "organization": "OpenAI",
-      "summary": "OpenAI released GPT-4.5 as a research preview, featuring deep world knowledge, improved understanding of user intent, and a 128,000 token context window. The model excels in writing, creative tasks, image understanding, and data extraction but is not a reasoning model.",
-      "detail": "This represents OpenAI's latest advancement in creative and knowledge-intensive tasks, potentially serving as a foundation for GPT-5 development.",
-      "tags": [
-        "gpt-4.5",
-        "openai",
-        "research-preview",
-        "creative-writing",
-        "world-knowledge"
       ],
       "sources": []
     },
@@ -7654,24 +7149,6 @@
       "sources": []
     },
     {
-      "date": "2025-04-09",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Runway Gen-4 Turbo launched",
-      "organization": "Runway",
-      "summary": "Runway launched Gen-4 Turbo with 10x better results than Gen-3 at the same cost.",
-      "detail": "This significant performance improvement in video generation at the same cost point represents a major advancement in accessible AI video creation tools.",
-      "tags": [
-        "gen-4-turbo",
-        "runway",
-        "video-generation",
-        "performance",
-        "cost-efficiency"
-      ],
-      "sources": []
-    },
-    {
       "date": "2025-04-10",
       "date_precision": "day",
       "category": "model",
@@ -7776,25 +7253,6 @@
         "gemini-api",
         "google",
         "multimodal"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-04-16",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Alibaba QwQ-32B reasoning model released",
-      "organization": "Alibaba",
-      "summary": "Alibaba Qwen released QwQ-32B, a 32 billion parameter reasoning model using a novel two-stage reinforcement learning approach for math, coding, and general capabilities.",
-      "detail": "This model aims to compete with larger MoE models like DeepSeek-R1 while using significantly fewer parameters, demonstrating efficiency gains in reasoning tasks.",
-      "tags": [
-        "alibaba",
-        "qwq-32b",
-        "reasoning",
-        "reinforcement-learning",
-        "math",
-        "coding"
       ],
       "sources": []
     },
@@ -7999,24 +7457,6 @@
         "inference",
         "cerebras",
         "groq"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-05-01",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "Anthropic introduces remote MCP server support and Research mode",
-      "organization": "Anthropic",
-      "summary": "Anthropic introduced remote MCP server support and a 45-minute Research mode in Claude.",
-      "detail": "These features enhance Claude's capabilities for extended research tasks and expand its integration possibilities through remote server support.",
-      "tags": [
-        "mcp",
-        "remote-server",
-        "research-mode",
-        "claude",
-        "45-minute"
       ],
       "sources": []
     },
@@ -8328,24 +7768,6 @@
     {
       "date": "2025-05-16",
       "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "OpenAI enhances Codex CLI with codex-mini model",
-      "organization": "OpenAI",
-      "summary": "The Codex CLI was enhanced with quick sign-in and a new low-latency model, codex-mini.",
-      "detail": "Improves developer experience with faster response times and streamlined authentication, making the coding assistant more practical for daily use.",
-      "tags": [
-        "codex-cli",
-        "codex-mini",
-        "openai",
-        "cli",
-        "low-latency"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-05-16",
-      "date_precision": "day",
       "category": "model",
       "significance": "low",
       "title": "Marigold IID depth estimation model released",
@@ -8425,22 +7847,6 @@
         "google-search",
         "google",
         "generative-ai"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-05-21",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Mistral launches new code model fine-tune",
-      "organization": "Mistral",
-      "summary": "Mistral launched a new code model fine-tune.",
-      "detail": "Continues Mistral's focus on specialized models, targeting the growing demand for coding-specific AI capabilities.",
-      "tags": [
-        "mistral",
-        "code-model",
-        "fine-tune"
       ],
       "sources": []
     },
@@ -8594,25 +8000,6 @@
     {
       "date": "2025-06-05",
       "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Qwen3 releases state-of-the-art embedding and reranking models",
-      "organization": "Qwen",
-      "summary": "Qwen3 released state-of-the-art embedding and reranking models, with Qwen3-Embedding-8B topping the MTEB multilingual leaderboard.",
-      "detail": "These specialized models advance the state of text understanding and retrieval capabilities, particularly for multilingual applications.",
-      "tags": [
-        "qwen3",
-        "embedding",
-        "reranking",
-        "mteb",
-        "multilingual",
-        "text-understanding"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-06-05",
-      "date_precision": "day",
       "category": "engineering",
       "significance": "low",
       "title": "LightOn introduces FastPlaid for late-interaction model speedup",
@@ -8702,24 +8089,6 @@
         "24b",
         "open-source",
         "consumer-gpu"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-06-12",
-      "date_precision": "day",
-      "category": "engineering",
-      "significance": "low",
-      "title": "Sakana AI releases Text-to-LoRA hypernetwork method",
-      "organization": "Sakana AI",
-      "summary": "Sakana AI released Text-to-LoRA, a hypernetwork method for generating task-specific LoRA adapters from natural language, enabling efficient model customization.",
-      "detail": "This technique allows for dynamic model adaptation using natural language descriptions, potentially simplifying the process of fine-tuning models for specific tasks.",
-      "tags": [
-        "sakana",
-        "text-to-lora",
-        "hypernetwork",
-        "model-customization",
-        "natural-language"
       ],
       "sources": []
     },
@@ -8870,24 +8239,6 @@
       "sources": []
     },
     {
-      "date": "2025-06-23",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Google Magenta RealTime 800M parameter music generation model released",
-      "organization": "Google",
-      "summary": "Google Magenta RealTime, an 800M parameter open-weights model for real-time music generation, was released.",
-      "detail": "This represents Google's continued investment in creative AI applications with a focus on real-time music generation capabilities.",
-      "tags": [
-        "google",
-        "magenta",
-        "music-generation",
-        "real-time",
-        "open-weights"
-      ],
-      "sources": []
-    },
-    {
       "date": "2025-06-25",
       "date_precision": "day",
       "category": "product",
@@ -8926,25 +8277,6 @@
       "date_precision": "day",
       "category": "model",
       "significance": "low",
-      "title": "Google Gemma 3n multimodal edge model released",
-      "organization": "Google",
-      "summary": "Google released Gemma 3n, a multimodal model optimized for edge devices with only 3GB RAM, achieving a top score of 1300 on LMSys Arena, featuring the new MatFormer architecture and broad ecosystem integration.",
-      "detail": "This model brings high-performance multimodal capabilities to resource-constrained devices while introducing the innovative MatFormer architecture.",
-      "tags": [
-        "gemma3n",
-        "google",
-        "multimodal",
-        "edge",
-        "matformer",
-        "3gb-ram"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-06-26",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
       "title": "DeepMind AlphaGenome model unveiled",
       "organization": "DeepMind",
       "summary": "DeepMind unveiled AlphaGenome, an AI model capable of reading 1 million DNA bases for gene function prediction, marking a breakthrough in AI biology.",
@@ -8974,24 +8306,6 @@
         "photo-generation",
         "fashion",
         "presets"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-06-27",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Inception AI Labs Mercury diffusion LLM launched",
-      "organization": "Inception AI Labs",
-      "summary": "Inception AI Labs launched Mercury, the first commercial-scale diffusion LLM for chat.",
-      "detail": "This represents a novel approach to language modeling using diffusion techniques, potentially offering new capabilities for conversational AI.",
-      "tags": [
-        "mercury",
-        "inception-ai",
-        "diffusion-llm",
-        "chat",
-        "commercial-scale"
       ],
       "sources": []
     },
@@ -9282,24 +8596,6 @@
     {
       "date": "2025-07-30",
       "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Moonshot AI releases Kimi K2 trillion-parameter model",
-      "organization": "Moonshot AI",
-      "summary": "Moonshot AI released Kimi K2, a 1 trillion-parameter MoE model surpassing benchmarks like LiveCodeBench.",
-      "detail": "This massive model represents the scale ambitions of Chinese AI companies and their ability to compete with or exceed Western models in benchmark performance.",
-      "tags": [
-        "moonshot",
-        "kimi",
-        "k2",
-        "trillion-parameter",
-        "moe"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-07-30",
-      "date_precision": "day",
       "category": "product",
       "significance": "low",
       "title": "Runway rolls out Runway Aleph video model",
@@ -9386,60 +8682,6 @@
       "sources": []
     },
     {
-      "date": "2025-08-08",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "OpenAI launches GPT-5 with unified user experience",
-      "organization": "OpenAI",
-      "summary": "OpenAI launched GPT-5 with a unified user experience removing manual model selection, introducing Priority Processing for lower latency.",
-      "detail": "This represents a shift toward automated model routing and tiered performance options, achieving ~750ms median time-to-first-token.",
-      "tags": [
-        "openai",
-        "gpt-5",
-        "unified-experience",
-        "priority-processing",
-        "latency"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-08-11",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "OpenAI GPT-5 launch with increased usage limits",
-      "organization": "OpenAI",
-      "summary": "The GPT-5 launch faced user backlash over restrictive limits, leading to a reversal and increased limits to 3000 requests per week for Plus users.",
-      "detail": "This demonstrates OpenAI's responsiveness to user feedback and the importance of usage limits in model deployment.",
-      "tags": [
-        "openai",
-        "gpt-5",
-        "usage-limits",
-        "plus-users",
-        "feedback"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-08-12",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "OpenAI releases GPT-5 series including mini and nano variants",
-      "organization": "OpenAI",
-      "summary": "OpenAI released the GPT-5 series including GPT-5-mini and GPT-5-nano, with mixed user feedback on performance.",
-      "detail": "These variants provide different performance and cost options within the GPT-5 family, though early user reception has been mixed.",
-      "tags": [
-        "openai",
-        "gpt-5",
-        "mini",
-        "nano",
-        "variants"
-      ],
-      "sources": []
-    },
-    {
       "date": "2025-08-12",
       "date_precision": "day",
       "category": "model",
@@ -9472,24 +8714,6 @@
         "qwen3",
         "thinking",
         "web-search"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-08-13",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "OpenAI introduces GPT-5 Auto/Fast/Thinking modes",
-      "organization": "OpenAI",
-      "summary": "OpenAI continues updates to GPT-5, introducing 'Auto/Fast/Thinking' modes with 196k token context and dynamic routing.",
-      "detail": "These modes provide users with different performance and cost trade-offs while optimizing for efficiency through intelligent routing.",
-      "tags": [
-        "openai",
-        "gpt-5",
-        "modes",
-        "context",
-        "routing"
       ],
       "sources": []
     },
@@ -9602,24 +8826,6 @@
       "sources": []
     },
     {
-      "date": "2025-08-20",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "Anthropic launches Claude Code seats with spend controls",
-      "organization": "Anthropic",
-      "summary": "Anthropic launched Claude Code seats with spend controls for enterprise customers.",
-      "detail": "This provides enterprises with better cost management and control over AI coding assistant usage.",
-      "tags": [
-        "anthropic",
-        "claude-code",
-        "enterprise",
-        "spend-controls",
-        "coding"
-      ],
-      "sources": []
-    },
-    {
       "date": "2025-08-26",
       "date_precision": "day",
       "category": "model",
@@ -9672,24 +8878,6 @@
         "huggingface",
         "webgpu",
         "coreml"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-08-29",
-      "date_precision": "day",
-      "category": "product",
-      "significance": "low",
-      "title": "OpenAI integrates GPT-5 into Xcode 26",
-      "organization": "OpenAI",
-      "summary": "OpenAI integrated GPT-5 into Xcode 26 with improved coding latency, though some UX trade-offs are noted.",
-      "detail": "This integration brings advanced AI coding assistance directly into Apple's development environment, potentially transforming iOS/macOS development workflows.",
-      "tags": [
-        "openai",
-        "gpt-5",
-        "xcode",
-        "integration",
-        "coding"
       ],
       "sources": []
     },
@@ -10342,24 +9530,6 @@
         "audio",
         "social-network",
         "openai"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-09-30",
-      "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "Claude 4.5 Sonnet released with enhanced intelligence",
-      "organization": "Anthropic",
-      "summary": "Anthropic launched Claude 4.5 Sonnet with enhanced intelligence, token efficiency, and agentic tool use, outperforming some competitors and closely tracking GPT-5-high on benchmarks.",
-      "detail": "The release includes LangSmith integration and strong coding/math benchmark results, representing a significant advancement in Anthropic's model capabilities.",
-      "tags": [
-        "claude",
-        "sonnet",
-        "anthropic",
-        "benchmarks",
-        "agentic"
       ],
       "sources": []
     },
@@ -11209,23 +10379,6 @@
     {
       "date": "2025-12-12",
       "date_precision": "day",
-      "category": "model",
-      "significance": "low",
-      "title": "OpenAI releases sparse activation models",
-      "organization": "OpenAI",
-      "summary": "OpenAI released sparse activation models, sparking debate on sparsity vs MoE architectures.",
-      "detail": "This release represents OpenAI's exploration of alternative model architectures beyond traditional dense models, potentially offering efficiency gains through sparse computation.",
-      "tags": [
-        "openai",
-        "sparse-models",
-        "model-architecture",
-        "efficiency"
-      ],
-      "sources": []
-    },
-    {
-      "date": "2025-12-12",
-      "date_precision": "day",
       "category": "product",
       "significance": "low",
       "title": "Tinker platform goes GA with vision and finetuning support",
@@ -11847,6 +11000,147 @@
         {
           "label": "Cursor AI launch announcement",
           "url": "https://x.com/cursor_ai/status/2026369873321013568"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Nano Banana 2 (Gemini 3.1 Flash Image Preview) released",
+      "organization": "Google DeepMind",
+      "summary": "Google DeepMind shipped Nano Banana 2 (aka Gemini 3.1 Flash Image Preview) as a Flash-tier image generation/editing model rolling out across Gemini App, Search, Flow, Google Ads, and AI Studio/Gemini API/Vertex AI.",
+      "detail": "The model claims world knowledge, improved i18n text rendering, aspect ratio control, upscaling to 4K, and multi-subject consistency supporting up to 5 characters and 14 objects. It undercuts Pro pricing at $67/1k images vs ~$133-134 for GPT Image 1.5.",
+      "tags": [
+        "nano-banana-2",
+        "gemini-3.1-flash",
+        "image-generation",
+        "google",
+        "flash-tier"
+      ],
+      "sources": [
+        {
+          "label": "Google announcement",
+          "url": "https://x.com/Google/status/2027051657163391104"
+        },
+        {
+          "label": "GoogleDeepMind announcement",
+          "url": "https://x.com/GoogleDeepMind/status/2027051577899380991"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Perplexity pplx-embed and pplx-embed-context released",
+      "organization": "Perplexity",
+      "summary": "Perplexity launched two embedding model families at 0.6B and 4B parameters, including a context variant for doc chunk embeddings in RAG, both MIT licensed and available via HuggingFace and Perplexity API.",
+      "detail": "The models include internal benchmarks on PPLXQuery2Query/PPLXQuery2Doc with 115k real queries over 30M docs from 1B+ pages. Arav claims they are industry-leading.",
+      "tags": [
+        "pplx-embed",
+        "embeddings",
+        "rag",
+        "perplexity",
+        "mit-licensed"
+      ],
+      "sources": [
+        {
+          "label": "Perplexity announcement",
+          "url": "https://x.com/perplexity_ai/status/2027094981161410710"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Cursor Bugbot Autofix released",
+      "organization": "Cursor",
+      "summary": "Cursor Bugbot Autofix automates fixing issues found in PRs.",
+      "detail": "This tooling ships fast to automate bug-fixing workflows in pull requests.",
+      "tags": [
+        "cursor",
+        "bugbot",
+        "autofix",
+        "pr",
+        "coding-agent"
+      ],
+      "sources": [
+        {
+          "label": "Cursor announcement",
+          "url": "https://x.com/cursor_ai/status/2027079876948484200"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "OpenAI Codex Figma roundtrip integration launched",
+      "organization": "OpenAI",
+      "summary": "OpenAI's Codex launched code to design to code roundtrip with Figma to make UI iteration less lossy.",
+      "detail": "This enables bidirectional code-design-code workflows, reducing information loss in UI iteration cycles.",
+      "tags": [
+        "openai",
+        "codex",
+        "figma",
+        "ui-iteration",
+        "design"
+      ],
+      "sources": [
+        {
+          "label": "OpenAI Devs announcement",
+          "url": "https://x.com/OpenAIDevs/status/2027062351724527723"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "VS Code Next Edit Suggestions released",
+      "organization": "Microsoft VS Code",
+      "summary": "VS Code's long-distance Next Edit Suggestions focuses on predicting where not to edit and supporting flow.",
+      "detail": "This editor-level improvement helps developers maintain flow by intelligently predicting edit locations.",
+      "tags": [
+        "vscode",
+        "next-edit-suggestions",
+        "flow",
+        "editor"
+      ],
+      "sources": [
+        {
+          "label": "VS Code announcement",
+          "url": "https://x.com/code/status/2027093279762747526"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "HuggingFace Transformers MoE support shipped",
+      "organization": "HuggingFace",
+      "summary": "HuggingFace shipped deeper MoE plumbing including loading, expert backends, expert parallelism, and hub support in Transformers.",
+      "detail": "This makes MoE first-class in Transformers, with collaboration on faster MoE training including with Unsloth.",
+      "tags": [
+        "huggingface",
+        "transformers",
+        "moe",
+        "expert-parallelism",
+        "infrastructure"
+      ],
+      "sources": [
+        {
+          "label": "HuggingFace announcement",
+          "url": "https://x.com/ariG23498/status/2026995823536751072"
         }
       ]
     }
