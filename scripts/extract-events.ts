@@ -213,6 +213,11 @@ function maxDate(values: string[]): string {
     .at(-1) ?? "";
 }
 
+function clampDateToMax(date: string, maxDateInclusive: string): string {
+  if (!date) return "";
+  return date > maxDateInclusive ? maxDateInclusive : date;
+}
+
 // ─── Existing data ──────────────────────────────────────────────────────────
 
 function loadExistingTimeline(): TimelineFile | null {
@@ -584,7 +589,8 @@ async function main() {
 
   const dates = mergedEvents.map((e) => e.date).sort();
   const today = new Date().toISOString().slice(0, 10);
-  const nextCursor = maxDate([cursor, processedCursorDate]) || today;
+  const rawNextCursor = maxDate([cursor, processedCursorDate]);
+  const nextCursor = clampDateToMax(rawNextCursor, today) || today;
 
   const output: TimelineFile = {
     version: 2,
