@@ -1,4 +1,4 @@
-name: Daily Event Extraction
+name: Daily Content Sync
 
 on:
   schedule:
@@ -6,14 +6,14 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: extract-pipeline
+  group: content-sync-pipeline
   cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
-  extract:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,16 +29,45 @@ jobs:
 
       - run: pnpm install
 
-      - name: Extract new events from RSS
-        run: npx tsx scripts/extract-events.ts
+      - name: Snapshot RSS feed
+        env:
+          RSS_FEED_URL: ${{ vars.RSS_FEED_URL }}
+        run: |
+          set -euo pipefail
+          RSS_URL="${RSS_FEED_URL:-https://news.smol.ai/rss.xml}"
+          curl -fsSL "$RSS_URL" -o data/raw_rss.xml
+          echo "Saved RSS snapshot from $RSS_URL"
+
+      - name: Extract new events from RSS snapshot
+        run: npx tsx scripts/extract-events.ts --file data/raw_rss.xml
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
-      - name: Commit and push if changed
+      - name: Refresh pelican benchmark images
+        run: npx tsx scripts/fetch-pelican-svgs.ts all
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+      - name: Commit and push synced content
+        id: commit
         run: |
-          git diff --quiet data/ && echo "No changes" && exit 0
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ai_timeline.json data/logs/extract-*.json
-          git commit -m "chore(data): daily extraction $(date -u +%Y-%m-%d)"
+
+          git add -A data/ai_timeline.json data/pelican_timeline.json data/raw_rss.xml public/pelican-svgs
+          if git diff --cached --quiet; then
+            echo "No content changes"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -m "chore(data): automated content sync $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger Vercel deploy hook (optional)
+        if: steps.commit.outputs.changed == 'true' && secrets.VERCEL_DEPLOY_HOOK_URL != ''
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: curl -fsS -X POST "$VERCEL_DEPLOY_HOOK_URL"
