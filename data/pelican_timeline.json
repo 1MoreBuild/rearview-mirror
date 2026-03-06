@@ -570,6 +570,16 @@
         "gemini-3-1-flash-lite-2026-03-03-3.svg",
         "gemini-3-1-flash-lite-2026-03-03-4.svg"
       ]
+    },
+    {
+      "date": "2026-03-05",
+      "model": "GPT-5.4",
+      "provider": "OpenAI",
+      "blog_url": "https://simonwillison.net/2026/Mar/5/introducing-gpt54/",
+      "svg_files": [
+        "gpt-5-4-2026-03-05.svg",
+        "gpt-5-4-2026-03-05-2.svg"
+      ]
     }
   ]
 }

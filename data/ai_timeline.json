@@ -2,7 +2,7 @@
   "version": 2,
   "as_of": "2026-03-03",
   "range_start": "2023-12-06",
-  "range_end": "2026-02-26",
+  "range_end": "2026-03-03",
   "events": [
     {
       "date": "2023-12-08",
@@ -11141,6 +11141,57 @@
         {
           "label": "HuggingFace announcement",
           "url": "https://x.com/ariG23498/status/2026995823536751072"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "GPT-5.3 Instant rolled out",
+      "organization": "OpenAI",
+      "summary": "GPT-5.3 Instant rolled out to all ChatGPT users with improved conversational naturalness, fewer unnecessary refusals and defensive disclaimers, and reduced hallucinations (26.8% better with search, 19.7% without).",
+      "detail": "The release explicitly responds to complaints that GPT-5.2 was 'too cautious' with 'too many caveats,' positioning 5.3 as less preachy while maintaining safety improvements.",
+      "tags": [
+        "gpt-5.3-instant",
+        "chatgpt",
+        "reduced-refusals",
+        "hallucination-reduction",
+        "conversational-naturalness"
+      ],
+      "sources": [
+        {
+          "label": "OpenAI announcement",
+          "url": "https://x.com/OpenAI/status/2028893701427302559"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "FlashOptim open-source optimizer released",
+      "organization": "Databricks",
+      "summary": "FlashOptim released as open-source optimizer implementations (AdamW/SGD/Lion) that preserve update equivalence while cutting training memory by over 50%, reducing AdamW overhead from ~16 bytes/param to 7 bytes (or 5 with gradient release).",
+      "detail": "Enables training larger models on limited GPU memory - example 8B finetune peak reduced from 175 GiB to 113 GiB, making long-context training more practical.",
+      "tags": [
+        "flashoptim",
+        "databricks",
+        "optimizer",
+        "memory-optimization",
+        "training-efficiency",
+        "adamw"
+      ],
+      "sources": [
+        {
+          "label": "Davis Blalock announcement",
+          "url": "https://x.com/davisblalock/status/2028943987349045610"
+        },
+        {
+          "label": "MosaicAI memory reduction details",
+          "url": "https://x.com/DbrxMosaicAI/status/2028977216940589383"
         }
       ]
     }
