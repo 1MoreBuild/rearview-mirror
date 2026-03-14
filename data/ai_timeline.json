@@ -11194,6 +11194,103 @@
           "url": "https://x.com/DbrxMosaicAI/status/2028977216940589383"
         }
       ]
+    },
+    {
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Gemini 3.1 Flash-Lite released with dynamic thinking levels",
+      "organization": "Google",
+      "summary": "Google released Gemini 3.1 Flash-Lite (Preview) as the fastest and most cost-efficient Gemini 3-series endpoint, featuring adjustable thinking levels that let users dial compute based on task complexity. Pricing is $0.25/M input and $1.50/M output with 1432 Elo on LMArena.",
+      "detail": "The model emphasizes latency and throughput for high-volume workloads, with 2.5× faster time-to-first-token than Gemini 2.5 Flash. The dynamic thinking levels feature represents a product-level knob for balancing intelligence vs latency.",
+      "tags": [
+        "gemini",
+        "flash-lite",
+        "google",
+        "thinking-levels",
+        "multimodal",
+        "cost-optimization"
+      ],
+      "sources": [
+        {
+          "label": "Google DeepMind announcement",
+          "url": "https://x.com/GoogleDeepMind/status/2028872381477929185"
+        },
+        {
+          "label": "Jeff Dean pricing/performance details",
+          "url": "https://x.com/JeffDean/status/2028876962580816143"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Document Arena launches for PDF reasoning evaluation",
+      "organization": "LMArena",
+      "summary": "LMArena launched Document Arena, a new benchmark for real PDF reasoning with side-by-side evaluations, addressing the gap between agent benchmarks and real-world document work distribution.",
+      "detail": "Document Arena provides practical evaluation for text+images+video+audio+PDF ingestion use cases. Claude Opus 4.6 currently leads the rankings per Arena.",
+      "tags": [
+        "document-arena",
+        "lmarena",
+        "benchmark",
+        "pdf-reasoning",
+        "evaluation"
+      ],
+      "sources": [
+        {
+          "label": "Arena Document Arena launch",
+          "url": "https://x.com/arena/status/2028915403704156581"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Notion ships MCP/API support for Meeting Notes",
+      "organization": "Notion",
+      "summary": "Notion released MCP (Model Context Protocol) and API support for Meeting Notes, enabling one-liner installation via Claude Code.",
+      "detail": "This represents expanded MCP adoption in production workflows, allowing AI assistants to interact with Notion meeting notes through a standardized protocol.",
+      "tags": [
+        "notion",
+        "mcp",
+        "meeting-notes",
+        "integration",
+        "cursor"
+      ],
+      "sources": [
+        {
+          "label": "Zach Tratar announcement",
+          "url": "https://x.com/zachtratar/status/2028881783551570209"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Cursor launches MCP Apps with interactive UI rendering",
+      "organization": "Cursor",
+      "summary": "Cursor released MCP Apps, enabling AI agents to render interactive UIs directly inside the chat interface.",
+      "detail": "This expands MCP adoption by allowing agents to create and display interactive user interfaces within the conversational context, advancing agentic UX capabilities.",
+      "tags": [
+        "cursor",
+        "mcp",
+        "agents",
+        "ui-rendering",
+        "interactive-ux"
+      ],
+      "sources": [
+        {
+          "label": "Cursor AI announcement",
+          "url": "https://x.com/cursor_ai/status/2028953584407085546"
+        }
+      ]
     }
   ]
 }
