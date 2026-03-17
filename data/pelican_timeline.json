@@ -580,6 +580,15 @@
         "gpt-5-4-2026-03-05.svg",
         "gpt-5-4-2026-03-05-2.svg"
       ]
+    },
+    {
+      "date": "2026-03-16",
+      "model": "Mistral Small 4",
+      "provider": "Mistral",
+      "blog_url": "https://simonwillison.net/2026/Mar/16/mistral-small-4/",
+      "svg_files": [
+        "mistral-small-4-2026-03-16.svg"
+      ]
     }
   ]
 }
