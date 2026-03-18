@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-03-03",
+  "as_of": "2026-03-16",
   "range_start": "2023-12-06",
-  "range_end": "2026-03-03",
+  "range_end": "2026-03-11",
   "events": [
     {
       "date": "2023-12-08",
@@ -11289,6 +11289,61 @@
         {
           "label": "Cursor AI announcement",
           "url": "https://x.com/cursor_ai/status/2028953584407085546"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "NVIDIA Nemotron 3 Super released",
+      "organization": "NVIDIA",
+      "summary": "NVIDIA released Nemotron 3 Super, a 120B parameter/~12B active open model with 1M context, hybrid Mamba-Transformer/SSM Latent MoE architecture, designed for agentic workloads with weights, data, recipe, and infra details fully open.",
+      "detail": "Claims up to 2.2x faster inference than GPT-OSS-120B in FP4 with native multi-token prediction optimization and significantly lighter KV-cache versus competitors, marking NVIDIA's strongest open-model push yet.",
+      "tags": [
+        "nemotron-3-super",
+        "open-model",
+        "nvidia",
+        "mamba-transformer",
+        "inference-optimization",
+        "agentic-ai"
+      ],
+      "sources": [
+        {
+          "label": "Announcement via @ctnzr",
+          "url": "https://x.com/ctnzr/status/2031762077325406428"
+        },
+        {
+          "label": "Tech perspective via @kuchaev",
+          "url": "https://x.com/kuchaev/status/2031765052970393805"
+        },
+        {
+          "label": "Wired reporting on NVIDIA open-model investment",
+          "url": "https://x.com/willknight/status/2031792027390587313"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Replit Agent 4 launched",
+      "organization": "Replit",
+      "summary": "Replit launched Agent 4, a more collaborative canvas-like workflow with parallel agents for building apps, sites, and slides simultaneously.",
+      "detail": "Positions Replit's agent product as a collaborative multi-agent workspace rather than single-task automation, appealing to creative and development workflows.",
+      "tags": [
+        "replit",
+        "agent-4",
+        "multi-agent",
+        "collaborative-ai",
+        "development-tools"
+      ],
+      "sources": [
+        {
+          "label": "Launch announcement",
+          "url": "https://x.com/amasad/status/2031755113694679094"
         }
       ]
     }
