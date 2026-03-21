@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-03-18",
+  "as_of": "2026-03-19",
   "range_start": "2023-12-06",
-  "range_end": "2026-03-11",
+  "range_end": "2026-03-19",
   "events": [
     {
       "date": "2023-12-08",
@@ -11344,6 +11344,109 @@
         {
           "label": "Launch announcement",
           "url": "https://x.com/amasad/status/2031755113694679094"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "LangSmith Fleet launched",
+      "organization": "LangChain",
+      "summary": "LangChain launched LangSmith Fleet, an enterprise workspace for creating and managing fleets of agents with memory, tools, permissions, and channel integrations.",
+      "detail": "The launch emphasizes agent identity, credential management, sharing controls, Slack exposure, and auditability—reflecting the industry shift from single agents to managed fleets and agent operating systems.",
+      "tags": [
+        "langsmith",
+        "langchain",
+        "fleet-management",
+        "enterprise",
+        "multi-agent",
+        "agent-os"
+      ],
+      "sources": [
+        {
+          "label": "LangChain Fleet launch",
+          "url": "https://x.com/LangChain/status/2034679590250258855"
+        },
+        {
+          "label": "LangChain Fleet overview",
+          "url": "https://x.com/LangChain/status/2034694530478612777"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "LiteParse open-sourced",
+      "organization": "LlamaIndex",
+      "summary": "LlamaIndex open-sourced LiteParse, a local, layout-aware parser for PDFs, Office docs, and images with zero Python dependencies, built-in OCR options, and spatial layout preservation.",
+      "detail": "The tool explicitly targets agent pipelines, representing a split in the stack between high-end OCR/VLMs for difficult pages and lightweight local parsers for common cases.",
+      "tags": [
+        "liteparse",
+        "llamaindex",
+        "parser",
+        "pdf",
+        "document-processing",
+        "agent-tools"
+      ],
+      "sources": [
+        {
+          "label": "LiteParse launch tweet",
+          "url": "https://x.com/llama_index/status/2034661997644808638"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Qwen 3.5 Max Preview released",
+      "organization": "Alibaba",
+      "summary": "Alibaba released Qwen 3.5 Max Preview, reaching #3 in Math, Top 10 in Arena Expert, and Top 15 overall on the Arena leaderboard.",
+      "detail": "The model showed particularly large gains versus prior Max variants in text, writing, and math, with Alibaba confirming more optimization is coming.",
+      "tags": [
+        "qwen",
+        "qwen3.5",
+        "max-preview",
+        "alibaba",
+        "reasoning",
+        "benchmarks"
+      ],
+      "sources": [
+        {
+          "label": "Arena benchmark results",
+          "url": "https://x.com/arena/status/2034653740465336407"
+        },
+        {
+          "label": "Alibaba Qwen confirmation",
+          "url": "https://x.com/Alibaba_Qwen/status/2034658901321560549"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Chandra OCR 2 released",
+      "organization": "Chandra",
+      "summary": "Chandra released OCR 2 as a new SOTA OCR model achieving 85.9% on olmOCR bench, supporting 90+ languages, with a 4B parameter model supporting handwriting, math, forms, tables, and image caption extraction.",
+      "detail": "The model represents a significant advancement in multilingual OCR capabilities, covering a wide range of document types and languages.",
+      "tags": [
+        "chandra",
+        "ocr",
+        "document-extraction",
+        "multilingual",
+        "vision"
+      ],
+      "sources": [
+        {
+          "label": "Chandra OCR 2 announcement",
+          "url": "https://x.com/nathanhabib1011/status/2034565076963991910"
         }
       ]
     }
