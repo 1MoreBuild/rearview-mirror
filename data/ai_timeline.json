@@ -2,7 +2,7 @@
   "version": 2,
   "as_of": "2026-03-20",
   "range_start": "2023-12-06",
-  "range_end": "2026-03-19",
+  "range_end": "2026-03-20",
   "events": [
     {
       "date": "2023-12-08",
@@ -11447,6 +11447,102 @@
         {
           "label": "Chandra OCR 2 announcement",
           "url": "https://x.com/nathanhabib1011/status/2034565076963991910"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Claude Code expands to Channels (Telegram, Discord)",
+      "organization": "Anthropic",
+      "summary": "Anthropic is extending Claude Code beyond the terminal into Channels like Telegram and Discord, expanding the reach of the CLI coding assistant.",
+      "detail": "This follows Claude integration in T3 Code and represents Anthropic's push to make Claude Code accessible across more platforms and workflows.",
+      "tags": [
+        "claude-code",
+        "anthropic",
+        "channels",
+        "telegram",
+        "discord"
+      ],
+      "sources": [
+        {
+          "label": "kimmonismus tweet",
+          "url": "https://x.com/kimmonismus/status/2034934937388806528"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "HermesWorkspace v0.2.0 released",
+      "organization": "Hermes",
+      "summary": "HermesWorkspace v0.2.0 released with one-command startup, UI-based provider/model config, live model catalogs, and new config/model endpoints.",
+      "detail": "Added parallel web search/page extraction, workflow recorder/replay system, and integration with Camel Guard v0.4 for prompt-injection defenses.",
+      "tags": [
+        "hermes-workspace",
+        "v0.2.0",
+        "agent",
+        "local-agent",
+        "workflow"
+      ],
+      "sources": [
+        {
+          "label": "outsource_ tweet",
+          "url": "https://x.com/outsource_/status/2034788187944431914"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "Camel Guard v0.4 released",
+      "organization": "Camel",
+      "summary": "Camel Guard v0.4 released as an update to the prompt-injection defense system, integrated into HermesWorkspace for security.",
+      "detail": "Provides stronger prompt-injection defenses for local agent workflows as the ecosystem matures.",
+      "tags": [
+        "camel-guard",
+        "v0.4",
+        "prompt-injection",
+        "security",
+        "defense"
+      ],
+      "sources": [
+        {
+          "label": "p0 tweet",
+          "url": "https://x.com/p0/status/2034948093980926167"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "LangSmith Prompt Hub adds owners-only promotion",
+      "organization": "LangChain",
+      "summary": "LangChain shipped owners-only prompt promotion in LangSmith Prompt Hub, a production-oriented feature for prompt management.",
+      "detail": "Part of broader LangChain announcements including Building Reliable Agents course, React Suspense support in @langchain/react, and observability messaging for agents in production.",
+      "tags": [
+        "langchain",
+        "langsmith",
+        "prompt-hub",
+        "features",
+        "production"
+      ],
+      "sources": [
+        {
+          "label": "LangChain tweet",
+          "url": "https://x.com/LangChain/status/2035039198575476799"
+        },
+        {
+          "label": "LangChain tweet",
+          "url": "https://x.com/LangChain/status/2035058068460106213"
         }
       ]
     }
