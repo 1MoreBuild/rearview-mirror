@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-03-20",
+  "as_of": "2026-03-24",
   "range_start": "2023-12-06",
-  "range_end": "2026-03-20",
+  "range_end": "2026-03-24",
   "events": [
     {
       "date": "2023-12-08",
@@ -11543,6 +11543,128 @@
         {
           "label": "LangChain tweet",
           "url": "https://x.com/LangChain/status/2035058068460106213"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Mistral Small 4 released with hybrid reasoning and multimodality",
+      "organization": "Mistral AI",
+      "summary": "Mistral released Small 4, a 119B MoE with 6.5B active parameters, Apache 2.0 licensed, supporting both reasoning and non-reasoning modes plus image input, posting 27 on the AA Intelligence Index.",
+      "detail": "While trailing larger peers like gpt-oss-120B and Qwen3.5 122B in raw intelligence, the model appears relatively token-efficient and less hallucinatory than comparably-sized alternatives.",
+      "tags": [
+        "mistral-small-4",
+        "moe",
+        "multimodal",
+        "reasoning",
+        "apache-2"
+      ],
+      "sources": [
+        {
+          "label": "Artificial Analysis Summary",
+          "url": "https://artificialanalysis.ai/models/mistral-small-4"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Figma launches MCP server with direct AI canvas editing in open beta",
+      "organization": "Figma",
+      "summary": "Figma released an MCP server enabling direct AI editing on the canvas, now in open beta. The integration works through GitHub Copilot CLI and other MCP-compatible clients.",
+      "detail": "This represents tool-calling becoming product-native rather than chat-wrapper-native, enabling agents to directly manipulate designs through a standardized protocol rather than UI automation.",
+      "tags": [
+        "figma",
+        "mcp",
+        "agent-tooling",
+        "design",
+        "open-beta"
+      ],
+      "sources": [
+        {
+          "label": "Figma announcement",
+          "url": "https://x.com/figma/status/2036434766661296602"
+        },
+        {
+          "label": "GitHub MCP integration",
+          "url": "https://x.com/github/status/2036439431352041911"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "Nous Research releases Hermes Agent v0.4.0 with OpenAI-compatible Responses API",
+      "organization": "Nous Research",
+      "summary": "Nous released Hermes Agent v0.4.0 with approximately 300 merged PRs, adding an OpenAI-compatible Responses API backend, background self-improvement loops, and a post-response review agent for reusable memory and skills.",
+      "detail": "Exposing a personal coding and ops agent behind a standard API makes it usable from any OpenAI-compatible client like Open WebUI or LobeChat, lowering the barrier to personal agent deployment.",
+      "tags": [
+        "hermes-agent",
+        "nous-research",
+        "agent-framework",
+        "openai-compatible",
+        "memory-system"
+      ],
+      "sources": [
+        {
+          "label": "Teknium announcement",
+          "url": "https://x.com/Teknium/status/2036473305025356023"
+        },
+        {
+          "label": "NousResearch announcement",
+          "url": "https://x.com/NousResearch/status/2036492872044745180"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "GenReasoning launches OpenReward platform with 330+ RL environments",
+      "organization": "GenReasoning",
+      "summary": "GenReasoning launched OpenReward, a platform exposing over 330 RL environments with autoscaled environment compute and 4.5M+ unique RL tasks through one API.",
+      "detail": "OpenReward addresses the often-missing environment compute layer in agentic RL, making it easier for researchers and developers to train and evaluate agents across standardized, reproducible task suites.",
+      "tags": [
+        "reinforcement-learning",
+        "agent-training",
+        "environment-compute",
+        "rl-benchmark"
+      ],
+      "sources": [
+        {
+          "label": "GenReasoning announcement",
+          "url": "https://x.com/GenReasoning/status/2036412836742590950"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "Hugging Face releases hf-mount for local filesystem access to Hub resources",
+      "organization": "Hugging Face",
+      "summary": "Hugging Face released hf-mount, allowing users to mount Hub datasets, models, and storage buckets as a local filesystem, with examples using a 5TB FineWeb slice.",
+      "detail": "Since agents are particularly effective at filesystem operations, mounted remote storage provides a natural substrate for agent memory, scratchpads, team artifact storage, and lazy access to large corpora.",
+      "tags": [
+        "hugging-face",
+        "data-storage",
+        "agent-memory",
+        "filesystem",
+        "data-pipeline"
+      ],
+      "sources": [
+        {
+          "label": "Julien C announcement",
+          "url": "https://x.com/julien_c/status/2036436553082286342"
         }
       ]
     }
