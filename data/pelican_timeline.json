@@ -589,6 +589,17 @@
       "svg_files": [
         "mistral-small-4-2026-03-16.svg"
       ]
+    },
+    {
+      "date": "2026-04-07",
+      "model": "GLM-5.1",
+      "provider": "Z.ai",
+      "blog_url": "https://simonwillison.net/2026/Apr/7/glm-51/",
+      "svg_files": [
+        "glm-5-1-2026-04-07.svg",
+        "glm-5-1-2026-04-07-2.svg",
+        "glm-5-1-2026-04-07-3.svg"
+      ]
     }
   ]
 }
