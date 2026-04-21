@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-04-17",
+  "as_of": "2026-04-20",
   "range_start": "2023-12-06",
-  "range_end": "2026-03-24",
+  "range_end": "2026-04-20",
   "events": [
     {
       "date": "2023-12-08",
@@ -11665,6 +11665,73 @@
         {
           "label": "Julien C announcement",
           "url": "https://x.com/julien_c/status/2036436553082286342"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Kimi K2.6 released",
+      "organization": "Moonshot (Kimi)",
+      "summary": "Moonshot released Kimi K2.6, an open-weight 1T-parameter MoE with 32B active parameters, 384 experts, MLA attention, 256K context, native multimodality, and INT4 quantization, with day-0 support across vLLM, OpenRouter, Cloudflare Workers AI, Baseten, MLX, Hermes Agent, and OpenCode.",
+      "detail": "Claims open-source SOTA on multiple agentic coding benchmarks including HLE w/ tools 54.0, SWE-Bench Pro 58.6, and SWE-bench Multilingual 76.7. The more novel claims include long-horizon execution with 4,000+ tool calls, 12+ hour continuous runs, and 300 parallel sub-agents.",
+      "tags": [
+        "kimi-k2.6",
+        "moonshot",
+        "open-weight",
+        "moe",
+        "agentic-coding",
+        "1t-parameter"
+      ],
+      "sources": [
+        {
+          "label": "Kimi launch thread",
+          "url": "https://x.com/Kimi_Moonshot/status/2046249571882500354"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Cursor CLI adds /debug and status bars",
+      "organization": "Cursor",
+      "summary": "Cursor CLI added /debug command and customizable status bars, enhancing terminal surface for coding agents.",
+      "detail": "Memory, inspection, and execution controls are becoming first-class product features, not just backend details.",
+      "tags": [
+        "cursor",
+        "cli",
+        "debug",
+        "coding-agent"
+      ],
+      "sources": [
+        {
+          "label": "Cursor announcement",
+          "url": "https://x.com/cursor_ai/status/2046324136377721128"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "OpenCode ships new model picker",
+      "organization": "OpenCode",
+      "summary": "OpenCode shipped a new model picker feature for their coding agent product.",
+      "detail": "Part of ongoing UX polishing for coding-agent tools in the terminal surface.",
+      "tags": [
+        "opencode",
+        "model-picker",
+        "coding-agent"
+      ],
+      "sources": [
+        {
+          "label": "OpenCode announcement",
+          "url": "https://x.com/jullerino/status/2046110099262103743"
         }
       ]
     }
