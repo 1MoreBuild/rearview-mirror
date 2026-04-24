@@ -600,6 +600,16 @@
         "glm-5-1-2026-04-07-2.svg",
         "glm-5-1-2026-04-07-3.svg"
       ]
+    },
+    {
+      "date": "2026-04-22",
+      "model": "Qwen3.6-27B",
+      "provider": "Alibaba",
+      "blog_url": "https://simonwillison.net/2026/Apr/22/qwen36-27b/",
+      "svg_files": [
+        "qwen3-6-27b-2026-04-22.svg",
+        "qwen3-6-27b-2026-04-22-2.svg"
+      ]
     }
   ]
 }

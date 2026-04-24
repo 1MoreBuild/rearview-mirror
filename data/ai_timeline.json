@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-04-21",
+  "as_of": "2026-04-23",
   "range_start": "2023-12-06",
-  "range_end": "2026-04-20",
+  "range_end": "2026-04-22",
   "events": [
     {
       "date": "2023-12-08",
@@ -11732,6 +11732,121 @@
         {
           "label": "OpenCode announcement",
           "url": "https://x.com/jullerino/status/2046110099262103743"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Qwen3.6-27B released",
+      "organization": "Alibaba",
+      "summary": "Alibaba released Qwen3.6-27B, a dense Apache 2.0 model with thinking + non-thinking modes and unified multimodal checkpoint, claiming it beats Qwen3.5-397B-A17B on major coding evals including SWE-bench Verified 77.2 vs 76.2.",
+      "detail": "The ecosystem moved immediately with vLLM day-0 support, Unsloth 18GB-RAM local GGUFs, llama.cpp integration, and Ollama packaging—indicating strong demand for capable local coding models.",
+      "tags": [
+        "qwen3.6-27b",
+        "alibaba",
+        "coding-model",
+        "open-weight",
+        "multimodal"
+      ],
+      "sources": [
+        {
+          "label": "Alibaba Qwen announcement",
+          "url": "https://x.com/Alibaba_Qwen/status/2046939764428009914"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "OpenAI Privacy Filter released",
+      "organization": "OpenAI",
+      "summary": "OpenAI released Privacy Filter, a lightweight 1.5B total/50M active MoE Apache 2.0 open model for PII detection and masking with 128k context window.",
+      "detail": "Targets a concrete infra problem in enterprise/agent pipelines where on-device or low-cost preprocessing matters—more operationally interesting than generic small open models.",
+      "tags": [
+        "openai",
+        "privacy-filter",
+        "pii-detection",
+        "moe",
+        "open-model"
+      ],
+      "sources": [
+        {
+          "label": "Hugging Face announcement",
+          "url": "https://x.com/ClementDelangue/status/2046973714751754479"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "MiMo-V2.5-Pro and MiMo-V2.5 released",
+      "organization": "Xiaomi",
+      "summary": "Xiaomi announced MiMo-V2.5-Pro and MiMo-V2.5, positioning V2.5-Pro as a major jump in software engineering and long-horizon agents with SWE-bench Pro 57.2, and non-Pro adding native omnimodality and 1M-token context.",
+      "detail": "Claims 1,000+ autonomous tool calls and quickly got Hermes/Nous integration, showing active ecosystem adoption for agentic open models.",
+      "tags": [
+        "mimo-v2.5",
+        "xiaomi",
+        "agentic-model",
+        "omnimodal",
+        "1m-context"
+      ],
+      "sources": [
+        {
+          "label": "Xiaomi MiMo announcement",
+          "url": "https://x.com/XiaomiMiMo/status/2046988157888209365"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Gemini Enterprise Agent Platform launched",
+      "organization": "Google",
+      "summary": "Google launched Gemini Enterprise Agent Platform, evolution of Vertex AI into a platform for building, governing, and optimizing agents at scale with Agent Studio and 200+ models via Model Garden.",
+      "detail": "Includes Gemini 3.1 Pro, Gemini 3.1 Flash Image, Lyria 3, and Gemma 4—signaling Google's vertical integration of chips, models, agent tooling, and enterprise control planes.",
+      "tags": [
+        "google",
+        "gemini",
+        "enterprise-agents",
+        "vertex-ai",
+        "agent-platform"
+      ],
+      "sources": [
+        {
+          "label": "Google DeepMind announcement",
+          "url": "https://x.com/GoogleDeepMind/status/2046983340524269713"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Workspace Intelligence GA released",
+      "organization": "Google",
+      "summary": "Google released Workspace Intelligence GA as a semantic layer over docs/sheets/meetings/mail, enabling AI-powered productivity across the Workspace suite.",
+      "detail": "Represents Google's push to embed AI deeply into everyday enterprise productivity tools, competing with Microsoft Copilot integration.",
+      "tags": [
+        "google",
+        "workspace",
+        "semantic-layer",
+        "productivity",
+        "ga"
+      ],
+      "sources": [
+        {
+          "label": "Google Workspace announcement",
+          "url": "https://x.com/ChanduThota/status/2046946043078848788"
         }
       ]
     }
