@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-04-23",
+  "as_of": "2026-04-24",
   "range_start": "2023-12-06",
-  "range_end": "2026-04-22",
+  "range_end": "2026-04-24",
   "events": [
     {
       "date": "2023-12-08",
@@ -11847,6 +11847,97 @@
         {
           "label": "Google Workspace announcement",
           "url": "https://x.com/ChanduThota/status/2046946043078848788"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "GPT-5.5 flagship model released",
+      "organization": "OpenAI",
+      "summary": "OpenAI launched GPT-5.5 as its new flagship frontier model for 'real work and powering agents,' rolling it out in ChatGPT and Codex with API access delayed pending safety requirements.",
+      "detail": "The model is positioned as a step toward lower-micromanagement agentic work with stronger coding, computer use, knowledge work, and longer multi-step execution. Pricing is $5/$30 per million tokens for GPT-5.5 and $30/$180 for Pro, with notable token efficiency improvements over GPT-5.4.",
+      "tags": [
+        "gpt-5.5",
+        "openai",
+        "flagship-model",
+        "agents",
+        "frontier-model",
+        "codex"
+      ],
+      "sources": [
+        {
+          "label": "OpenAI announcement",
+          "url": "https://x.com/OpenAI/status/2047376561205325845"
+        },
+        {
+          "label": "OpenAI rollout",
+          "url": "https://x.com/OpenAI/status/2047376568809636017"
+        },
+        {
+          "label": "Pricing announcement",
+          "url": "https://x.com/scaling01/status/2047375819144597737"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Codex gets major product upgrade with browser control and productivity features",
+      "organization": "OpenAI",
+      "summary": "OpenAI bundled significant Codex product upgrades including browser control, file/docs/PDF handling, Sheets & Slides support, auto-review mode, OS-wide dictation, and expanded computer-use workflows.",
+      "detail": "These upgrades position Codex beyond coding into broader productivity workflows including spreadsheets, slides, documents, and browser automation tasks.",
+      "tags": [
+        "codex",
+        "openai",
+        "product-upgrade",
+        "browser-control",
+        "productivity"
+      ],
+      "sources": [
+        {
+          "label": "Codex browser use",
+          "url": "https://x.com/OpenAIDevs/status/2047381283358355706"
+        },
+        {
+          "label": "Sam Altman bundle announcement",
+          "url": "https://x.com/sama/status/2047378431260664058"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "DeepSeek-V4 Pro and Flash released with 1M token context",
+      "organization": "DeepSeek",
+      "summary": "DeepSeek released DeepSeek-V4 Pro (1.6T total/49B active params) and DeepSeek-V4 Flash (284B total/13B active), its first major architecture refresh with 1M-token context, hybrid reasoning/non-reasoning modes, and MIT license.",
+      "detail": "V4 Pro ranks #2 open-weights on benchmarks near Kimi K2.6, with especially strong long-context and agentic performance. The new hybrid attention architecture achieves 8.7x smaller KV cache than V3.2, making 1M context practical.",
+      "tags": [
+        "deepseek-v4",
+        "deepseek-v4-pro",
+        "deepseek-v4-flash",
+        "1m-context",
+        "moe",
+        "open-weights"
+      ],
+      "sources": [
+        {
+          "label": "@ArtificialAnlys benchmark analysis",
+          "url": "https://x.com/ArtificialAnlys/status/2047735160544841953"
+        },
+        {
+          "label": "@teortaxesTex technical details",
+          "url": "https://x.com/teortaxesTex/status/2047630981364883816"
+        },
+        {
+          "label": "@ZhihuFrontier architecture summary",
+          "url": "https://x.com/ZhihuFrontier/status/2047664976215839021"
         }
       ]
     }
