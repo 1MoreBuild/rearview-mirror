@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-05-06",
+  "as_of": "2026-05-08",
   "range_start": "2023-12-06",
-  "range_end": "2026-04-24",
+  "range_end": "2026-05-07",
   "events": [
     {
       "date": "2023-12-08",
@@ -11938,6 +11938,30 @@
         {
           "label": "@ZhihuFrontier architecture summary",
           "url": "https://x.com/ZhihuFrontier/status/2047664976215839021"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "GPT-Realtime-Translate released",
+      "organization": "OpenAI",
+      "summary": "OpenAI released GPT-Realtime-Translate, a live streaming speech translation model supporting 70+ input languages to 13 output languages.",
+      "detail": "Enables real-time voice-to-voice translation for developers building with the Realtime API, representing a capability OpenAI has aimed to deliver since its early days.",
+      "tags": [
+        "gpt-realtime-translate",
+        "translation",
+        "voice-ai",
+        "openai",
+        "realtime-api",
+        "multilingual"
+      ],
+      "sources": [
+        {
+          "label": "OpenAI announcement",
+          "url": "https://x.com/OpenAI/status/2052438196454379986"
         }
       ]
     }
