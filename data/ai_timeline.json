@@ -2,7 +2,7 @@
   "version": 2,
   "as_of": "2026-05-26",
   "range_start": "2023-12-06",
-  "range_end": "2026-05-18",
+  "range_end": "2026-05-26",
   "events": [
     {
       "date": "2023-12-08",
@@ -12017,6 +12017,145 @@
         {
           "label": "Google on Search + Antigravity",
           "url": "https://x.com/Google/status/2056795269694423065"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "QUEST open 2B-35B deep-research agent models released",
+      "organization": "QUEST",
+      "summary": "QUEST released a family of open 2B-35B parameter models designed for long-horizon fact-seeking, citation grounding, and report synthesis as a general-purpose deep research agent.",
+      "detail": "The open release enables researchers to run deep research workflows locally, with the 2B variant making lightweight long-horizon research accessible on consumer hardware.",
+      "tags": [
+        "quest",
+        "deep-research",
+        "open-source",
+        "long-context",
+        "agent"
+      ],
+      "sources": [
+        {
+          "label": "iScienceLuvr QUEST release tweet",
+          "url": "https://x.com/iScienceLuvr/status/2059223911011930606"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "PrismML releases Bonsai Image 4B with 1-bit variants",
+      "organization": "PrismML",
+      "summary": "PrismML released Bonsai Image 4B, a vision model including 1-bit and ternary quantization variants designed to run locally on laptops and phones.",
+      "detail": "The aggressive quantization approach enables browser-local execution at approximately 3GB footprint, pushing the boundary for what can run on-device without cloud infrastructure.",
+      "tags": [
+        "bonsai",
+        "vision",
+        "quantization",
+        "on-device",
+        "edge-ai"
+      ],
+      "sources": [
+        {
+          "label": "PrismML Bonsai Image release tweet",
+          "url": "https://x.com/PrismML/status/2059339157600969199"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "category": "engineering",
+      "significance": "low",
+      "title": "vLLM merges Rust frontend as Python API alternative",
+      "organization": "vLLM",
+      "summary": "vLLM merged a Rust frontend as a drop-in alternative to the Python API server, offering a Rust-based serving path for preprocessing-heavy workloads.",
+      "detail": "Early benchmarks show approximately 5x throughput improvement (~837 req/s vs ~162 req/s) on preprocess-heavy workloads in a single process, addressing a key performance bottleneck for LLM serving.",
+      "tags": [
+        "vllm",
+        "rust",
+        "inference",
+        "serving",
+        "performance"
+      ],
+      "sources": [
+        {
+          "label": "vLLM project tweet",
+          "url": "https://x.com/vllm_project/status/2059344804295942513"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Weights & Biases launches MCP server for agents",
+      "organization": "Weights & Biases",
+      "summary": "W&B launched an MCP server that lets coding agents inspect experiments, training runs, and metrics directly through the Model Context Protocol.",
+      "detail": "The schema-first redesign is specifically aimed at avoiding context-window blowups when agents query large experiment histories, a practical friction point for agentic ML workflows.",
+      "tags": [
+        "wandb",
+        "mcp",
+        "agent",
+        "mlops",
+        "observability"
+      ],
+      "sources": [
+        {
+          "label": "W&B tweet announcing MCP server",
+          "url": "https://x.com/wandb/status/2059384552725025226"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Unsloth adds support for GPT, Claude, and other APIs in local UI",
+      "organization": "Unsloth",
+      "summary": "Unsloth added support for running GPT, Claude, and other API providers directly inside its local UI, including prompt caching and code execution capabilities.",
+      "detail": "This unifies fine-tuning and local inference workflows with cloud API access in a single interface, potentially simplifying the development loop for users combining multiple providers.",
+      "tags": [
+        "unsloth",
+        "fine-tuning",
+        "local-ui",
+        "api",
+        "claude",
+        "gpt"
+      ],
+      "sources": [
+        {
+          "label": "UnslothAI tweet",
+          "url": "https://x.com/UnslothAI/status/2059277719633101291"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "MiniMax teases M3 open-source release with block-sparse attention",
+      "organization": "MiniMax",
+      "summary": "MiniMax announced that M3 will be open-sourced, featuring a new block-sparse two-stage attention architecture reportedly delivering 9.7x prefilling and 15.6x decoding speedups at 1M tokens versus M2.",
+      "detail": "The architecture appears to return to GQA-based sparse attention with block selection on real KV, diverging from DeepSeek's compressed-attention variants and representing a distinct design choice in the sparse attention design space.",
+      "tags": [
+        "minimax",
+        "m3",
+        "sparse-attention",
+        "open-source",
+        "inference-speed"
+      ],
+      "sources": [
+        {
+          "label": "MiniMax AI M3 announcement",
+          "url": "https://x.com/MiniMax_AI/status/2059286515155599595"
         }
       ]
     }
