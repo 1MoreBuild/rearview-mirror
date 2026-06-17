@@ -2,7 +2,7 @@
   "version": 2,
   "as_of": "2026-06-09",
   "range_start": "2023-12-06",
-  "range_end": "2026-05-28",
+  "range_end": "2026-06-09",
   "events": [
     {
       "date": "2023-12-08",
@@ -12184,6 +12184,28 @@
         {
           "label": "ClaudeDevs availability",
           "url": "https://x.com/ClaudeDevs/status/2060044860984529368"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Claude Mythos 5 released for restricted access",
+      "organization": "Anthropic",
+      "summary": "Anthropic released Claude Mythos 5 as the restricted-access version of the same underlying model as Fable 5, with additional safeguards for frontier AI development tasks.",
+      "detail": "Mythos 5 is the same underlying model as Fable 5 but with capability limitations applied silently for frontier LLM development queries; shares same pricing tier as Fable 5.",
+      "tags": [
+        "claude-mythos-5",
+        "anthropic",
+        "model-release",
+        "restricted-access"
+      ],
+      "sources": [
+        {
+          "label": "Anthropic @claudeai announcement",
+          "url": "https://x.com/claudeai/status/2064394151441863006"
         }
       ]
     }
