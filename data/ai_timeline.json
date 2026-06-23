@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-06-09",
+  "as_of": "2026-06-22",
   "range_start": "2023-12-06",
-  "range_end": "2026-06-09",
+  "range_end": "2026-06-16",
   "events": [
     {
       "date": "2023-12-08",
@@ -12206,6 +12206,35 @@
         {
           "label": "Anthropic @claudeai announcement",
           "url": "https://x.com/claudeai/status/2064394151441863006"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "GLM-5.2 released",
+      "organization": "Z.ai",
+      "summary": "Z.ai released GLM-5.2, an MIT-licensed open-weight 744B MoE frontier model with 1M-token context, coding/agentic focus, and two reasoning-effort modes (high and max).",
+      "detail": "First open-weight model to exceed 80% on Terminal-Bench, ranked #1 on Design Arena and #2 on Code Arena Frontend, positioning it as the strongest open coding model yet with broad day-0 ecosystem support.",
+      "tags": [
+        "glm-5.2",
+        "open-weight",
+        "coding",
+        "agentic",
+        "1m-context",
+        "moe",
+        "frontier-model"
+      ],
+      "sources": [
+        {
+          "label": "Z.ai announcement",
+          "url": "https://x.com/Zai_org/status/2066938937344495629"
+        },
+        {
+          "label": "Technical details",
+          "url": "https://x.com/Zai_org/status/2066938952225857609"
         }
       ]
     }
