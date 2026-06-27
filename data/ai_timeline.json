@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-06-25",
+  "as_of": "2026-06-26",
   "range_start": "2023-12-06",
-  "range_end": "2026-06-16",
+  "range_end": "2026-06-26",
   "events": [
     {
       "date": "2023-12-08",
@@ -12235,6 +12235,60 @@
         {
           "label": "Technical details",
           "url": "https://x.com/Zai_org/status/2066938952225857609"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "GPT-5.6 Sol/Terra/Luna released as limited preview",
+      "organization": "OpenAI",
+      "summary": "OpenAI released GPT-5.6 in three variants: Sol (flagship), Terra (mid-tier), and Luna (lower-cost), with initial access restricted to trusted partners via Codex and API at the request of the U.S. government.",
+      "detail": "This marks a significant shift in OpenAI's release strategy toward government-coordinated, risk-tiered deployment. Sol is positioned as the strongest cybersecurity model with Terminal-Bench 2.1 at 91.9%, and pricing ranges from $1/$6 to $5/$30 per 1M tokens.",
+      "tags": [
+        "gpt-5.6",
+        "openai",
+        "frontier-models",
+        "restricted-access",
+        "cerebras",
+        "pricing"
+      ],
+      "sources": [
+        {
+          "label": "OpenAI announcement",
+          "url": "https://x.com/OpenAI/status/2070555272230384038"
+        },
+        {
+          "label": "Sam Altman statement",
+          "url": "https://x.com/sama/status/2070607488274358364"
+        },
+        {
+          "label": "Pricing details",
+          "url": "https://x.com/reach_vb/status/2070556105403482387"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "date_precision": "day",
+      "category": "product",
+      "significance": "low",
+      "title": "Google Interactions API adds background execution",
+      "organization": "Google",
+      "summary": "Google's Interactions API added background=True support for long-running async tasks that exceed HTTP timeouts.",
+      "detail": "This addresses a key agent infrastructure need by enabling proper handling of extended-duration agentic workflows beyond traditional HTTP constraints.",
+      "tags": [
+        "google-cloud",
+        "interactions-api",
+        "async",
+        "agent-infrastructure"
+      ],
+      "sources": [
+        {
+          "label": "API feature announcement",
+          "url": "https://x.com/_philschmid/status/2070537421431644432"
         }
       ]
     }
