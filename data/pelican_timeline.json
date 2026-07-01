@@ -610,6 +610,15 @@
         "qwen3-6-27b-2026-04-22.svg",
         "qwen3-6-27b-2026-04-22-2.svg"
       ]
+    },
+    {
+      "date": "2026-06-30",
+      "model": "What’s new in Claude Sonnet 5",
+      "provider": "Anthropic",
+      "blog_url": "https://simonwillison.net/2026/Jun/30/claude-sonnet-5/",
+      "svg_files": [
+        "what-s-new-in-claude-sonnet-5-2026-06-30.svg"
+      ]
     }
   ]
 }
