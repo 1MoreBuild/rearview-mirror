@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-07-14",
+  "as_of": "2026-07-15",
   "range_start": "2023-12-06",
-  "range_end": "2026-07-13",
+  "range_end": "2026-07-15",
   "events": [
     {
       "date": "2023-12-08",
@@ -12341,6 +12341,39 @@
         {
           "label": "Prime Intellect announcement",
           "url": "https://x.com/PrimeIntellect/status/2076447247693402301"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Inkling foundation model released",
+      "organization": "Thinking Machines Lab",
+      "summary": "Thinking Machines Lab released Inkling, an open-weights multimodal foundation model with 975B total/41B active MoE parameters, Apache 2.0 licensed, supporting text, image, and audio inputs with up to 1M context.",
+      "detail": "First major U.S. open-weights release with unusually broad day-0 ecosystem support across vLLM, SGLang, Modal, Baseten, Databricks, and Hugging Face. Positioned as a customizable base model for practical use rather than benchmark-maxed flagship.",
+      "tags": [
+        "thinking-machines-lab",
+        "inkling",
+        "open-weights",
+        "multimodal",
+        "mixture-of-experts",
+        "apache-2.0",
+        "founding-model"
+      ],
+      "sources": [
+        {
+          "label": "Thinking Machines Lab announcement",
+          "url": "https://x.com/thinkymachines/status/2077454609551921208"
+        },
+        {
+          "label": "Mira Murati announcement",
+          "url": "https://x.com/miramurati/status/2077455974743593100"
+        },
+        {
+          "label": "Soumith Chintala announcement",
+          "url": "https://x.com/soumithchintala/status/2077457110728884327"
         }
       ]
     }
