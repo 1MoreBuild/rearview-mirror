@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "as_of": "2026-07-16",
+  "as_of": "2026-07-17",
   "range_start": "2023-12-06",
-  "range_end": "2026-07-15",
+  "range_end": "2026-07-16",
   "events": [
     {
       "date": "2023-12-08",
@@ -12374,6 +12374,39 @@
         {
           "label": "Soumith Chintala announcement",
           "url": "https://x.com/soumithchintala/status/2077457110728884327"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "date_precision": "day",
+      "category": "model",
+      "significance": "low",
+      "title": "Kimi K3 frontier open-weights model released",
+      "organization": "Moonshot AI",
+      "summary": "Moonshot AI released Kimi K3, a frontier-class open-weights model with 2.8T total parameters, 1M-token context, native multimodal input, Kimi Delta Attention (KDA), and Attention Residuals, with open weights promised by July 27, 2026.",
+      "detail": "K3 achieved #1 in Frontend Code Arena (1679 points, 76% pairwise win rate) and #9 in Text Arena (#1486), outperforming Claude Fable 5 in frontend tasks and positioning as the largest open-weight model to date, representing a major open-model milestone.",
+      "tags": [
+        "kimi-k3",
+        "open-weights",
+        "frontier-model",
+        "multimodal",
+        "coding",
+        "moonshot-ai",
+        "kda"
+      ],
+      "sources": [
+        {
+          "label": "Official announcement",
+          "url": "https://x.com/Kimi_Moonshot/status/2077830229968683203"
+        },
+        {
+          "label": "Product positioning",
+          "url": "https://x.com/Kimi_Moonshot/status/2077830245382758902"
+        },
+        {
+          "label": "Arena frontend results",
+          "url": "https://x.com/arena/status/2077824029126504525"
         }
       ]
     }
